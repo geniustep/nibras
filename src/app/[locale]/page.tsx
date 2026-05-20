@@ -24,6 +24,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
+const levelTimelineColors: Record<string, string> = {
+  blue: "#2563a8",
+  green: "#16a34a",
+  amber: "#d97706",
+  red: "#dc2626",
+};
+
 export default async function HomePage({ params }: Props) {
   const { locale } = await params;
   const t = await getTranslations({ locale });
@@ -46,82 +53,118 @@ export default async function HomePage({ params }: Props) {
     title: string;
     description: string;
   }>;
+  const highlights = t.raw("highlights.items") as Array<{
+    icon: string;
+    title: string;
+    description: string;
+  }>;
+
+  const learnMoreLabel =
+    locale === "ar" ? "اكتشف المزيد" : locale === "fr" ? "En savoir plus" : "Learn More";
+  const discoverSchoolLifeLabel =
+    locale === "ar"
+      ? "الحياة المدرسية"
+      : locale === "fr"
+      ? "Vie scolaire"
+      : "School Life";
 
   return (
     <div dir={isRtl ? "rtl" : "ltr"}>
-      {/* ======= HERO ======= */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+
+      {/* ══════════════════════════════════════════
+          HERO
+      ══════════════════════════════════════════ */}
+      <section className="relative min-h-[82vh] flex items-center justify-center overflow-hidden">
         <Image
           src={siteConfig.assets.mainImage}
           alt={t("hero.title")}
           fill
-          className="object-cover"
+          className="object-cover object-center"
+          sizes="100vw"
           priority
         />
         <div className="hero-overlay absolute inset-0" />
-        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto py-20">
+
+        <div className="relative z-10 text-center px-4 max-w-3xl mx-auto py-20">
           <div className="animate-fade-in-up">
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 leading-tight">
+            {/* School name — big and clear */}
+            <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight mb-3">
               {t("hero.title")}
             </h1>
-            <p className="text-xl md:text-2xl text-[#e4b93a] font-medium mb-6">
+            {/* Gold accent divider */}
+            <div className="h-1 w-20 bg-[#c9a227] mx-auto rounded-full mb-5" />
+            {/* Tagline */}
+            <p className="text-lg md:text-2xl text-white/90 font-medium mb-8 max-w-xl mx-auto leading-relaxed">
               {t("hero.subtitle")}
             </p>
-            <p className="text-white/90 text-base md:text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
-              {t("hero.body")}
-            </p>
-            <div className="flex flex-wrap gap-3 justify-center">
+            {/* Two CTAs only */}
+            <div className="flex flex-wrap gap-4 justify-center">
               <Link
-                href={`/${locale}/registration`}
-                className="px-6 py-3 rounded-lg font-bold text-white transition-colors"
+                href={`/${locale}/contact`}
+                className="px-7 py-3.5 rounded-xl font-bold text-white text-base hover:opacity-90 transition-opacity shadow-lg"
                 style={{ backgroundColor: "#c9a227" }}
               >
                 {t("hero.requestInfo")}
               </Link>
               <Link
                 href={`/${locale}/registration`}
-                className="px-6 py-3 rounded-lg font-bold border-2 border-white text-white hover:bg-white hover:text-[#1a4a7a] transition-colors"
+                className="px-7 py-3.5 rounded-xl font-bold border-2 border-white text-white hover:bg-white hover:text-[#1a4a7a] transition-colors text-base shadow-lg"
               >
                 {t("hero.bookVisit")}
               </Link>
-              <a
-                href={whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-6 py-3 rounded-lg font-bold text-white flex items-center gap-2 transition-colors"
-                style={{ backgroundColor: "#25D366" }}
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="18" height="18" fill="white">
-                  <path d="M16.003 2.667C8.64 2.667 2.667 8.64 2.667 16c0 2.344.635 4.64 1.84 6.65L2.667 29.333l6.896-1.807A13.28 13.28 0 0016.003 29.333C23.363 29.333 29.333 23.36 29.333 16S23.363 2.667 16.003 2.667z" />
-                </svg>
-                {t("hero.whatsapp")}
-              </a>
             </div>
           </div>
         </div>
+
         {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-pulse-slow">
-          <div className="w-6 h-10 rounded-full border-2 border-white/50 flex items-start justify-center p-1">
-            <div className="w-1 h-2 bg-white/70 rounded-full" />
+          <div className="w-6 h-10 rounded-full border-2 border-white/40 flex items-start justify-center p-1">
+            <div className="w-1 h-2 bg-white/60 rounded-full" />
           </div>
         </div>
       </section>
 
-      {/* ======= INTRO ======= */}
-      <section className="py-16 bg-[#f7f8fc]">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-[#1a4a7a] mb-4">
-            {t("intro.title")}
-          </h2>
-          <div className="h-1 w-16 bg-[#c9a227] mx-auto mb-6 rounded-full" />
-          <p className="text-[#4a5568] text-base md:text-lg leading-relaxed">
-            {t("intro.body")}
-          </p>
+      {/* ══════════════════════════════════════════
+          IDENTITY — 3 key points
+      ══════════════════════════════════════════ */}
+      <section className="py-14 bg-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Brief welcome */}
+          <div className="text-center mb-10">
+            <h2 className="text-2xl md:text-3xl font-bold text-[#1a4a7a] mb-3">
+              {t("intro.title")}
+            </h2>
+            <div className="h-1 w-14 bg-[#c9a227] mx-auto rounded-full mb-5" />
+            <p className="text-[#4a5568] text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
+              {t("intro.body")}
+            </p>
+          </div>
+
+          {/* 3 identity cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {highlights.map((item, i) => (
+              <div
+                key={i}
+                className="bg-[#f7f8fc] rounded-2xl p-6 border border-[#e2e8f0] flex flex-col gap-3 hover:shadow-md hover:-translate-y-0.5 transition-all"
+              >
+                <div
+                  className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl"
+                  style={{ backgroundColor: "rgba(26,74,122,0.08)" }}
+                >
+                  {item.icon}
+                </div>
+                <h3 className="text-base font-bold text-[#1a4a7a]">{item.title}</h3>
+                <p className="text-[#4a5568] text-sm leading-relaxed">{item.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* ======= PILLARS ======= */}
-      <section className="py-16 bg-white">
+      {/* ══════════════════════════════════════════
+          PILLARS — 5 educational pillars
+      ══════════════════════════════════════════ */}
+      <section className="py-16 bg-[#f7f8fc]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionTitle
             title={t("pillars.sectionTitle")}
@@ -138,81 +181,174 @@ export default async function HomePage({ params }: Props) {
               />
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* ======= EDUCATIONAL LEVELS ======= */}
-      <section className="py-16 bg-[#f7f8fc]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionTitle
-            title={t("levels.sectionTitle")}
-            subtitle={t("levels.sectionSubtitle")}
-          />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {levels.map((level, i) => (
-              <LevelCard
-                key={i}
-                title={level.title}
-                ages={level.ages}
-                description={level.description}
-                color={level.color}
-                index={i}
-              />
-            ))}
-          </div>
           <div className="text-center mt-8">
             <Link
-              href={`/${locale}/levels`}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-bold text-white transition-colors"
-              style={{ backgroundColor: "#1a4a7a" }}
+              href={`/${locale}/pedagogical-project`}
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-[#1a4a7a] border-2 border-[#1a4a7a] hover:bg-[#1a4a7a] hover:text-white transition-colors text-sm"
             >
-              {locale === "ar" ? "اكتشف المزيد" : locale === "fr" ? "En savoir plus" : "Learn More"}
+              {learnMoreLabel}
             </Link>
           </div>
         </div>
       </section>
 
-      {/* ======= LANGUAGES ======= */}
+      {/* ══════════════════════════════════════════
+          LEVELS — journey timeline
+      ══════════════════════════════════════════ */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionTitle
+            title={t("levels.sectionTitle")}
+            subtitle={t("levels.sectionSubtitle")}
+          />
+
+          {/* Timeline layout */}
+          <div className="relative">
+            {/* Horizontal connector line (desktop) */}
+            <div
+              className="hidden lg:block absolute h-0.5 bg-[#e2e8f0]"
+              style={{ top: "28px", left: "12.5%", right: "12.5%", zIndex: 0 }}
+            />
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+              {levels.map((level, i) => {
+                const dotColor =
+                  levelTimelineColors[level.color] ?? levelTimelineColors.blue;
+                return (
+                  <div key={i} className="flex flex-col items-center gap-4 text-center">
+                    {/* Numbered step circle */}
+                    <div
+                      className="relative z-10 w-14 h-14 rounded-full flex items-center justify-center font-bold text-xl text-white shadow-md border-4 border-white flex-shrink-0"
+                      style={{ backgroundColor: dotColor }}
+                    >
+                      {i + 1}
+                    </div>
+                    {/* Card (full width) */}
+                    <div className="w-full">
+                      <LevelCard
+                        title={level.title}
+                        ages={level.ages}
+                        description={level.description}
+                        color={level.color}
+                        index={i}
+                      />
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          <div className="text-center mt-8">
+            <Link
+              href={`/${locale}/levels`}
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-[#1a4a7a] border-2 border-[#1a4a7a] hover:bg-[#1a4a7a] hover:text-white transition-colors text-sm"
+            >
+              {learnMoreLabel}
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════
+          LANGUAGES — trilingual section
+      ══════════════════════════════════════════ */}
       <section className="py-16" style={{ backgroundColor: "#1a4a7a" }}>
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionTitle
             title={t("languages.sectionTitle")}
             subtitle={t("languages.sectionSubtitle")}
             light
           />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
             {[
-              { flag: "🇲🇦", lang: locale === "ar" ? "العربية" : locale === "fr" ? "Arabe" : "Arabic", desc: locale === "ar" ? "لغة الهوية والتراث" : locale === "fr" ? "Langue de l'identité" : "Language of identity" },
-              { flag: "🇫🇷", lang: locale === "ar" ? "الفرنسية" : locale === "fr" ? "Français" : "French", desc: locale === "ar" ? "لغة العلوم والمجال" : locale === "fr" ? "Langue des sciences" : "Language of sciences" },
-              { flag: "🇬🇧", lang: locale === "ar" ? "الإنجليزية" : locale === "fr" ? "Anglais" : "English", desc: locale === "ar" ? "مسار Cambridge English" : locale === "fr" ? "Parcours Cambridge English" : "Cambridge English track" },
+              {
+                abbr: locale === "ar" ? "ع" : "AR",
+                lang:
+                  locale === "ar" ? "العربية" : locale === "fr" ? "Arabe" : "Arabic",
+                role:
+                  locale === "ar"
+                    ? "لغة الهوية والتراث"
+                    : locale === "fr"
+                    ? "Langue de l'identité et du patrimoine"
+                    : "Language of identity and heritage",
+                accent: "#c9a227",
+              },
+              {
+                abbr: "FR",
+                lang:
+                  locale === "ar" ? "الفرنسية" : locale === "fr" ? "Français" : "French",
+                role:
+                  locale === "ar"
+                    ? "لغة العلوم والمجال المهني"
+                    : locale === "fr"
+                    ? "Langue des sciences et du monde professionnel"
+                    : "Language of sciences and professional life",
+                accent: "#4ade80",
+              },
+              {
+                abbr: "EN",
+                lang:
+                  locale === "ar"
+                    ? "الإنجليزية"
+                    : locale === "fr"
+                    ? "Anglais"
+                    : "English",
+                role:
+                  locale === "ar"
+                    ? "مسار تدريجي لتقوية اللغة"
+                    : locale === "fr"
+                    ? "Parcours progressif de renforcement"
+                    : "Progressive English strengthening track",
+                accent: "#60a5fa",
+              },
             ].map((item, i) => (
-              <div key={i} className="bg-white/10 rounded-xl p-6 border border-white/20">
-                <div className="text-4xl mb-3">{item.flag}</div>
-                <h3 className="text-xl font-bold text-white mb-2">{item.lang}</h3>
-                <p className="text-blue-100 text-sm">{item.desc}</p>
+              <div
+                key={i}
+                className="bg-white/10 rounded-2xl p-6 border border-white/15 hover:bg-white/15 transition-colors"
+              >
+                {/* Language abbreviation badge */}
+                <div
+                  className="w-12 h-12 rounded-xl flex items-center justify-center font-bold text-sm text-white mb-4"
+                  style={{ backgroundColor: item.accent + "33", border: `2px solid ${item.accent}` }}
+                >
+                  <span style={{ color: item.accent }}>{item.abbr}</span>
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2">{item.lang}</h3>
+                <p className="text-blue-100 text-sm leading-relaxed">{item.role}</p>
               </div>
             ))}
           </div>
-          <p className="text-blue-100 text-sm italic max-w-2xl mx-auto mb-6">
-            {t("languages.cambridge")}
-          </p>
-          <Link
-            href={`/${locale}/languages`}
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-bold border-2 border-white text-white hover:bg-white hover:text-[#1a4a7a] transition-colors"
-          >
-            {t("languages.learnMore")}
-          </Link>
+
+          {/* Cambridge note — exact approved phrasing */}
+          <div className="bg-white/8 rounded-2xl p-5 border border-white/15 mb-7 max-w-3xl mx-auto">
+            <p className="text-blue-100 text-sm leading-relaxed text-center">
+              {t("languages.cambridge")}
+            </p>
+          </div>
+
+          <div className="text-center">
+            <Link
+              href={`/${locale}/languages`}
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold border-2 border-white text-white hover:bg-white hover:text-[#1a4a7a] transition-colors"
+            >
+              {t("languages.learnMore")}
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* ======= ACTIVITIES ======= */}
-      <section className="py-16 bg-white">
+      {/* ══════════════════════════════════════════
+          ACTIVITIES — school life
+      ══════════════════════════════════════════ */}
+      <section className="py-16 bg-[#f7f8fc]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionTitle
             title={t("activities.sectionTitle")}
             subtitle={t("activities.sectionSubtitle")}
           />
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
             {activities.map((act, i) => (
               <ActivityCard
                 key={i}
@@ -226,74 +362,65 @@ export default async function HomePage({ params }: Props) {
           <div className="text-center mt-8">
             <Link
               href={`/${locale}/school-life`}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-bold text-white transition-colors"
-              style={{ backgroundColor: "#1a4a7a" }}
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-[#1a4a7a] border-2 border-[#1a4a7a] hover:bg-[#1a4a7a] hover:text-white transition-colors text-sm"
             >
-              {locale === "ar" ? "اكتشف الحياة المدرسية" : locale === "fr" ? "Découvrir la vie scolaire" : "Discover School Life"}
+              {discoverSchoolLifeLabel}
             </Link>
           </div>
         </div>
       </section>
 
-      {/* ======= LOCATION ======= */}
-      <section className="py-16 bg-[#f7f8fc]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <SectionTitle title={t("location.sectionTitle")} />
-          <p className="text-[#4a5568] text-base md:text-lg leading-relaxed mb-8 max-w-2xl mx-auto">
-            {t("location.body")}
-          </p>
-          <div className="flex flex-wrap gap-4 justify-center">
-            <a
-              href={siteConfig.googleMapsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-bold text-white transition-colors"
-              style={{ backgroundColor: "#4285F4" }}
-            >
-              🗺️ {t("location.openMap")}
-            </a>
-            <Link
-              href={`/${locale}/registration`}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-bold text-white transition-colors"
-              style={{ backgroundColor: "#1a4a7a" }}
-            >
-              📅 {t("location.bookVisit")}
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ======= CTA ======= */}
-      <section className="py-16 bg-[#1a1a2e]">
-        <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
+      {/* ══════════════════════════════════════════
+          FINAL CTA
+      ══════════════════════════════════════════ */}
+      <section
+        className="py-20 relative overflow-hidden"
+        style={{ backgroundColor: "#1a4a7a" }}
+      >
+        {/* Subtle background accent */}
+        <div
+          className="absolute inset-0 opacity-10"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at 20% 50%, #c9a227 0%, transparent 50%), radial-gradient(circle at 80% 50%, #ffffff 0%, transparent 50%)",
+          }}
+        />
+        <div className="relative max-w-3xl mx-auto px-4 text-center">
+          <h2 className="text-2xl md:text-4xl font-bold text-white mb-4 leading-tight">
             {t("cta.sectionTitle")}
           </h2>
-          <p className="text-gray-400 text-base mb-8">{t("cta.body")}</p>
+          <div className="h-1 w-16 bg-[#c9a227] mx-auto rounded-full mb-6" />
+          <p className="text-blue-100 text-base md:text-lg mb-10 max-w-xl mx-auto leading-relaxed">
+            {t("cta.body")}
+          </p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <a
-              href={whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-bold text-white transition-colors"
-              style={{ backgroundColor: "#25D366" }}
-            >
-              📱 {t("cta.whatsapp")}
-            </a>
+            {/* Primary: request info */}
             <Link
-              href={`/${locale}/registration`}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-bold text-white transition-colors"
+              href={`/${locale}/contact`}
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-bold text-white hover:opacity-90 transition-opacity text-sm shadow-lg"
               style={{ backgroundColor: "#c9a227" }}
             >
-              📝 {t("cta.form")}
+              {t("hero.requestInfo")}
             </Link>
+            {/* Secondary: book visit */}
+            <Link
+              href={`/${locale}/registration`}
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-bold border-2 border-white text-white hover:bg-white hover:text-[#1a4a7a] transition-colors text-sm shadow-lg"
+            >
+              {t("hero.bookVisit")}
+            </Link>
+            {/* Tertiary: map */}
             <a
               href={siteConfig.googleMapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-bold border border-white/30 text-white hover:bg-white/10 transition-colors"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-white/80 border border-white/30 hover:bg-white/10 transition-colors text-sm"
             >
-              🗺️ {t("cta.map")}
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              {t("location.openMap")}
             </a>
           </div>
         </div>

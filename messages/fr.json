@@ -25,6 +25,25 @@
     "title": "Bienvenue à Madaris Nibras",
     "body": "Madaris Nibras est un établissement scolaire privé à Tanger, accueillant les élèves du préscolaire jusqu'au lycée. Nous aspirons à former une génération consciente, équilibrée et plurilingue, capable de relever les défis du XXIe siècle avec assurance et compétence. Nous accordons autant d'importance à l'excellence académique qu'à l'éducation aux valeurs et aux compétences de vie."
   },
+  "highlights": {
+    "items": [
+      {
+        "icon": "⚖️",
+        "title": "Éducation équilibrée",
+        "description": "Nous combinons valeurs islamiques, excellence académique et ouverture sur le monde dans un projet éducatif cohérent et renouvelé."
+      },
+      {
+        "icon": "🌐",
+        "title": "Langues dès le préscolaire",
+        "description": "Arabe comme fondement solide, français et anglais dès les premières années, avec un parcours progressif de renforcement de l'anglais."
+      },
+      {
+        "icon": "🎯",
+        "title": "Activités intégrées au projet éducatif",
+        "description": "Sport, arts, sciences et technologie sont des piliers essentiels. Nous formons une personnalité complète, en classe et en dehors."
+      }
+    ]
+  },
   "pillars": {
     "sectionTitle": "Les piliers de notre projet éducatif",
     "sectionSubtitle": "Cinq axes qui définissent l'identité de Madaris Nibras",
@@ -112,8 +131,8 @@
     "bookVisit": "Réserver une visite"
   },
   "cta": {
-    "sectionTitle": "Prêts à commencer l'aventure ?",
-    "body": "Contactez-nous dès aujourd'hui pour en savoir plus sur Madaris Nibras ou pour réserver une visite de l'établissement.",
+    "sectionTitle": "Découvrez Madaris Nibras de près",
+    "body": "Contactez-nous pour obtenir des informations ou réserver une visite de l'établissement et découvrir notre projet pédagogique.",
     "whatsapp": "Contacter via WhatsApp",
     "form": "Remplir le formulaire d'inscription",
     "map": "Voir sur la carte"

@@ -25,6 +25,25 @@
     "title": "Welcome to Madaris Nibras",
     "body": "Madaris Nibras is a private school in Tangier, Morocco, welcoming students from preschool through high school. We strive to educate a generation that is conscious, balanced, and multilingual — a generation ready to face the challenges of the 21st century with confidence and competence. We care equally about academic excellence, character formation, and life skills."
   },
+  "highlights": {
+    "items": [
+      {
+        "icon": "⚖️",
+        "title": "Balanced Education",
+        "description": "We combine Islamic values, academic excellence, and openness to the world in a coherent and living educational project."
+      },
+      {
+        "icon": "🌐",
+        "title": "Languages from Preschool",
+        "description": "Arabic as a solid foundation, French and English from the early years, with a progressive track for strengthening English skills."
+      },
+      {
+        "icon": "🎯",
+        "title": "Integrated Activities",
+        "description": "Sport, arts, science, and technology are core pillars — not extras. We develop well-rounded people inside and outside the classroom."
+      }
+    ]
+  },
   "pillars": {
     "sectionTitle": "Pillars of Our Educational Project",
     "sectionSubtitle": "Five core axes that define Madaris Nibras's identity",
@@ -112,8 +131,8 @@
     "bookVisit": "Book a Visit"
   },
   "cta": {
-    "sectionTitle": "Ready to Start the Journey?",
-    "body": "Contact us today to learn more about Madaris Nibras or to book an in-person visit to the school.",
+    "sectionTitle": "Discover Madaris Nibras Up Close",
+    "body": "Contact us to get information or to schedule a visit to our school and learn about our educational project.",
     "whatsapp": "Contact via WhatsApp",
     "form": "Fill Out the Registration Form",
     "map": "View on Map"
