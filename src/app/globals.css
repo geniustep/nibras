@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+:root {
+  /* Brand Colors */
+  --color-primary: #1a4a7a;
+  --color-primary-dark: #0f2f54;
+  --color-primary-light: #2563a8;
+  --color-accent: #c9a227;
+  --color-accent-dark: #a07d18;
+  --color-accent-light: #e4b93a;
+
+  /* Backgrounds */
+  --color-bg: #ffffff;
+  --color-bg-subtle: #f7f8fc;
+  --color-bg-muted: #eef1f7;
+
+  /* Text */
+  --color-text: #1a1a2e;
+  --color-text-muted: #4a5568;
+  --color-text-light: #718096;
+
+  /* Borders */
+  --color-border: #e2e8f0;
+  --color-border-dark: #cbd5e0;
+
+  scrollbar-width: thin;
+  scrollbar-color: #1a4a7a #eef1f7;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #eef1f7;
+}
+::-webkit-scrollbar-thumb {
+  background: #1a4a7a;
+  border-radius: 3px;
+}
+
+@theme inline {
+  --color-background: var(--color-bg);
+  --font-sans: system-ui, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[dir="rtl"] {
+  text-align: right;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes pulse-slow {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s ease-in-out infinite;
+}
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 1.5rem;
+  z-index: 1000;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}
+
+[dir="ltr"] .whatsapp-float {
+  right: 1.5rem;
+}
+
+[dir="rtl"] .whatsapp-float {
+  left: 1.5rem;
+}
+
+.hero-overlay {
+  background: linear-gradient(
+    135deg,
+    rgba(26, 74, 122, 0.85) 0%,
+    rgba(15, 47, 84, 0.75) 100%
+  );
+}
+
+.card-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(26, 74, 122, 0.15);
+}
