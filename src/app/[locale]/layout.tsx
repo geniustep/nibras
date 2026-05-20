@@ -47,7 +47,7 @@ export default async function LocaleLayout({ children, params }: Props) {
     notFound();
   }
 
-  const messages = await getMessages();
+  const messages = await getMessages({ locale });
   const isRtl = locale === "ar";
   const fontClass = isRtl
     ? `${cairo.variable} font-[family-name:var(--font-cairo)]`
@@ -60,7 +60,7 @@ export default async function LocaleLayout({ children, params }: Props) {
       className={`${fontClass} h-full`}
     >
       <body className="min-h-full flex flex-col antialiased">
-        <NextIntlClientProvider messages={messages}>
+        <NextIntlClientProvider locale={locale} messages={messages}>
           <Header locale={locale as Locale} />
           <main className="flex-1">{children}</main>
           <Footer locale={locale as Locale} />

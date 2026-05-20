@@ -4,11 +4,14 @@
     "about": "À propos",
     "pedagogicalProject": "Projet pédagogique",
     "levels": "Niveaux scolaires",
-    "languages": "Langues & Cambridge",
+    "languages": "Langues et anglais renforcé",
     "schoolLife": "Vie scolaire",
     "registration": "Inscription & Visite",
     "contact": "Contact",
-    "getInfo": "Demander des infos"
+    "more": "Plus",
+    "schoolLifeActivities": "Vie scolaire et activités",
+    "bookVisit": "Réserver une visite",
+    "getInfo": "Demander des informations"
   },
   "hero": {
     "title": "Madaris Nibras",
@@ -359,8 +362,8 @@
       "title": "Contact — Madaris Nibras",
       "description": "Contactez Madaris Nibras Tanger par téléphone, WhatsApp ou email"
     },
-    "heroTitle": "Contactez-nous",
-    "heroSubtitle": "Nous sommes là pour répondre à toutes vos questions",
+    "heroTitle": "Contactez Madaris Nibras",
+    "heroSubtitle": "L'équipe de Madaris Nibras est heureuse de répondre à toutes vos questions sur l'inscription, les niveaux scolaires et la prise de rendez-vous.",
     "address": {
       "title": "Adresse",
       "value": "Tanger, Maroc"
@@ -375,6 +378,11 @@
     "map": "Ouvrir sur la carte",
     "social": {
       "title": "Suivez-nous sur les réseaux sociaux"
+    },
+    "mapSection": {
+      "title": "Notre emplacement à Tanger",
+      "body": "Madaris Nibras est situé à Tanger. Nous accueillons volontiers les familles souhaitant découvrir notre établissement et planifier une visite.",
+      "openMap": "Voir l'itinéraire sur Google Maps"
     },
     "formTitle": "Envoyez-nous un message",
     "responseTime": "Nous nous engageons à répondre à toutes les demandes dans un délai de 24 heures ouvrables."
@@ -416,7 +424,7 @@
     "quickLinks": "Liens rapides",
     "contactInfo": "Informations de contact",
     "followUs": "Suivez-nous",
-    "copyright": "Tous droits réservés © 2025 Madaris Nibras",
+    "copyright": "Tous droits réservés © 2026 Madaris Nibras",
     "address": "Tanger, Maroc"
   },
   "meta": {

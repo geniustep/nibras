@@ -4,11 +4,14 @@
     "about": "About Us",
     "pedagogicalProject": "Pedagogical Project",
     "levels": "Academic Levels",
-    "languages": "Languages & Cambridge",
+    "languages": "Languages & English Support",
     "schoolLife": "School Life",
     "registration": "Registration & Visit",
     "contact": "Contact Us",
-    "getInfo": "Get Info"
+    "more": "More",
+    "schoolLifeActivities": "School Life & Activities",
+    "bookVisit": "Book a Visit",
+    "getInfo": "Request Information"
   },
   "hero": {
     "title": "Madaris Nibras",
@@ -359,8 +362,8 @@
       "title": "Contact Us — Madaris Nibras",
       "description": "Contact Madaris Nibras Tangier by phone, WhatsApp, or email"
     },
-    "heroTitle": "Contact Us",
-    "heroSubtitle": "We're here to answer all your questions",
+    "heroTitle": "Contact Madaris Nibras",
+    "heroSubtitle": "The Madaris Nibras team is happy to answer your questions about enrollment, academic levels, and scheduling a school visit.",
     "address": {
       "title": "Address",
       "value": "Tangier, Morocco"
@@ -375,6 +378,11 @@
     "map": "Open on Map",
     "social": {
       "title": "Follow us on social media"
+    },
+    "mapSection": {
+      "title": "Our Location in Tangier",
+      "body": "Madaris Nibras is located in Tangier, Morocco. We warmly welcome families who wish to visit our school and learn more about our community.",
+      "openMap": "Open location in Google Maps"
     },
     "formTitle": "Send Us a Message",
     "responseTime": "We commit to responding to all inquiries within 24 business hours."
@@ -416,7 +424,7 @@
     "quickLinks": "Quick Links",
     "contactInfo": "Contact Information",
     "followUs": "Follow Us",
-    "copyright": "All rights reserved © 2025 Madaris Nibras",
+    "copyright": "All rights reserved © 2026 Madaris Nibras",
     "address": "Tangier, Morocco"
   },
   "meta": {

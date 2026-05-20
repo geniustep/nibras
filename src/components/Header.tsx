@@ -1,12 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useTranslations, useLocale } from "next-intl";
+import { useTranslations } from "next-intl";
 import { usePathname, useRouter } from "next/navigation";
 import { siteConfig } from "../../site.config";
-import { getWhatsAppUrl } from "@/lib/whatsapp";
 
 type Locale = "ar" | "fr" | "en";
 
@@ -14,7 +13,8 @@ interface Props {
   locale: Locale;
 }
 
-const localeLabels: Record<Locale, string> = {
+// Static label objects — never depend on window/browser state
+const localeFull: Record<Locale, string> = {
   ar: "العربية",
   fr: "Français",
   en: "English",
@@ -25,155 +25,225 @@ export default function Header({ locale }: Props) {
   const pathname = usePathname();
   const router = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [langOpen, setLangOpen] = useState(false);
+  const [moreOpen, setMoreOpen] = useState(false);
   const isRtl = locale === "ar";
-  const whatsappUrl = getWhatsAppUrl(locale);
+  const langRef = useRef<HTMLDivElement>(null);
+  const moreRef = useRef<HTMLDivElement>(null);
 
-  // Switch locale while keeping the path
+  // Close dropdowns on outside click
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (langRef.current && !langRef.current.contains(e.target as Node)) {
+        setLangOpen(false);
+      }
+      if (moreRef.current && !moreRef.current.contains(e.target as Node)) {
+        setMoreOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  // Close everything on route change
+  useEffect(() => {
+    setMenuOpen(false);
+    setLangOpen(false);
+    setMoreOpen(false);
+  }, [pathname]);
+
   function switchLocale(newLocale: Locale) {
-    // pathname is like /ar/about → replace leading locale segment
+    // Preserve current page path, only swap the locale segment
     const segments = pathname.split("/");
     segments[1] = newLocale;
-    router.push(segments.join("/") || `/${newLocale}`);
-    setMenuOpen(false);
+    const newPath = segments.join("/") || `/${newLocale}`;
+    router.push(newPath);
   }
 
-  const navLinks = [
+  function isActive(href: string, key: string): boolean {
+    if (key === "home") return pathname === `/${locale}`;
+    return pathname === href || pathname.startsWith(href + "/");
+  }
+
+  // Primary links — always visible on desktop
+  const primaryLinks = [
     { key: "home", href: `/${locale}` },
     { key: "about", href: `/${locale}/about` },
     { key: "pedagogicalProject", href: `/${locale}/pedagogical-project` },
     { key: "levels", href: `/${locale}/levels` },
-    { key: "languages", href: `/${locale}/languages` },
-    { key: "schoolLife", href: `/${locale}/school-life` },
     { key: "registration", href: `/${locale}/registration` },
     { key: "contact", href: `/${locale}/contact` },
   ] as const;
 
-  const otherLocales = (["ar", "fr", "en"] as Locale[]).filter(
-    (l) => l !== locale
-  );
+  // Secondary links — in "More" dropdown
+  const secondaryLinks = [
+    { key: "languages", href: `/${locale}/languages` },
+    { key: "schoolLifeActivities", href: `/${locale}/school-life` },
+  ] as const;
+
+  const allLocales: Locale[] = ["ar", "fr", "en"];
 
   return (
     <header
-      className="sticky top-0 z-50 bg-white border-b border-[#e2e8f0] shadow-sm"
+      className="sticky top-0 z-50 bg-white"
+      style={{
+        borderBottom: "1px solid #e2e8f0",
+        boxShadow: "0 1px 6px 0 rgba(26,74,122,0.06)",
+      }}
       dir={isRtl ? "rtl" : "ltr"}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
+
+          {/* ── Logo ── */}
           <Link
             href={`/${locale}`}
-            className="flex items-center gap-2 flex-shrink-0"
+            className="flex items-center flex-shrink-0"
+            aria-label={siteConfig.name[locale]}
           >
             <Image
               src={siteConfig.assets.logo}
               alt={siteConfig.name[locale]}
-              width={44}
-              height={44}
-              className="object-contain"
+              width={140}
+              height={52}
+              className="h-11 w-auto object-contain"
               priority
             />
-            <span className="font-bold text-[#1a4a7a] text-sm hidden sm:block">
-              {siteConfig.name[locale]}
-            </span>
           </Link>
 
-          {/* Desktop nav */}
-          <nav className="hidden xl:flex items-center gap-1">
-            {navLinks.map(({ key, href }) => {
-              const isActive = pathname === href || (key === "home" && pathname === `/${locale}`);
-              return (
-                <Link
-                  key={key}
-                  href={href}
-                  className={`px-3 py-2 rounded-md text-xs font-medium transition-colors whitespace-nowrap ${
-                    isActive
-                      ? "text-[#1a4a7a] bg-blue-50 font-semibold"
-                      : "text-[#4a5568] hover:text-[#1a4a7a] hover:bg-blue-50"
-                  }`}
+          {/* ── Desktop nav ── */}
+          <nav className="hidden lg:flex items-center gap-0.5">
+            {primaryLinks.map(({ key, href }) => (
+              <Link
+                key={key}
+                href={href}
+                className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors whitespace-nowrap ${
+                  isActive(href, key)
+                    ? "text-[#1a4a7a] bg-blue-50 font-semibold"
+                    : "text-[#4a5568] hover:text-[#1a4a7a] hover:bg-blue-50"
+                }`}
+              >
+                {t(key)}
+              </Link>
+            ))}
+
+            {/* More dropdown */}
+            <div ref={moreRef} className="relative">
+              <button
+                onClick={() => setMoreOpen((v) => !v)}
+                className="flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium text-[#4a5568] hover:text-[#1a4a7a] hover:bg-blue-50 transition-colors"
+                aria-expanded={moreOpen}
+              >
+                {t("more")}
+                <svg
+                  className={`w-3.5 h-3.5 transition-transform duration-200 ${moreOpen ? "rotate-180" : ""}`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
                 >
-                  {t(key)}
-                </Link>
-              );
-            })}
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+
+              {moreOpen && (
+                <div
+                  className={`absolute top-full mt-1.5 w-56 bg-white border border-[#e2e8f0] rounded-xl overflow-hidden ${
+                    isRtl ? "right-0" : "left-0"
+                  }`}
+                  style={{ boxShadow: "0 8px 24px rgba(26,74,122,0.10)" }}
+                >
+                  {secondaryLinks.map(({ key, href }) => (
+                    <Link
+                      key={key}
+                      href={href}
+                      onClick={() => setMoreOpen(false)}
+                      className={`block px-4 py-3 text-sm font-medium transition-colors ${
+                        isActive(href, key)
+                          ? "text-[#1a4a7a] bg-blue-50 font-semibold"
+                          : "text-[#4a5568] hover:text-[#1a4a7a] hover:bg-blue-50"
+                      }`}
+                    >
+                      {t(key)}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
           </nav>
 
-          {/* Right actions */}
+          {/* ── Right actions ── */}
           <div className="flex items-center gap-2">
-            {/* Language switcher */}
-            <div className="hidden md:flex items-center gap-1">
-              {otherLocales.map((l) => (
-                <button
-                  key={l}
-                  onClick={() => switchLocale(l)}
-                  className="px-2 py-1 text-xs font-medium text-[#4a5568] hover:text-[#1a4a7a] border border-[#e2e8f0] rounded hover:border-[#1a4a7a] transition-colors"
+
+            {/* Language dropdown (desktop) */}
+            <div ref={langRef} className="relative hidden md:block">
+              <button
+                onClick={() => setLangOpen((v) => !v)}
+                className="flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium text-[#4a5568] border border-[#e2e8f0] rounded-lg hover:border-[#1a4a7a] hover:text-[#1a4a7a] transition-colors"
+                aria-expanded={langOpen}
+              >
+                {localeFull[locale]}
+                <svg
+                  className={`w-3.5 h-3.5 transition-transform duration-200 ${langOpen ? "rotate-180" : ""}`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
                 >
-                  {localeLabels[l]}
-                </button>
-              ))}
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+
+              {langOpen && (
+                <div
+                  className={`absolute top-full mt-1.5 w-36 bg-white border border-[#e2e8f0] rounded-xl overflow-hidden ${
+                    isRtl ? "right-0" : "left-0"
+                  }`}
+                  style={{ boxShadow: "0 8px 24px rgba(26,74,122,0.10)" }}
+                >
+                  {allLocales.map((l) => (
+                    <button
+                      key={l}
+                      onClick={() => switchLocale(l)}
+                      className={`w-full flex items-center justify-between px-4 py-2.5 text-sm transition-colors ${
+                        l === locale
+                          ? "text-[#1a4a7a] font-semibold bg-blue-50"
+                          : "text-[#4a5568] hover:bg-blue-50 hover:text-[#1a4a7a]"
+                      }`}
+                    >
+                      {localeFull[l]}
+                      {l === locale && (
+                        <svg className="w-3.5 h-3.5 text-[#1a4a7a]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                        </svg>
+                      )}
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
 
-            {/* WhatsApp icon */}
-            <a
-              href={whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden sm:flex w-9 h-9 rounded-full items-center justify-center transition-colors"
-              style={{ backgroundColor: "#25D366" }}
-              aria-label="WhatsApp"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 32 32"
-                width="18"
-                height="18"
-                fill="white"
-              >
-                <path d="M16.003 2.667C8.64 2.667 2.667 8.64 2.667 16c0 2.344.635 4.64 1.84 6.65L2.667 29.333l6.896-1.807A13.28 13.28 0 0016.003 29.333C23.363 29.333 29.333 23.36 29.333 16S23.363 2.667 16.003 2.667zm0 2.4c5.955 0 10.8 4.845 10.8 10.8s-4.845 10.8-10.8 10.8a10.76 10.76 0 01-5.527-1.523l-.394-.238-4.088 1.072 1.09-3.973-.258-.41A10.758 10.758 0 015.203 16c0-5.955 4.845-10.933 10.8-10.933zm-3.066 5.6c-.24 0-.627.09-.956.45-.329.36-1.254 1.226-1.254 2.99 0 1.764 1.284 3.468 1.463 3.708.18.24 2.487 3.803 6.094 5.181.853.328 1.517.523 2.035.671.855.243 1.634.209 2.249.127.686-.093 2.11-.862 2.408-1.694.298-.833.298-1.546.208-1.695-.09-.148-.33-.238-.69-.418-.36-.18-2.11-1.042-2.44-1.162-.328-.12-.567-.18-.806.18-.24.36-.927 1.162-1.136 1.4-.208.24-.417.27-.777.09-.36-.18-1.52-.56-2.895-1.787-1.071-.954-1.794-2.132-2.003-2.492-.208-.36-.022-.554.157-.733.16-.16.36-.418.54-.627.18-.21.24-.36.36-.6.12-.24.06-.45-.03-.63-.09-.18-.807-1.944-1.105-2.663-.29-.7-.587-.604-.807-.615l-.687-.012z" />
-              </svg>
-            </a>
-
-            {/* CTA Button */}
+            {/* CTA */}
             <Link
-              href={`/${locale}/registration`}
-              className="hidden lg:flex items-center px-4 py-2 rounded-lg text-xs font-bold text-white transition-colors"
+              href={`/${locale}/contact`}
+              className="hidden lg:flex items-center px-4 py-2 rounded-lg text-sm font-bold text-white hover:opacity-90 transition-opacity whitespace-nowrap"
               style={{ backgroundColor: "#c9a227" }}
             >
               {t("getInfo")}
             </Link>
 
-            {/* Hamburger */}
+            {/* Hamburger (mobile only) */}
             <button
-              onClick={() => setMenuOpen(!menuOpen)}
-              className="xl:hidden p-2 rounded-md text-[#4a5568] hover:text-[#1a4a7a] hover:bg-blue-50 transition-colors"
+              onClick={() => setMenuOpen((v) => !v)}
+              className="lg:hidden p-2 rounded-lg text-[#4a5568] hover:text-[#1a4a7a] hover:bg-blue-50 transition-colors"
               aria-label="Toggle menu"
+              aria-expanded={menuOpen}
             >
               {menuOpen ? (
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               ) : (
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
               )}
             </button>
@@ -181,44 +251,66 @@ export default function Header({ locale }: Props) {
         </div>
       </div>
 
-      {/* Mobile menu */}
+      {/* ── Mobile drawer ── */}
       {menuOpen && (
-        <div className="xl:hidden border-t border-[#e2e8f0] bg-white shadow-lg">
-          <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-1">
-            {navLinks.map(({ key, href }) => (
+        <div
+          className="lg:hidden border-t border-[#e2e8f0] bg-white"
+          style={{ boxShadow: "0 8px 24px rgba(26,74,122,0.08)" }}
+        >
+          <div className="max-w-7xl mx-auto px-4 py-3 flex flex-col gap-1">
+            {/* All nav links */}
+            {[...primaryLinks, ...secondaryLinks].map(({ key, href }) => (
               <Link
                 key={key}
                 href={href}
                 onClick={() => setMenuOpen(false)}
-                className="px-4 py-3 rounded-lg text-sm font-medium text-[#1a1a2e] hover:bg-blue-50 hover:text-[#1a4a7a] transition-colors"
+                className={`px-4 py-3 rounded-xl text-sm font-medium transition-colors ${
+                  isActive(href, key)
+                    ? "text-[#1a4a7a] bg-blue-50 font-semibold"
+                    : "text-[#1a1a2e] hover:bg-blue-50 hover:text-[#1a4a7a]"
+                }`}
               >
                 {t(key)}
               </Link>
             ))}
-            {/* Language switcher mobile */}
-            <div className="flex gap-2 pt-3 border-t border-[#e2e8f0] mt-2">
-              {(["ar", "fr", "en"] as Locale[]).map((l) => (
-                <button
-                  key={l}
-                  onClick={() => switchLocale(l)}
-                  className={`flex-1 py-2 text-xs font-semibold rounded border transition-colors ${
-                    l === locale
-                      ? "border-[#1a4a7a] text-[#1a4a7a] bg-blue-50"
-                      : "border-[#e2e8f0] text-[#4a5568] hover:border-[#1a4a7a]"
-                  }`}
-                >
-                  {localeLabels[l]}
-                </button>
-              ))}
+
+            <div className="border-t border-[#e2e8f0] mt-2 pt-3 flex flex-col gap-2">
+              {/* Language switcher — pill buttons */}
+              <div className="flex gap-1.5">
+                {allLocales.map((l) => (
+                  <button
+                    key={l}
+                    onClick={() => switchLocale(l)}
+                    className={`flex-1 py-2 text-xs font-semibold rounded-xl border transition-colors ${
+                      l === locale
+                        ? "border-[#1a4a7a] text-[#1a4a7a] bg-blue-50"
+                        : "border-[#e2e8f0] text-[#4a5568] hover:border-[#1a4a7a] hover:text-[#1a4a7a]"
+                    }`}
+                  >
+                    {localeFull[l]}
+                  </button>
+                ))}
+              </div>
+
+              {/* CTA */}
+              <Link
+                href={`/${locale}/contact`}
+                onClick={() => setMenuOpen(false)}
+                className="block py-3 rounded-xl text-center text-sm font-bold text-white"
+                style={{ backgroundColor: "#c9a227" }}
+              >
+                {t("getInfo")}
+              </Link>
+
+              {/* Book visit */}
+              <Link
+                href={`/${locale}/registration`}
+                onClick={() => setMenuOpen(false)}
+                className="block py-3 rounded-xl text-center text-sm font-semibold text-[#1a4a7a] border-2 border-[#1a4a7a] hover:bg-blue-50 transition-colors"
+              >
+                {t("bookVisit")}
+              </Link>
             </div>
-            <Link
-              href={`/${locale}/registration`}
-              onClick={() => setMenuOpen(false)}
-              className="mt-2 py-3 rounded-lg text-center text-sm font-bold text-white"
-              style={{ backgroundColor: "#c9a227" }}
-            >
-              {t("getInfo")}
-            </Link>
           </div>
         </div>
       )}
