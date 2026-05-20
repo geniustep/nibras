@@ -66,14 +66,14 @@ export default function Header({ locale }: Props) {
           >
             <Image
               src={siteConfig.assets.logo}
-              alt={locale === "ar" ? siteConfig.name.ar : siteConfig.name.fr}
+              alt={siteConfig.name[locale]}
               width={44}
               height={44}
               className="object-contain"
               priority
             />
             <span className="font-bold text-[#1a4a7a] text-sm hidden sm:block">
-              {locale === "ar" ? siteConfig.name.ar : siteConfig.name.fr}
+              {siteConfig.name[locale]}
             </span>
           </Link>
 
