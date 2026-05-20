@@ -1,0 +1,426 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "pedagogicalProject": "Projet pédagogique",
+    "levels": "Niveaux scolaires",
+    "languages": "Langues & Cambridge",
+    "schoolLife": "Vie scolaire",
+    "registration": "Inscription & Visite",
+    "contact": "Contact",
+    "getInfo": "Demander des infos"
+  },
+  "hero": {
+    "title": "Madaris Nibras",
+    "subtitle": "Une éducation équilibrée qui illumine l'avenir de nos enfants",
+    "body": "Au cœur de Tanger, Madaris Nibras offre une éducation qui allie tradition et modernité, valeurs islamiques et ouverture sur le monde. Nous croyons que chaque enfant porte en lui un potentiel sans limites, et que le rôle de l'école est d'éveiller la curiosité, de renforcer la confiance en soi et de fournir les outils nécessaires pour réussir dans un monde en constante évolution.",
+    "requestInfo": "Demander des infos",
+    "bookVisit": "Réserver une visite",
+    "whatsapp": "Contacter via WhatsApp"
+  },
+  "intro": {
+    "title": "Bienvenue à Madaris Nibras",
+    "body": "Madaris Nibras est un établissement scolaire privé à Tanger, accueillant les élèves du préscolaire jusqu'au lycée. Nous aspirons à former une génération consciente, équilibrée et plurilingue, capable de relever les défis du XXIe siècle avec assurance et compétence. Nous accordons autant d'importance à l'excellence académique qu'à l'éducation aux valeurs et aux compétences de vie."
+  },
+  "pillars": {
+    "sectionTitle": "Les piliers de notre projet éducatif",
+    "sectionSubtitle": "Cinq axes qui définissent l'identité de Madaris Nibras",
+    "items": [
+      {
+        "icon": "🕌",
+        "title": "Valeurs & Identité",
+        "description": "Nous ancrons dans les élèves les valeurs de l'islam, l'appartenance nationale et le respect mutuel. Une identité solide est le fondement d'une véritable ouverture à l'autre."
+      },
+      {
+        "icon": "🎓",
+        "title": "Excellence académique",
+        "description": "Nous appliquons des programmes rigoureux conformes aux normes nationales, enrichis des meilleures pratiques pédagogiques modernes, pour garantir un niveau scolaire élevé dans toutes les matières."
+      },
+      {
+        "icon": "🌍",
+        "title": "Multilinguisme",
+        "description": "Nos élèves maîtrisent l'arabe comme fondement, le français dès les premières années, et l'anglais via le parcours Cambridge English. Trois langues, des horizons illimités."
+      },
+      {
+        "icon": "⚽",
+        "title": "Activités intégrées",
+        "description": "Sport, arts, sciences, technologie — ces activités ne sont pas optionnelles, elles font partie intégrante du projet éducatif. L'apprentissage se vit aussi hors des salles de classe."
+      },
+      {
+        "icon": "💡",
+        "title": "Compétences de demain",
+        "description": "Nous formons nos élèves à la pensée critique, à la résolution de problèmes, au travail d'équipe et à la créativité — les compétences qui font la différence dans un monde en rapide évolution."
+      }
+    ]
+  },
+  "levels": {
+    "sectionTitle": "Le parcours scolaire",
+    "sectionSubtitle": "De la petite enfance au lycée — un parcours éducatif complet",
+    "items": [
+      {
+        "title": "Préscolaire",
+        "ages": "De 3 à 6 ans",
+        "description": "Un environnement chaleureux et stimulant qui développe la curiosité, les compétences motrices, sociales et cognitives à travers le jeu et l'exploration.",
+        "color": "blue"
+      },
+      {
+        "title": "Primaire",
+        "ages": "De 6 à 12 ans",
+        "description": "Construction des compétences fondamentales en lecture, écriture et calcul, avec l'enseignement des langues dès le début et l'ancrage de valeurs solides.",
+        "color": "green"
+      },
+      {
+        "title": "Collège",
+        "ages": "De 12 à 15 ans",
+        "description": "Approfondissement des connaissances dans les différentes disciplines, développement de l'autonomie et de la pensée critique, préparation au lycée.",
+        "color": "amber"
+      },
+      {
+        "title": "Lycée",
+        "ages": "De 15 à 18 ans",
+        "description": "Préparation sérieuse au baccalauréat et à l'enseignement supérieur, avec la poursuite du parcours Cambridge English et l'affinage des projets personnels.",
+        "color": "red"
+      }
+    ]
+  },
+  "languages": {
+    "sectionTitle": "Les langues — un pont vers le monde",
+    "sectionSubtitle": "Trois langues, trois clés pour un avenir sans frontières",
+    "cambridge": "Un parcours progressif pour renforcer l'anglais et préparer les élèves aux certifications Cambridge English, du primaire au lycée.",
+    "learnMore": "En savoir plus"
+  },
+  "activities": {
+    "sectionTitle": "La vie scolaire",
+    "sectionSubtitle": "Une expérience scolaire riche qui dépasse les salles de classe",
+    "items": [
+      { "icon": "⚽", "title": "Sport", "description": "Activités sportives variées qui renforcent la santé et l'esprit d'équipe." },
+      { "icon": "🏊", "title": "Natation", "description": "Apprentissage de la natation dans un programme structuré et sécurisé." },
+      { "icon": "🎨", "title": "Arts", "description": "Arts plastiques et théâtre pour libérer la créativité et développer le goût." },
+      { "icon": "🎭", "title": "Culture", "description": "Événements culturels, sorties pédagogiques et célébrations qui enrichissent l'identité." },
+      { "icon": "🔬", "title": "Sciences", "description": "Laboratoires et activités scientifiques pratiques qui éveillent l'amour de la découverte." },
+      { "icon": "💻", "title": "Technologie", "description": "Enseignement numérique et initiation à la programmation et aux technologies de l'information." },
+      { "icon": "🤝", "title": "Travail d'équipe", "description": "Projets collaboratifs qui ancrent la communication, le leadership et la responsabilité." }
+    ]
+  },
+  "location": {
+    "sectionTitle": "Notre emplacement à Tanger",
+    "body": "Madaris Nibras est idéalement situé à Tanger, facilement accessible depuis les différents quartiers de la ville. Nous serions ravis de vous accueillir pour vous faire découvrir notre équipe pédagogique et notre environnement scolaire.",
+    "openMap": "Ouvrir sur la carte",
+    "bookVisit": "Réserver une visite"
+  },
+  "cta": {
+    "sectionTitle": "Prêts à commencer l'aventure ?",
+    "body": "Contactez-nous dès aujourd'hui pour en savoir plus sur Madaris Nibras ou pour réserver une visite de l'établissement.",
+    "whatsapp": "Contacter via WhatsApp",
+    "form": "Remplir le formulaire d'inscription",
+    "map": "Voir sur la carte"
+  },
+  "about": {
+    "meta": {
+      "title": "À propos — Madaris Nibras Tanger",
+      "description": "Découvrez l'histoire, la mission et les valeurs de Madaris Nibras, établissement scolaire privé à Tanger"
+    },
+    "heroTitle": "À propos de nous",
+    "heroSubtitle": "Un établissement scolaire privé à Tanger, alliant tradition et modernité",
+    "history": {
+      "title": "Notre histoire et notre parcours",
+      "body": "Madaris Nibras est né d'une conviction profonde : une éducation de qualité est le plus précieux des dons que l'on puisse offrir à un enfant. Fondé à Tanger pour être une référence dans l'enseignement privé, l'établissement a tracé son chemin grâce à un travail assidu et à la confiance des familles qui nous ont confié leurs enfants. Au fil des années, nous avons bâti une structure pédagogique solide qui répond aux exigences du présent et aux ambitions de l'avenir."
+    },
+    "mission": {
+      "title": "Notre mission",
+      "body": "Notre mission est de former des générations conscientes, équilibrées et ouvertes — des générations qui portent fièrement leur identité islamique et marocaine, armées du savoir et des compétences pour participer activement à la construction de leur société et s'ouvrir au monde. Nous visons à ce que chaque élève quitte nos écoles avec des valeurs solides, des outils efficaces et la confiance nécessaire pour écrire lui-même son histoire de réussite."
+    },
+    "vision": {
+      "title": "Notre vision",
+      "body": "Devenir la référence éducative de premier plan à Tanger et dans le nord du Maroc, en formant une génération capable de créer et d'exceller dans un monde qui exige flexibilité et compétence."
+    },
+    "values": {
+      "title": "Nos valeurs",
+      "items": [
+        { "title": "Foi & Identité", "description": "L'attachement aux valeurs islamiques et l'appartenance nationale comme fondement de toute construction." },
+        { "title": "Excellence & Rigueur", "description": "La recherche permanente de la qualité dans l'enseignement, l'encadrement et l'environnement scolaire." },
+        { "title": "Respect & Équité", "description": "Respecter chaque enfant dans sa singularité et donner à chaque apprenant toutes ses chances." },
+        { "title": "Partenariat avec les familles", "description": "La famille est un partenaire essentiel dans le processus éducatif ; nous construisons avec elle, pas à sa place." }
+      ]
+    },
+    "why": {
+      "title": "Pourquoi choisir Madaris Nibras ?",
+      "items": [
+        "Une éducation qui allie valeurs, excellence académique et plurilinguisme",
+        "Un environnement sûr et stimulant pour l'apprentissage et l'épanouissement",
+        "Une équipe pédagogique qualifiée et engagée dans le parcours de chaque élève",
+        "Des activités intégrées qui développent la personnalité de l'élève de manière globale",
+        "Une communication régulière et ouverte avec les familles",
+        "Un parcours Cambridge English pour maîtriser l'anglais dès le primaire"
+      ]
+    }
+  },
+  "pedagogical": {
+    "meta": {
+      "title": "Projet pédagogique — Madaris Nibras",
+      "description": "Découvrez l'approche pédagogique de Madaris Nibras, fondée sur cinq piliers essentiels"
+    },
+    "heroTitle": "Projet pédagogique",
+    "heroSubtitle": "Une vision éducative globale pour les générations de demain",
+    "intro": {
+      "title": "Notre philosophie éducative",
+      "body": "Notre projet pédagogique repose sur la conviction profonde que la véritable éducation va au-delà de la transmission des connaissances pour inclure la formation du caractère, l'affûtage des compétences et l'ancrage des valeurs. Nous n'enseignons pas seulement des matières, nous façonnons un être humain : penseur, productif et équilibré. C'est pourquoi notre projet pédagogique est organisé autour de cinq axes complémentaires et interdépendants."
+    },
+    "pillars": {
+      "title": "Les cinq piliers",
+      "items": [
+        {
+          "icon": "🕌",
+          "title": "Valeurs & Identité",
+          "detail": "Nous croyons qu'une identité solide est le fondement sur lequel se construisent tous les accomplissements. À Madaris Nibras, nous veillons à ce que l'élève grandisse dans l'amour de sa religion et de son pays, et dans le respect des valeurs humaines universelles. Nous intégrons l'éducation islamique dans le tissu de la vie scolaire, non comme une matière isolée, mais comme un esprit qui anime toutes nos activités."
+        },
+        {
+          "icon": "🎓",
+          "title": "Excellence académique",
+          "detail": "Nous appliquons des programmes nationaux alignés sur les meilleures normes éducatives modernes. Nos enseignants travaillent selon des approches pédagogiques actives qui placent l'apprenant au cœur du processus éducatif. Nous offrons un accompagnement individualisé et un suivi continu pour assurer la progression de chaque élève dans son propre rythme."
+        },
+        {
+          "icon": "🌍",
+          "title": "Plurilinguisme",
+          "detail": "L'arabe, langue du Coran et du patrimoine. Le français, passerelle des sciences et de l'économie marocaine. L'anglais, clé du monde numérique et académique. Nous débutons avec l'arabe comme base solide, puis introduisons le français dès les premières années, et développons l'anglais via le parcours Cambridge English. Trois langues, une personnalité complète et épanouie."
+        },
+        {
+          "icon": "⚽",
+          "title": "Activités intégrées",
+          "detail": "Les activités sportives, artistiques, culturelles et scientifiques ne sont pas périphériques, elles font partie intégrante de notre projet éducatif. Ces activités développent les aspects de la personnalité que le manuel scolaire seul ne peut pas développer : travail d'équipe, discipline, créativité et résilience face aux défis."
+        },
+        {
+          "icon": "💡",
+          "title": "Compétences de demain",
+          "detail": "Nous préparons nos élèves pour un monde encore en construction. C'est pourquoi nous intégrons dans nos programmes une formation à la pensée critique, à la résolution de problèmes, au travail en équipe et à la communication efficace. Nous les initions à la technologie et leur enseignons à l'utiliser avec intelligence et responsabilité."
+        }
+      ]
+    },
+    "balance": {
+      "title": "L'équilibre : le cœur battant de notre projet",
+      "body": "Ce qui distingue le projet de Madaris Nibras, c'est l'équilibre véritable entre les différentes dimensions de la croissance humaine. Nous ne sacrifions pas les valeurs au profit de la performance académique, ni le plaisir au profit de la sérieux, ni l'identité au profit de l'ouverture. Nous croyons que tous ces aspects se renforcent mutuellement quand ils sont gérés avec conscience et harmonie."
+    }
+  },
+  "levelsPage": {
+    "meta": {
+      "title": "Niveaux scolaires — Madaris Nibras",
+      "description": "Du préscolaire au lycée — découvrez les niveaux scolaires de Madaris Nibras à Tanger"
+    },
+    "heroTitle": "Niveaux scolaires",
+    "heroSubtitle": "Un parcours éducatif complet de la petite enfance au lycée",
+    "intro": "Chaque niveau scolaire à Madaris Nibras est conçu pour répondre aux besoins de développement de l'élève et le préparer pour la prochaine étape. Nous veillons à la continuité pédagogique et à ce que chaque élève se sente appartenir à un système de soutien bienveillant à chaque étape de sa croissance.",
+    "items": [
+      {
+        "title": "Préscolaire",
+        "ages": "De 3 à 6 ans",
+        "icon": "🌱",
+        "color": "blue",
+        "fullDescription": "Le préscolaire à Madaris Nibras est un environnement chaleureux qui ressemble à un foyer. Nous accueillons les enfants dans des espaces spécialement aménagés pour éveiller leur curiosité et développer leur sentiment de sécurité et d'appartenance. Les enfants apprennent par le jeu dirigé, les histoires, le chant et les activités sensorimotrices. Nous les initions tôt aux trois langues de manière naturelle et ludique. Nous leur permettons de développer leurs compétences sociales et émotionnelles, d'apprendre la première autonomie et de s'intégrer dans la vie collective dans un esprit de joie et de participation.",
+        "highlights": ["Apprentissage par le jeu et l'exploration", "Développement des compétences motrices et sociales", "Initiation précoce aux trois langues", "Environnement sûr et chaleureux"]
+      },
+      {
+        "title": "Primaire",
+        "ages": "De 6 à 12 ans",
+        "icon": "📚",
+        "color": "green",
+        "fullDescription": "Le primaire est la phase de construction des compétences fondamentales. Les élèves apprennent la lecture, l'écriture et le calcul en arabe, et développent leurs compétences en français et en anglais dans un cadre méthodique et progressif. Nous accordons une attention particulière à l'éducation islamique et à la mémorisation du Coran, ainsi qu'à l'éducation artistique et physique. Nous intégrons des activités scientifiques et d'exploration par des méthodes sensorielles qui font aimer la connaissance aux élèves et développent leur motivation intrinsèque pour l'apprentissage.",
+        "highlights": ["Fondements solides en arabe et mathématiques", "Enseignement du français et de l'anglais dès le début", "Mémorisation du Coran et éducation islamique", "Activités sciences et arts intégrées"]
+      },
+      {
+        "title": "Collège",
+        "ages": "De 12 à 15 ans",
+        "icon": "🔭",
+        "color": "amber",
+        "fullDescription": "Le collège représente une étape d'approfondissement et d'autonomie. Les élèves font face à des matières plus spécialisées et au contenu plus profond. Nous encourageons à ce niveau la pensée critique, le questionnement et la conduite de recherches. Les élèves poursuivent le parcours Cambridge English tout en développant leurs compétences linguistiques dans les trois langues. Nous leur permettons de participer à des projets collectifs et à des activités scientifiques et culturelles qui développent leur personnalité et élargissent leurs horizons.",
+        "highlights": ["Approfondissement des connaissances disciplinaires", "Développement de l'autonomie et de la pensée critique", "Poursuite du parcours Cambridge English", "Projets de recherche et activités technologiques"]
+      },
+      {
+        "title": "Lycée",
+        "ages": "De 15 à 18 ans",
+        "icon": "🎓",
+        "color": "red",
+        "fullDescription": "Le lycée est la phase de l'ambition et de la préparation sérieuse pour l'avenir. Les élèves se préparent aux examens du baccalauréat dans les différentes filières et continuent de développer leurs compétences linguistiques selon le parcours Cambridge English. Nous leur accordons une attention individuelle particulière et leur fournissons le soutien psychologique et académique nécessaire pour traverser cette étape avec confiance. Nous les encourageons à élaborer leurs projets d'avenir et à relier ce qu'ils ont appris à leurs ambitions personnelles et professionnelles.",
+        "highlights": ["Préparation au baccalauréat dans toutes les filières", "Parcours Cambridge English pour l'anglais", "Orientation scolaire et académique", "Soutien psychologique et pédagogique continu"]
+      }
+    ]
+  },
+  "languagesPage": {
+    "meta": {
+      "title": "Langues & Cambridge — Madaris Nibras",
+      "description": "Apprenez l'arabe, le français et l'anglais avec le parcours Cambridge English à Madaris Nibras Tanger"
+    },
+    "heroTitle": "Langues & Cambridge",
+    "heroSubtitle": "Trois langues, trois portes vers le monde",
+    "intro": "À Madaris Nibras, les langues ne sont pas de simples matières scolaires ; ce sont des outils de réflexion, de communication et d'ouverture. Nous croyons qu'un enfant qui maîtrise trois langues possède trois façons différentes de comprendre le monde et de s'exprimer.",
+    "arabic": {
+      "title": "L'arabe — langue de l'identité et du patrimoine",
+      "body": "L'arabe est la langue maternelle et la langue du Coran. Nous l'enseignons avec le plus grand soin, des premières lettres au préscolaire jusqu'aux textes littéraires au lycée. Nous renforçons l'expression écrite et orale, et cultivons l'amour de la littérature arabe et de son riche patrimoine. La maîtrise linguistique en arabe reste le fondement de tout autre accomplissement académique."
+    },
+    "french": {
+      "title": "Le français — langue des sciences et du territoire",
+      "body": "Le français occupe une place centrale dans le système éducatif marocain et dans la vie économique et professionnelle. Nous intégrons le français dans les programmes dès les premières années, et nous l'enseignons avec des approches communicatives modernes qui en font une langue vivante et non de simples règles grammaticales. Les élèves apprennent à l'utiliser dans la vie quotidienne, le domaine scientifique et professionnel."
+    },
+    "english": {
+      "title": "L'anglais et le parcours Cambridge English",
+      "body": "L'anglais est la langue du monde numérique, académique et commercial. Nous l'enseignons dès le primaire avec des méthodes interactives et audiovisuelles avancées. Nos élèves bénéficient d'un parcours progressif pour renforcer l'anglais et les préparer aux certifications Cambridge English, du primaire au lycée.",
+      "cambridge": "Un parcours progressif pour renforcer l'anglais et préparer les élèves aux certifications Cambridge English, du primaire au lycée."
+    },
+    "benefits": {
+      "title": "Les avantages du plurilinguisme",
+      "items": [
+        "Développement de l'intelligence cognitive et de la flexibilité intellectuelle",
+        "Accès aux sources de connaissances mondiales sans barrières",
+        "Opportunités académiques et professionnelles élargies aux niveaux national et international",
+        "Maîtrise de certifications internationalement reconnues en anglais",
+        "Renforcement de l'appartenance culturelle et d'ouverture à l'autre"
+      ]
+    }
+  },
+  "schoolLifePage": {
+    "meta": {
+      "title": "Vie scolaire — Madaris Nibras",
+      "description": "Découvrez les activités et événements scolaires à Madaris Nibras Tanger"
+    },
+    "heroTitle": "La vie scolaire",
+    "heroSubtitle": "Une école qui se vit, pas seulement qui s'apprend",
+    "intro": "À Madaris Nibras, nous croyons qu'une éducation complète dépasse les salles de classe et les manuels scolaires. Une vie scolaire riche en activités variées et en événements partagés est ce qui fait de l'école un lieu que les élèves aiment et dont ils gardent de beaux souvenirs. Chaque activité est une leçon, et chaque expérience collective est une école.",
+    "activities": {
+      "title": "Les activités scolaires",
+      "items": [
+        {
+          "icon": "⚽",
+          "title": "Sport",
+          "description": "Football, basketball, gymnastique, athlétisme et bien d'autres. Nous croyons qu'un corps sain est le porteur d'un esprit épanoui. Des programmes sportifs organisés qui renforcent l'esprit de compétition loyale, le travail d'équipe et la discipline."
+        },
+        {
+          "icon": "🏊",
+          "title": "Natation",
+          "description": "Apprentissage de la natation dans un programme structuré et sécurisé qui initie les élèves à ce sport vital dès le jeune âge. La natation est une compétence pour la vie, pas seulement un sport."
+        },
+        {
+          "icon": "🎨",
+          "title": "Arts & Créativité",
+          "description": "Dessin, calligraphie, travaux manuels, théâtre et jeu dramatique. Nous offrons des espaces d'expression artistique libre qui libèrent la créativité des élèves, développent leur goût esthétique et renforcent leur confiance en eux."
+        },
+        {
+          "icon": "🎭",
+          "title": "Culture & Événements",
+          "description": "Célébrations religieuses et nationales, compétitions scientifiques et littéraires, sorties pédagogiques et semaines culturelles. Ces événements élargissent les horizons des élèves et nourrissent leur attachement à leur identité."
+        },
+        {
+          "icon": "🔬",
+          "title": "Sciences appliquées",
+          "description": "Des laboratoires équipés et des activités d'exploration qui font des sciences une expérience vivante et non des informations théoriques. L'expérimentation et l'investigation allument la curiosité et ancrent les concepts en profondeur."
+        },
+        {
+          "icon": "💻",
+          "title": "Technologie & Informatique",
+          "description": "Salles informatiques équipées, initiation à la programmation de base et utilisation sûre et responsable d'Internet. Nous préparons nos élèves à être des citoyens numériques conscients."
+        },
+        {
+          "icon": "🤝",
+          "title": "Travail d'équipe & Projets",
+          "description": "Projets communs entre classes et niveaux qui enseignent la communication, la négociation et la prise de responsabilité. La capacité à travailler en équipe est une compétence indispensable dans le monde d'aujourd'hui."
+        }
+      ]
+    },
+    "community": {
+      "title": "Une communauté scolaire vivante",
+      "body": "Madaris Nibras n'est pas seulement des bâtiments et des programmes ; c'est une communauté éducative vivante où pulsent des relations humaines authentiques entre élèves, enseignants, personnels administratifs et familles. Nous organisons tout au long de l'année des événements qui rassemblent la communauté scolaire, renforcent les liens et célèbrent les réussites."
+    }
+  },
+  "registrationPage": {
+    "meta": {
+      "title": "Inscription & Visite — Madaris Nibras",
+      "description": "Inscrivez votre enfant ou réservez une visite à Madaris Nibras Tanger"
+    },
+    "heroTitle": "Inscription & Visite",
+    "heroSubtitle": "Le premier pas vers une expérience éducative d'exception",
+    "intro": "Nous sommes heureux d'accueillir les familles souhaitant rejoindre la communauté Madaris Nibras. Que vous souhaitiez vous inscrire ou en savoir plus sur notre établissement, notre équipe est prête à vous accompagner.",
+    "process": {
+      "title": "Les étapes de l'inscription",
+      "steps": [
+        { "step": "1", "title": "Premier contact", "description": "Contactez-nous via le formulaire, par téléphone ou via WhatsApp pour obtenir les informations initiales." },
+        { "step": "2", "title": "Visite de l'établissement", "description": "Nous vous invitons à visiter l'établissement pour découvrir les espaces, l'environnement scolaire et rencontrer l'équipe pédagogique." },
+        { "step": "3", "title": "Finalisation de l'inscription", "description": "Remplissage du dossier d'inscription, soumission des documents requis et accomplissement des procédures administratives." },
+        { "step": "4", "title": "Accueil de vos enfants", "description": "Nous préparons un accueil chaleureux pour chaque nouvel élève afin de garantir son intégration harmonieuse dans notre communauté scolaire." }
+      ]
+    },
+    "visitSection": {
+      "title": "Réserver une visite",
+      "body": "La visite sur place est le meilleur moyen de découvrir Madaris Nibras. Venez explorer nos espaces scolaires, rencontrez nos enseignants et construisez une image réelle de ce qui attend vos enfants.",
+      "whatsapp": "Réserver via WhatsApp"
+    },
+    "formTitle": "Formulaire de demande d'information",
+    "formSubtitle": "Envoyez-nous vos informations et nous vous contacterons dans les plus brefs délais"
+  },
+  "contactPage": {
+    "meta": {
+      "title": "Contact — Madaris Nibras",
+      "description": "Contactez Madaris Nibras Tanger par téléphone, WhatsApp ou email"
+    },
+    "heroTitle": "Contactez-nous",
+    "heroSubtitle": "Nous sommes là pour répondre à toutes vos questions",
+    "address": {
+      "title": "Adresse",
+      "value": "Tanger, Maroc"
+    },
+    "phone": {
+      "title": "Téléphone"
+    },
+    "email": {
+      "title": "Email"
+    },
+    "whatsapp": "Contacter via WhatsApp",
+    "map": "Ouvrir sur la carte",
+    "social": {
+      "title": "Suivez-nous sur les réseaux sociaux"
+    },
+    "formTitle": "Envoyez-nous un message",
+    "responseTime": "Nous nous engageons à répondre à toutes les demandes dans un délai de 24 heures ouvrables."
+  },
+  "contact": {
+    "form": {
+      "parentName": "Nom du parent",
+      "parentNamePlaceholder": "Nom complet du parent",
+      "phone": "Numéro de téléphone",
+      "phonePlaceholder": "06XXXXXXXX",
+      "email": "Email",
+      "emailPlaceholder": "exemple@email.com",
+      "studentName": "Nom de l'élève",
+      "studentNamePlaceholder": "Nom complet de l'élève",
+      "level": "Niveau souhaité",
+      "levelPlaceholder": "Sélectionner un niveau",
+      "preferredLanguage": "Langue de communication préférée",
+      "message": "Message supplémentaire (optionnel)",
+      "messagePlaceholder": "Toute information supplémentaire que vous souhaitez partager...",
+      "submit": "Envoyer la demande",
+      "submitting": "Envoi en cours...",
+      "successTitle": "Envoi réussi !",
+      "successMessage": "Merci de nous avoir contactés. Nous vous répondrons très prochainement.",
+      "levels": {
+        "preschool": "Préscolaire",
+        "primary": "Primaire",
+        "middle": "Collège",
+        "high": "Lycée"
+      },
+      "languages": {
+        "ar": "العربية",
+        "fr": "Français",
+        "en": "English"
+      }
+    }
+  },
+  "footer": {
+    "description": "Madaris Nibras — établissement scolaire privé à Tanger, offrant une éducation équilibrée alliant valeurs, excellence académique et plurilinguisme, du préscolaire au lycée.",
+    "quickLinks": "Liens rapides",
+    "contactInfo": "Informations de contact",
+    "followUs": "Suivez-nous",
+    "copyright": "Tous droits réservés © 2025 Madaris Nibras",
+    "address": "Tanger, Maroc"
+  },
+  "meta": {
+    "homeTitle": "Madaris Nibras — Éducation équilibrée à Tanger",
+    "homeDescription": "Madaris Nibras : enseignement privé d'excellence à Tanger, du préscolaire au lycée. Plurilinguisme, valeurs solides et excellence académique."
+  }
+}
