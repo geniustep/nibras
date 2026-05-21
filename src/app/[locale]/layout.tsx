@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Noto_Kufi_Arabic, Noto_Sans_Arabic, Inter, Manrope } from "next/font/google";
+import { Noto_Kufi_Arabic, Noto_Sans_Arabic, Inter } from "next/font/google";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
@@ -22,13 +22,7 @@ const notoSansArabic = Noto_Sans_Arabic({
 
 const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-latin-body",
-  display: "swap",
-});
-
-const manrope = Manrope({
-  subsets: ["latin"],
-  variable: "--font-latin-heading",
+  variable: "--font-latin",
   display: "swap",
 });
 
@@ -61,7 +55,7 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   const messages = await getMessages({ locale });
   const isRtl = locale === "ar";
-  const fontVars = `${notoKufiArabic.variable} ${notoSansArabic.variable} ${inter.variable} ${manrope.variable}`;
+  const fontVars = `${notoKufiArabic.variable} ${notoSansArabic.variable} ${inter.variable}`;
 
   return (
     <html
