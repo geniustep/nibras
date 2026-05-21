@@ -74,7 +74,7 @@ export default async function ContactPage({ params }: Props) {
               </div>
               <div>
                 <p className="font-bold text-[#1a4a7a] text-sm mb-1">WhatsApp</p>
-                <p className="text-[#4a5568] text-xs">{t("whatsapp")}</p>
+                <p className="text-[#4a5568] text-xs">{siteConfig.phone}</p>
               </div>
             </a>
 

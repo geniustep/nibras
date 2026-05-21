@@ -41,7 +41,11 @@ export default function MapEmbed({ embedUrl, mapsUrl, openLabel, title, locale }
         </div>
         <p className="text-[#4a5568] text-sm font-medium">Madaris Nibras</p>
         <p className="text-[#718096] text-xs">
-          {locale === "ar" ? "طنجة، المغرب" : locale === "fr" ? "Tanger, Maroc" : "Tangier, Morocco"}
+          {locale === "ar"
+            ? "مجمع زموري 3، قرب أسواق السلام"
+            : locale === "fr"
+              ? "Complexe Zemmouri 3, près d'Aswak Assalam"
+              : "Zemmouri 3 Complex, near Aswak Assalam"}
         </p>
         <a
           href={mapsUrl}
