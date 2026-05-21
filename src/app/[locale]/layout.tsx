@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cairo, Inter } from "next/font/google";
+import { Noto_Kufi_Arabic, Noto_Sans_Arabic, Inter, Manrope } from "next/font/google";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
@@ -8,15 +8,27 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
-const cairo = Cairo({
-  subsets: ["arabic", "latin"],
-  variable: "--font-cairo",
+const notoKufiArabic = Noto_Kufi_Arabic({
+  subsets: ["arabic"],
+  variable: "--font-arabic-heading",
+  display: "swap",
+});
+
+const notoSansArabic = Noto_Sans_Arabic({
+  subsets: ["arabic"],
+  variable: "--font-arabic-body",
   display: "swap",
 });
 
 const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-latin-body",
+  display: "swap",
+});
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  variable: "--font-latin-heading",
   display: "swap",
 });
 
@@ -49,15 +61,13 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   const messages = await getMessages({ locale });
   const isRtl = locale === "ar";
-  const fontClass = isRtl
-    ? `${cairo.variable} font-[family-name:var(--font-cairo)]`
-    : `${inter.variable} font-[family-name:var(--font-inter)]`;
+  const fontVars = `${notoKufiArabic.variable} ${notoSansArabic.variable} ${inter.variable} ${manrope.variable}`;
 
   return (
     <html
       lang={locale}
       dir={isRtl ? "rtl" : "ltr"}
-      className={`${fontClass} h-full`}
+      className={`${fontVars} h-full`}
     >
       <body className="min-h-full flex flex-col antialiased">
         <NextIntlClientProvider locale={locale} messages={messages}>

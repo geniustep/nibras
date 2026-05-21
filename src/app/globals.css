@@ -40,7 +40,8 @@
 
 @theme inline {
   --color-background: var(--color-bg);
-  --font-sans: system-ui, sans-serif;
+  --font-sans: var(--font-latin-body), system-ui, sans-serif;
+  --font-heading: var(--font-latin-heading), system-ui, sans-serif;
 }
 
 *,
@@ -56,10 +57,33 @@ html {
 body {
   background: var(--color-bg);
   color: var(--color-text);
-  font-family: system-ui, sans-serif;
-  line-height: 1.6;
+  font-family: var(--font-latin-body), system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+html[lang="ar"] body {
+  font-family: var(--font-arabic-body), system-ui, sans-serif;
+  line-height: 1.8;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-latin-heading), system-ui, sans-serif;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+}
+
+html[lang="ar"] h1,
+html[lang="ar"] h2,
+html[lang="ar"] h3,
+html[lang="ar"] h4,
+html[lang="ar"] h5,
+html[lang="ar"] h6 {
+  font-family: var(--font-arabic-heading), system-ui, sans-serif;
+  line-height: 1.45;
+  letter-spacing: 0;
 }
 
 [dir="rtl"] {
