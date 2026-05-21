@@ -4,11 +4,6 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "مدارس النبراس — Madaris Nibras",
   description: "مدارس النبراس — مؤسسة تعليمية خاصة بطنجة",
-  icons: {
-    icon: "/logo.png",
-    shortcut: "/logo.png",
-    apple: "/logo.png",
-  },
 };
 
 export default function RootLayout({
