@@ -93,7 +93,7 @@ export default function Header({ locale }: Props) {
       dir={isRtl ? "rtl" : "ltr"}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-16 lg:h-20">
 
           {/* ── Logo ── */}
           <Link
@@ -104,9 +104,9 @@ export default function Header({ locale }: Props) {
             <Image
               src={siteConfig.assets.logo}
               alt={siteConfig.name[locale]}
-              width={140}
-              height={52}
-              className="h-11 w-auto object-contain"
+              width={180}
+              height={66}
+              className="h-12 lg:h-[66px] w-auto object-contain"
               priority
             />
           </Link>
