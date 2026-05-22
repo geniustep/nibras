@@ -1,40 +1,53 @@
 @import "tailwindcss";
 
 :root {
-  /* Brand Colors */
-  --color-primary: #1a4a7a;
-  --color-primary-dark: #0f2f54;
-  --color-primary-light: #2563a8;
-  --color-accent: #c9a227;
-  --color-accent-dark: #a07d18;
-  --color-accent-light: #e4b93a;
+  /* Brand — Nibras Palette */
+  --color-primary: #1d4395;
+  --color-primary-dark: #0e2250;
+  --color-primary-mid: #153373;
+  --color-primary-light: #2857b8;
+  --color-primary-soft: #3b6fd3;
+  --color-accent: #eea748;
+  --color-accent-dark: #b87518;
+  --color-accent-light: #f6c77a;
 
   /* Backgrounds */
   --color-bg: #ffffff;
-  --color-bg-subtle: #f7f8fc;
-  --color-bg-muted: #eef1f7;
+  --color-bg-warm: #fafbff;
+  --color-bg-subtle: #f5f8ff;
+  --color-bg-muted: #eaf1ff;
+  --color-bg-gold-pale: #fff2dc;
+  --color-bg-gold-white: #fff8ee;
 
   /* Text */
-  --color-text: #1a1a2e;
-  --color-text-muted: #4a5568;
-  --color-text-light: #718096;
+  --color-text: #111827;
+  --color-text-heading: #0e2250;
+  --color-text-mid: #1f2937;
+  --color-text-muted: #64748b;
+  --color-text-light: #64748b;
+  --color-text-on-dark: #eaf1ff;
 
   /* Borders */
-  --color-border: #e2e8f0;
+  --color-border: #e5e7eb;
   --color-border-dark: #cbd5e0;
 
+  /* Functional */
+  --color-success: #2e7d5b;
+  --color-warning: #d98a13;
+  --color-error: #b42318;
+
   scrollbar-width: thin;
-  scrollbar-color: #1a4a7a #eef1f7;
+  scrollbar-color: var(--color-primary) var(--color-bg-muted);
 }
 
 ::-webkit-scrollbar {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #eef1f7;
+  background: var(--color-bg-muted);
 }
 ::-webkit-scrollbar-thumb {
-  background: #1a4a7a;
+  background: var(--color-primary);
   border-radius: 3px;
 }
 
@@ -54,7 +67,7 @@ html {
 }
 
 body {
-  background: var(--color-bg);
+  background: var(--color-bg-warm);
   color: var(--color-text);
   font-family: var(--font-latin), system-ui, sans-serif;
   font-size: 1rem;
@@ -138,10 +151,22 @@ html[lang="ar"] h6 {
 .hero-overlay {
   background: linear-gradient(
     to bottom,
-    rgba(26, 74, 122, 0.45) 0%,
-    rgba(15, 47, 84, 0.78) 65%,
-    rgba(15, 47, 84, 0.92) 100%
+    rgba(29, 67, 149, 0.45) 0%,
+    rgba(14, 34, 80, 0.78) 65%,
+    rgba(14, 34, 80, 0.92) 100%
   );
+}
+
+.hero-gradient {
+  background: linear-gradient(135deg, #0e2250 0%, #1d4395 100%);
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+.btn-primary:hover {
+  background-color: var(--color-primary-light);
 }
 
 .card-hover {
@@ -150,5 +175,5 @@ html[lang="ar"] h6 {
 
 .card-hover:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(26, 74, 122, 0.15);
+  box-shadow: 0 12px 32px rgba(29, 67, 149, 0.15);
 }

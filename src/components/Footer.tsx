@@ -29,7 +29,7 @@ export default async function Footer({ locale }: Props) {
 
   return (
     <footer
-      className="bg-[#1a1a2e] text-white pt-12 pb-6"
+      className="bg-[#0E2250] text-white pt-12 pb-6"
       dir={isRtl ? "rtl" : "ltr"}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -48,7 +48,7 @@ export default async function Footer({ locale }: Props) {
                 {siteConfig.name[locale]}
               </span>
             </div>
-            <p className="text-gray-400 text-sm leading-relaxed mb-4">
+            <p className="text-[#EAF1FF]/80 text-sm leading-relaxed mb-4">
               {t("description")}
             </p>
             {/* Social */}
@@ -103,7 +103,7 @@ export default async function Footer({ locale }: Props) {
                 <li key={key}>
                   <Link
                     href={href}
-                    className="text-gray-400 text-sm hover:text-[#c9a227] transition-colors"
+                    className="text-[#EAF1FF]/80 text-sm hover:text-[#EEA748] transition-colors"
                   >
                     {tNav(key)}
                   </Link>
@@ -122,7 +122,7 @@ export default async function Footer({ locale }: Props) {
                 <li key={key}>
                   <Link
                     href={href}
-                    className="text-gray-400 text-sm hover:text-[#c9a227] transition-colors"
+                    className="text-[#EAF1FF]/80 text-sm hover:text-[#EEA748] transition-colors"
                   >
                     {tNav(key)}
                   </Link>
@@ -138,24 +138,24 @@ export default async function Footer({ locale }: Props) {
             </h3>
             <div className="flex flex-col gap-3">
               <div className="flex items-start gap-2">
-                <span className="text-[#c9a227] mt-0.5">📍</span>
-                <span className="text-gray-400 text-sm">{t("address")}</span>
+                <span className="text-[#EEA748] mt-0.5">📍</span>
+                <span className="text-[#EAF1FF]/80 text-sm">{t("address")}</span>
               </div>
               <div className="flex items-start gap-2">
-                <span className="text-[#c9a227] mt-0.5">📧</span>
+                <span className="text-[#EEA748] mt-0.5">📧</span>
                 <a
                   href={`mailto:${siteConfig.email}`}
-                  className="text-gray-400 text-sm hover:text-[#c9a227] transition-colors break-all"
+                  className="text-[#EAF1FF]/80 text-sm hover:text-[#EEA748] transition-colors break-all"
                 >
                   {siteConfig.email}
                 </a>
               </div>
               {siteConfig.phone !== "PUT_PHONE_HERE" && (
                 <div className="flex items-start gap-2">
-                  <span className="text-[#c9a227] mt-0.5">📞</span>
+                  <span className="text-[#EEA748] mt-0.5">📞</span>
                   <a
                     href={`tel:${siteConfig.phone}`}
-                    className="text-gray-400 text-sm hover:text-[#c9a227] transition-colors"
+                    className="text-[#EAF1FF]/80 text-sm hover:text-[#EEA748] transition-colors"
                   >
                     {siteConfig.phone}
                   </a>
@@ -187,7 +187,7 @@ export default async function Footer({ locale }: Props) {
 
         {/* Copyright */}
         <div className="border-t border-white/10 pt-6 text-center">
-          <p className="text-gray-500 text-sm">{t("copyright")}</p>
+          <p className="text-[#EAF1FF]/60 text-sm">{t("copyright")}</p>
         </div>
       </div>
     </footer>

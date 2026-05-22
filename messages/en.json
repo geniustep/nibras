@@ -14,33 +14,33 @@
     "getInfo": "Request Information"
   },
   "hero": {
-    "title": "Madaris Nibras",
-    "subtitle": "Balanced education that illuminates our children's future",
-    "body": "In the heart of Tangier, Madaris Nibras offers an education that combines tradition with modernity, Islamic values with global openness. We believe every child carries unlimited potential, and that the role of a school is to ignite curiosity, build confidence, and provide the tools needed to succeed in an ever-changing world.",
+    "title": "Madaris Nibras — balanced education that builds knowledge and character",
+    "subtitle": "We accompany your children toward a promising future with confidence and excellence",
+    "body": "Madaris Nibras is a modern Moroccan educational institution in Tangier. We support pupils from early years through secondary school in an educational project that combines values, academic excellence, multilingualism, integrated activities, and openness to the future.",
     "requestInfo": "Request Information",
     "bookVisit": "Book a Visit",
     "whatsapp": "Contact via WhatsApp"
   },
   "intro": {
     "title": "Welcome to Madaris Nibras",
-    "body": "Madaris Nibras is a private school in Tangier, Morocco, welcoming students from preschool through high school. We strive to educate a generation that is conscious, balanced, and multilingual — a generation ready to face the challenges of the 21st century with confidence and competence. We care equally about academic excellence, character formation, and life skills."
+    "body": "A modern Moroccan school that is balanced and close to families, bringing together values, academic excellence, multilingualism, activities, and future-ready skills. We nurture confident, responsible, high-achieving pupils who are open to the world without losing their roots."
   },
   "highlights": {
     "items": [
       {
         "icon": "⚖️",
         "title": "Balanced Education",
-        "description": "We combine Islamic values, academic excellence, and openness to the world in a coherent and living educational project."
+        "description": "Balanced education that builds knowledge and character together in an integrated project combining values, excellence, and openness."
       },
       {
         "icon": "🌐",
-        "title": "Languages from Preschool",
-        "description": "Arabic as a solid foundation, French and English from the early years, with a progressive track for strengthening English skills."
+        "title": "Multiple Languages",
+        "description": "Multiple languages… pupils better able to understand, express, and communicate, with a progressive pathway to strengthen English."
       },
       {
         "icon": "🎯",
         "title": "Integrated Activities",
-        "description": "Sport, arts, science, and technology are core pillars — not extras. We develop well-rounded people inside and outside the classroom."
+        "description": "Activities are part of learning, not just an add-on. We develop talents, character, confidence, and cooperation at school and beyond."
       }
     ]
   },
@@ -61,7 +61,7 @@
       {
         "icon": "🌍",
         "title": "Multilingualism",
-        "description": "Our students master Arabic as a foundation, French from the early years, and English via the Cambridge English track. Three languages open unlimited horizons."
+        "description": "A balanced linguistic approach: Arabic, French, and English are fields for learning, communication, culture, and openness, with particular attention to English."
       },
       {
         "icon": "⚽",
@@ -100,20 +100,25 @@
       {
         "title": "High School",
         "ages": "Ages 15 to 18",
-        "description": "Serious preparation for national exams and higher education, continuing the Cambridge English track, and refining personal and academic projects.",
+        "description": "Serious preparation for national exams and higher education, with ongoing progressive English development, and refining personal and academic projects.",
         "color": "red"
       }
     ]
   },
   "languages": {
-    "sectionTitle": "Languages — A Bridge to the World",
-    "sectionSubtitle": "Three languages, three keys to a boundless future",
-    "cambridge": "A progressive track to strengthen English and prepare students for Cambridge English certifications from primary through high school.",
-    "learnMore": "Learn More"
+    "sectionTitle": "Languages — bridges to knowledge and communication",
+    "sectionSubtitle": "At Madaris Nibras, we teach languages as bridges to knowledge, communication, and openness",
+    "cambridge": "Madaris Nibras gives special attention to English through a progressive pathway aimed at strengthening comprehension, expression, communication, and practical use. Within this approach, pupils are gradually prepared for Cambridge English qualifications at levels suited to their school stage.",
+    "learnMore": "Learn More",
+    "roles": {
+      "arabic": "A space for learning, communication and expression, strengthening identity and confidence in words and meaning.",
+      "french": "A space for learning, communication and openness, helping pupils interact with their environment and knowledge.",
+      "english": "A progressive pathway to strengthen understanding, expression and communication, while supporting readiness for international academic pathways."
+    }
   },
   "activities": {
     "sectionTitle": "School Life",
-    "sectionSubtitle": "A rich school experience that goes beyond the classroom",
+    "sectionSubtitle": "Activities are part of learning, not just an add-on",
     "items": [
       { "icon": "⚽", "title": "Sports", "description": "Diverse sporting activities that strengthen health and team spirit." },
       { "icon": "🏊", "title": "Swimming", "description": "Swimming instruction within a structured and safe program." },
@@ -132,7 +137,7 @@
   },
   "cta": {
     "sectionTitle": "Discover Madaris Nibras Up Close",
-    "body": "Contact us to get information or to schedule a visit to our school and learn about our educational project.",
+    "body": "We accompany your children toward a promising future with confidence and excellence. Contact us or book a visit to discover our educational project.",
     "whatsapp": "Contact via WhatsApp",
     "form": "Fill Out the Registration Form",
     "map": "View on Map"
@@ -140,26 +145,26 @@
   "about": {
     "meta": {
       "title": "About Us — Madaris Nibras Tangier",
-      "description": "Learn about the history, mission, and values of Madaris Nibras, a private school in Tangier"
+      "description": "Madaris Nibras: a modern Moroccan educational institution in Tangier, from early years to secondary school. Balanced education, values, languages, activities, and openness."
     },
     "heroTitle": "About Us",
-    "heroSubtitle": "A private school in Tangier, combining tradition and modernity",
+    "heroSubtitle": "A modern Moroccan school combining values, excellence, and openness",
     "history": {
       "title": "Our History & Journey",
-      "body": "Madaris Nibras was born from a deep conviction: quality education is the most precious gift one can give a child. Founded in Tangier to be a reference in private education, the school has carved its path through dedicated work and the trust of families who entrusted us with their children. Over the years, we have built a solid educational structure that meets today's requirements and tomorrow's ambitions."
+      "body": "Madaris Nibras was born from a deep conviction: quality education is the most precious gift one can give a child. Founded in Tangier to offer a modern learning environment close to families, the school has built its path through dedicated work and the trust of families who entrusted us with their children. Over the years, we have developed an integrated educational project that meets today's needs and tomorrow's ambitions."
     },
     "mission": {
       "title": "Our Mission",
-      "body": "Our mission is to form conscious, balanced, and open-minded generations — generations that proudly carry their Islamic and Moroccan identity, armed with knowledge and skills to actively participate in building their society and engaging with the world. We aim for every student who leaves our school to carry strong values, effective tools, and the confidence to write their own success story."
+      "body": "Madaris Nibras is a modern Moroccan educational institution in Tangier. We support pupils from early years through secondary school through an integrated project combining academic excellence, strong values, multilingualism, integrated activities, and openness to the future. We aim to nurture confident, responsible, high-achieving pupils who are open to the world without losing their roots."
     },
     "vision": {
       "title": "Our Vision",
-      "body": "To become the leading educational reference in Tangier and northern Morocco, producing a generation capable of creativity and excellence in a world that demands flexibility and competence."
+      "body": "To be a recognised educational space in Tangier and northern Morocco, graduating pupils capable of creativity, excellence, and responsibility in a world that demands flexibility and competence."
     },
     "values": {
       "title": "Our Values",
       "items": [
-        { "title": "Faith & Identity", "description": "Commitment to Islamic values and national belonging as the foundation of all achievement." },
+        { "title": "Faith & Identity", "description": "National and religious identity as the foundation of discipline, respect, and openness. We build the future… and preserve our roots." },
         { "title": "Excellence & Rigor", "description": "The constant pursuit of quality in teaching, supervision, and the school environment." },
         { "title": "Respect & Equity", "description": "Respecting every child's uniqueness and giving every learner a full chance to succeed." },
         { "title": "Family Partnership", "description": "The family is a key partner in the educational process; we build with them, not instead of them." }
@@ -173,7 +178,7 @@
         "A qualified teaching team engaged in every student's journey",
         "Integrated activities that develop the student's personality holistically",
         "Regular and open communication with families",
-        "Cambridge English track for mastering English from primary school"
+        "Progressive English development and appropriate preparation for Cambridge English qualifications"
       ]
     }
   },
@@ -183,7 +188,7 @@
       "description": "Discover Madaris Nibras's educational approach, built on five essential pillars"
     },
     "heroTitle": "Pedagogical Project",
-    "heroSubtitle": "A comprehensive educational vision for tomorrow's generations",
+    "heroSubtitle": "A clear educational pathway from early years to secondary school",
     "intro": {
       "title": "Our Educational Philosophy",
       "body": "Our pedagogical project rests on the deep conviction that true education goes beyond knowledge transmission to include character formation, skill development, and values anchoring. We don't just teach subjects — we shape human beings: thinkers, producers, and balanced individuals. That's why our pedagogical project is organized around five complementary and interconnected axes."
@@ -204,7 +209,7 @@
         {
           "icon": "🌍",
           "title": "Multilingualism",
-          "detail": "Arabic: the language of the Quran and heritage. French: the gateway to Moroccan science and economy. English: the key to the digital and academic world. We begin with Arabic as a solid base, then introduce French from the earliest years, and develop English through the Cambridge English track. Three languages, one complete and flourishing personality."
+          "detail": "At Madaris Nibras, we believe languages are not merely school subjects, but tools to build the pupil's character and broaden their horizons. The school adopts a balanced linguistic approach that gives pupils a strong presence in Arabic, French, and English, without reducing any language to a single role."
         },
         {
           "icon": "⚽",
@@ -253,16 +258,16 @@
         "ages": "Ages 12 to 15",
         "icon": "🔭",
         "color": "amber",
-        "fullDescription": "Middle school represents a phase of deepening and autonomy. Students face more specialized subjects with deeper content. We encourage critical thinking, questioning, and conducting research at this level. Students continue the Cambridge English track while developing their language skills across all three languages. We allow them to participate in collective projects and scientific and cultural activities that develop their personalities and broaden their horizons.",
-        "highlights": ["Deepening disciplinary knowledge", "Developing autonomy and critical thinking", "Continuing the Cambridge English track", "Research projects and technology activities"]
+        "fullDescription": "Middle school represents a phase of deepening and autonomy. Pupils face more specialized subjects with deeper content. We encourage critical thinking, questioning, and research. They continue a progressive English development pathway while strengthening skills across all three languages. They take part in collective projects and scientific and cultural activities that develop their personalities and broaden their horizons.",
+        "highlights": ["Deepening disciplinary knowledge", "Developing autonomy and critical thinking", "Ongoing progressive English development", "Research projects and technology activities"]
       },
       {
         "title": "High School",
         "ages": "Ages 15 to 18",
         "icon": "🎓",
         "color": "red",
-        "fullDescription": "High school is the phase of ambition and serious preparation for the future. Students prepare for national baccalaureate exams in various streams and continue developing their language skills through the Cambridge English track. We give them special individual attention and provide the psychological and academic support needed to navigate this stage with confidence. We encourage them to formulate their future projects and connect what they've learned to their personal and professional ambitions.",
-        "highlights": ["Baccalaureate preparation in all streams", "Cambridge English track for English", "Academic and career guidance", "Continuous psychological and pedagogical support"]
+        "fullDescription": "High school is the phase of ambition and serious preparation for the future. Pupils prepare for national baccalaureate exams in various streams and continue developing their language skills through a progressive English development pathway. We give them individual attention and the psychological and academic support needed to navigate this stage with confidence. We encourage them to shape their future projects and connect learning to their ambitions.",
+        "highlights": ["Baccalaureate preparation in all streams", "Progressive English development pathway", "Academic and career guidance", "Continuous psychological and pedagogical support"]
       }
     ]
   },
@@ -307,8 +312,8 @@
       "description": "Discover school activities and events at Madaris Nibras Tangier"
     },
     "heroTitle": "School Life",
-    "heroSubtitle": "A school that is lived, not just studied",
-    "intro": "At Madaris Nibras, we believe that complete education goes beyond classrooms and textbooks. A rich school life full of varied activities and shared events is what makes school a place students love and fondly remember. Every activity is a lesson, and every collective experience is a school.",
+    "heroSubtitle": "Activities are part of learning, not just an add-on",
+    "intro": "We believe complete education goes beyond classrooms and textbooks. Activities help pupils discover their talents, develop character, confidence, communication, cooperation, and discipline. A rich school life makes the school a place pupils love.",
     "activities": {
       "title": "School Activities",
       "items": [
@@ -360,7 +365,7 @@
       "description": "Register your child or book a visit to Madaris Nibras Tangier"
     },
     "heroTitle": "Registration & Visit",
-    "heroSubtitle": "The first step toward an exceptional educational experience",
+    "heroSubtitle": "The first step toward an integrated educational pathway",
     "intro": "We are happy to welcome families wishing to join the Madaris Nibras community. Whether you want to register or learn more about our school, our team is ready to guide you.",
     "process": {
       "title": "Registration Steps",
@@ -385,7 +390,7 @@
       "description": "Contact Madaris Nibras Tangier by phone, WhatsApp, or email"
     },
     "heroTitle": "Contact Madaris Nibras",
-    "heroSubtitle": "The Madaris Nibras team is happy to answer your questions about enrollment, academic levels, and scheduling a school visit.",
+    "heroSubtitle": "Our team is happy to answer your questions about registration, academic levels, and booking a school visit. Families are essential partners in the educational journey.",
     "address": {
       "title": "Address",
       "value": "Zemmouri 3 Complex, near Aswak Assalam"
@@ -417,8 +422,8 @@
       "phonePlaceholder": "06XXXXXXXX",
       "email": "Email Address",
       "emailPlaceholder": "example@email.com",
-      "studentName": "Student's Name",
-      "studentNamePlaceholder": "Full name of the student",
+      "studentName": "Pupil's Name",
+      "studentNamePlaceholder": "Full name of the pupil",
       "level": "Desired Level",
       "levelPlaceholder": "Select a level",
       "preferredLanguage": "Preferred Communication Language",
@@ -442,7 +447,7 @@
     }
   },
   "footer": {
-    "description": "Madaris Nibras — a private school in Tangier, Morocco, offering balanced education combining values, academic excellence, and multilingualism from preschool through high school.",
+    "description": "Madaris Nibras — a modern Moroccan educational institution in Tangier, offering balanced education combining values, academic excellence, and multilingualism from early years through secondary school.",
     "quickLinks": "Quick Links",
     "contactInfo": "Contact Information",
     "followUs": "Follow Us",
@@ -450,7 +455,7 @@
     "address": "Zemmouri 3 Complex, near Aswak Assalam"
   },
   "meta": {
-    "homeTitle": "Madaris Nibras — Balanced Education in Tangier",
-    "homeDescription": "Madaris Nibras: distinguished private education in Tangier, from preschool to high school. Multilingualism, solid values, and academic excellence."
+    "homeTitle": "Madaris Nibras Tangier — Balanced education from early years to secondary",
+    "homeDescription": "Madaris Nibras: a modern Moroccan educational institution in Tangier. Values, languages, activities, and openness — an integrated educational pathway."
   }
 }

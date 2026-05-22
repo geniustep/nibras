@@ -85,10 +85,10 @@ export default function Header({ locale }: Props) {
 
   return (
     <header
-      className="sticky top-0 z-50 bg-white"
+      className="sticky top-0 z-50 bg-[#FAFBFF]"
       style={{
-        borderBottom: "1px solid #e2e8f0",
-        boxShadow: "0 1px 6px 0 rgba(26,74,122,0.06)",
+        borderBottom: "1px solid #E5E7EB",
+        boxShadow: "0 1px 6px 0 rgba(29,67,149,0.06)",
       }}
       dir={isRtl ? "rtl" : "ltr"}
     >
@@ -119,8 +119,8 @@ export default function Header({ locale }: Props) {
                 href={href}
                 className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors whitespace-nowrap ${
                   isActive(href, key)
-                    ? "text-[#1a4a7a] bg-blue-50 font-semibold"
-                    : "text-[#4a5568] hover:text-[#1a4a7a] hover:bg-blue-50"
+                    ? "text-[#1D4395] bg-[#F5F8FF] font-semibold"
+                    : "text-[#64748B] hover:text-[#1D4395] hover:bg-[#F5F8FF]"
                 }`}
               >
                 {t(key)}
@@ -131,7 +131,7 @@ export default function Header({ locale }: Props) {
             <div ref={moreRef} className="relative">
               <button
                 onClick={() => setMoreOpen((v) => !v)}
-                className="flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium text-[#4a5568] hover:text-[#1a4a7a] hover:bg-blue-50 transition-colors"
+                className="flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium text-[#64748B] hover:text-[#1D4395] hover:bg-[#F5F8FF] transition-colors"
                 aria-expanded={moreOpen}
               >
                 {t("more")}
@@ -147,10 +147,10 @@ export default function Header({ locale }: Props) {
 
               {moreOpen && (
                 <div
-                  className={`absolute top-full mt-1.5 w-56 bg-white border border-[#e2e8f0] rounded-xl overflow-hidden ${
+                  className={`absolute top-full mt-1.5 w-56 bg-white border border-[#E5E7EB] rounded-xl overflow-hidden ${
                     isRtl ? "right-0" : "left-0"
                   }`}
-                  style={{ boxShadow: "0 8px 24px rgba(26,74,122,0.10)" }}
+                  style={{ boxShadow: "0 8px 24px rgba(29,67,149,0.10)" }}
                 >
                   {secondaryLinks.map(({ key, href }) => (
                     <Link
@@ -159,8 +159,8 @@ export default function Header({ locale }: Props) {
                       onClick={() => setMoreOpen(false)}
                       className={`block px-4 py-3 text-sm font-medium transition-colors ${
                         isActive(href, key)
-                          ? "text-[#1a4a7a] bg-blue-50 font-semibold"
-                          : "text-[#4a5568] hover:text-[#1a4a7a] hover:bg-blue-50"
+                          ? "text-[#1D4395] bg-[#F5F8FF] font-semibold"
+                          : "text-[#64748B] hover:text-[#1D4395] hover:bg-[#F5F8FF]"
                       }`}
                     >
                       {t(key)}
@@ -178,7 +178,7 @@ export default function Header({ locale }: Props) {
             <div ref={langRef} className="relative hidden md:block">
               <button
                 onClick={() => setLangOpen((v) => !v)}
-                className="flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium text-[#4a5568] border border-[#e2e8f0] rounded-lg hover:border-[#1a4a7a] hover:text-[#1a4a7a] transition-colors"
+                className="flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium text-[#64748B] border border-[#E5E7EB] rounded-lg hover:border-[#1D4395] hover:text-[#1D4395] transition-colors"
                 aria-expanded={langOpen}
               >
                 {localeFull[locale]}
@@ -194,10 +194,10 @@ export default function Header({ locale }: Props) {
 
               {langOpen && (
                 <div
-                  className={`absolute top-full mt-1.5 w-36 bg-white border border-[#e2e8f0] rounded-xl overflow-hidden ${
+                  className={`absolute top-full mt-1.5 w-36 bg-white border border-[#E5E7EB] rounded-xl overflow-hidden ${
                     isRtl ? "right-0" : "left-0"
                   }`}
-                  style={{ boxShadow: "0 8px 24px rgba(26,74,122,0.10)" }}
+                  style={{ boxShadow: "0 8px 24px rgba(29,67,149,0.10)" }}
                 >
                   {allLocales.map((l) => (
                     <button
@@ -205,13 +205,13 @@ export default function Header({ locale }: Props) {
                       onClick={() => switchLocale(l)}
                       className={`w-full flex items-center justify-between px-4 py-2.5 text-sm transition-colors ${
                         l === locale
-                          ? "text-[#1a4a7a] font-semibold bg-blue-50"
-                          : "text-[#4a5568] hover:bg-blue-50 hover:text-[#1a4a7a]"
+                          ? "text-[#1D4395] font-semibold bg-[#F5F8FF]"
+                          : "text-[#64748B] hover:bg-[#F5F8FF] hover:text-[#1D4395]"
                       }`}
                     >
                       {localeFull[l]}
                       {l === locale && (
-                        <svg className="w-3.5 h-3.5 text-[#1a4a7a]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-3.5 h-3.5 text-[#1D4395]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                         </svg>
                       )}
@@ -224,8 +224,7 @@ export default function Header({ locale }: Props) {
             {/* CTA */}
             <Link
               href={`/${locale}/contact`}
-              className="hidden lg:flex items-center px-4 py-2 rounded-lg text-sm font-bold text-white hover:opacity-90 transition-opacity whitespace-nowrap"
-              style={{ backgroundColor: "#c9a227" }}
+              className="hidden lg:flex items-center px-4 py-2 rounded-lg text-sm font-bold text-white bg-[#1D4395] hover:bg-[#2857B8] transition-colors whitespace-nowrap"
             >
               {t("getInfo")}
             </Link>
@@ -233,7 +232,7 @@ export default function Header({ locale }: Props) {
             {/* Hamburger (mobile only) */}
             <button
               onClick={() => setMenuOpen((v) => !v)}
-              className="lg:hidden p-2 rounded-lg text-[#4a5568] hover:text-[#1a4a7a] hover:bg-blue-50 transition-colors"
+              className="lg:hidden p-2 rounded-lg text-[#64748B] hover:text-[#1D4395] hover:bg-[#F5F8FF] transition-colors"
               aria-label="Toggle menu"
               aria-expanded={menuOpen}
             >
@@ -254,8 +253,8 @@ export default function Header({ locale }: Props) {
       {/* ── Mobile drawer ── */}
       {menuOpen && (
         <div
-          className="lg:hidden border-t border-[#e2e8f0] bg-white"
-          style={{ boxShadow: "0 8px 24px rgba(26,74,122,0.08)" }}
+          className="lg:hidden border-t border-[#E5E7EB] bg-white"
+          style={{ boxShadow: "0 8px 24px rgba(29,67,149,0.08)" }}
         >
           <div className="max-w-7xl mx-auto px-4 py-3 flex flex-col gap-1">
             {/* All nav links */}
@@ -266,15 +265,15 @@ export default function Header({ locale }: Props) {
                 onClick={() => setMenuOpen(false)}
                 className={`px-4 py-3 rounded-xl text-sm font-medium transition-colors ${
                   isActive(href, key)
-                    ? "text-[#1a4a7a] bg-blue-50 font-semibold"
-                    : "text-[#1a1a2e] hover:bg-blue-50 hover:text-[#1a4a7a]"
+                    ? "text-[#1D4395] bg-[#F5F8FF] font-semibold"
+                    : "text-[#0E2250] hover:bg-[#F5F8FF] hover:text-[#1D4395]"
                 }`}
               >
                 {t(key)}
               </Link>
             ))}
 
-            <div className="border-t border-[#e2e8f0] mt-2 pt-3 flex flex-col gap-2">
+            <div className="border-t border-[#E5E7EB] mt-2 pt-3 flex flex-col gap-2">
               {/* Language switcher — pill buttons */}
               <div className="flex gap-1.5">
                 {allLocales.map((l) => (
@@ -283,8 +282,8 @@ export default function Header({ locale }: Props) {
                     onClick={() => switchLocale(l)}
                     className={`flex-1 py-2 text-xs font-semibold rounded-xl border transition-colors ${
                       l === locale
-                        ? "border-[#1a4a7a] text-[#1a4a7a] bg-blue-50"
-                        : "border-[#e2e8f0] text-[#4a5568] hover:border-[#1a4a7a] hover:text-[#1a4a7a]"
+                        ? "border-[#1D4395] text-[#1D4395] bg-[#F5F8FF]"
+                        : "border-[#E5E7EB] text-[#64748B] hover:border-[#1D4395] hover:text-[#1D4395]"
                     }`}
                   >
                     {localeFull[l]}
@@ -296,8 +295,7 @@ export default function Header({ locale }: Props) {
               <Link
                 href={`/${locale}/contact`}
                 onClick={() => setMenuOpen(false)}
-                className="block py-3 rounded-xl text-center text-sm font-bold text-white"
-                style={{ backgroundColor: "#c9a227" }}
+                className="block py-3 rounded-xl text-center text-sm font-bold text-white bg-[#1D4395] hover:bg-[#2857B8] transition-colors"
               >
                 {t("getInfo")}
               </Link>
@@ -306,7 +304,7 @@ export default function Header({ locale }: Props) {
               <Link
                 href={`/${locale}/registration`}
                 onClick={() => setMenuOpen(false)}
-                className="block py-3 rounded-xl text-center text-sm font-semibold text-[#1a4a7a] border-2 border-[#1a4a7a] hover:bg-blue-50 transition-colors"
+                className="block py-3 rounded-xl text-center text-sm font-semibold text-[#1D4395] border-2 border-[#1D4395] hover:bg-[#F5F8FF] transition-colors"
               >
                 {t("bookVisit")}
               </Link>

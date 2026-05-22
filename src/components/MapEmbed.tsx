@@ -14,10 +14,10 @@ export default function MapEmbed({ embedUrl, mapsUrl, openLabel, title, locale }
   const [loaded, setLoaded] = useState(false);
 
   return (
-    <div className="relative w-full rounded-2xl overflow-hidden border border-[#e2e8f0]"
+    <div className="relative w-full rounded-2xl overflow-hidden border border-[#E5E7EB]"
       style={{
         height: "420px",
-        boxShadow: "0 4px 24px rgba(26,74,122,0.10)",
+        boxShadow: "0 4px 24px rgba(29,67,149,0.10)",
       }}
     >
       {/* Placeholder visible while iframe loads or if blocked */}
@@ -25,7 +25,7 @@ export default function MapEmbed({ embedUrl, mapsUrl, openLabel, title, locale }
         className={`absolute inset-0 flex flex-col items-center justify-center gap-4 transition-opacity duration-300 ${
           loaded ? "opacity-0 pointer-events-none" : "opacity-100"
         }`}
-        style={{ backgroundColor: "#f0f4f8" }}
+        style={{ backgroundColor: "#F5F8FF" }}
         aria-hidden={loaded}
       >
         <div
@@ -39,8 +39,8 @@ export default function MapEmbed({ embedUrl, mapsUrl, openLabel, title, locale }
               d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
           </svg>
         </div>
-        <p className="text-[#4a5568] text-sm font-medium">Madaris Nibras</p>
-        <p className="text-[#718096] text-xs">
+        <p className="text-[#64748B] text-sm font-medium">Madaris Nibras</p>
+        <p className="text-[#64748B] text-xs">
           {locale === "ar"
             ? "مجمع زموري 3، قرب أسواق السلام"
             : locale === "fr"

@@ -27,17 +27,17 @@ export default async function RegistrationPage({ params }: Props) {
   return (
     <div dir={isRtl ? "rtl" : "ltr"}>
       {/* Hero */}
-      <section className="py-20 text-center" style={{ backgroundColor: "#1a4a7a" }}>
+      <section className="py-20 text-center hero-gradient">
         <div className="max-w-4xl mx-auto px-4">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">{t("heroTitle")}</h1>
-          <p className="text-blue-100 text-lg md:text-xl">{t("heroSubtitle")}</p>
+          <p className="text-[#EAF1FF] text-lg md:text-xl">{t("heroSubtitle")}</p>
         </div>
       </section>
 
       {/* Intro */}
-      <section className="py-10 bg-[#f7f8fc]">
+      <section className="py-10 bg-[#FAFBFF]">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <p className="text-[#4a5568] text-base leading-relaxed">{t("intro")}</p>
+          <p className="text-[#64748B] text-base leading-relaxed">{t("intro")}</p>
         </div>
       </section>
 
@@ -47,15 +47,15 @@ export default async function RegistrationPage({ params }: Props) {
           <SectionTitle title={t("process.title")} />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {steps.map((step, i) => (
-              <div key={i} className="card-hover bg-[#f7f8fc] rounded-2xl p-6 border border-[#e2e8f0] text-center flex flex-col items-center gap-3">
+              <div key={i} className="card-hover bg-[#FAFBFF] rounded-2xl p-6 border border-[#E5E7EB] text-center flex flex-col items-center gap-3">
                 <div
                   className="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-lg flex-shrink-0"
-                  style={{ backgroundColor: "#1a4a7a" }}
+                  style={{ backgroundColor: "#1D4395" }}
                 >
                   {step.step}
                 </div>
-                <h3 className="font-bold text-[#1a4a7a] text-base">{step.title}</h3>
-                <p className="text-[#4a5568] text-sm leading-relaxed">{step.description}</p>
+                <h3 className="font-bold text-[#1D4395] text-base">{step.title}</h3>
+                <p className="text-[#64748B] text-sm leading-relaxed">{step.description}</p>
               </div>
             ))}
           </div>
@@ -63,14 +63,14 @@ export default async function RegistrationPage({ params }: Props) {
       </section>
 
       {/* Visit section */}
-      <section className="py-14" style={{ backgroundColor: "#1a4a7a" }}>
+      <section className="py-14 hero-gradient">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <div className="text-5xl mb-5">🏫</div>
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
             {t("visitSection.title")}
           </h2>
-          <div className="h-1 w-16 bg-[#c9a227] mx-auto mb-6 rounded-full" />
-          <p className="text-blue-100 text-base leading-relaxed max-w-2xl mx-auto mb-8">
+          <div className="h-1 w-16 bg-[#EEA748] mx-auto mb-6 rounded-full" />
+          <p className="text-[#EAF1FF] text-base leading-relaxed max-w-2xl mx-auto mb-8">
             {t("visitSection.body")}
           </p>
           <a
@@ -89,14 +89,14 @@ export default async function RegistrationPage({ params }: Props) {
       </section>
 
       {/* Form */}
-      <section className="py-16 bg-[#f7f8fc]">
+      <section className="py-16 bg-[#FAFBFF]">
         <div className="max-w-3xl mx-auto px-4">
           <div className="text-center mb-8">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#1a1a2e] mb-2">
+            <h2 className="text-2xl md:text-3xl font-bold text-[#0E2250] mb-2">
               {t("formTitle")}
             </h2>
-            <p className="text-[#4a5568] text-base">{t("formSubtitle")}</p>
-            <div className="h-1 w-16 bg-[#c9a227] mx-auto mt-4 rounded-full" />
+            <p className="text-[#64748B] text-base">{t("formSubtitle")}</p>
+            <div className="h-1 w-16 bg-[#EEA748] mx-auto mt-4 rounded-full" />
           </div>
           <ContactForm />
         </div>

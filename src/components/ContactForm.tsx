@@ -45,13 +45,13 @@ export default function ContactForm() {
   }
 
   const inputClass =
-    "w-full px-4 py-3 rounded-lg border border-[#e2e8f0] bg-white text-[#1a1a2e] focus:outline-none focus:ring-2 focus:ring-[#1a4a7a] focus:border-transparent transition-colors text-sm";
-  const labelClass = "block text-sm font-semibold text-[#1a1a2e] mb-1";
+    "w-full px-4 py-3 rounded-lg border border-[#E5E7EB] bg-white text-[#0E2250] focus:outline-none focus:ring-2 focus:ring-[#1D4395] focus:border-transparent transition-colors text-sm";
+  const labelClass = "block text-sm font-semibold text-[#0E2250] mb-1";
 
   return (
     <form
       onSubmit={handleSubmit}
-      className="bg-white rounded-2xl shadow-md border border-[#e2e8f0] p-6 md:p-8 flex flex-col gap-5"
+      className="bg-white rounded-2xl shadow-md border border-[#E5E7EB] p-6 md:p-8 flex flex-col gap-5"
     >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         {/* Parent name */}
@@ -180,8 +180,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={loading}
-        className="w-full py-3 px-6 rounded-lg font-bold text-white transition-all disabled:opacity-70 disabled:cursor-not-allowed"
-        style={{ backgroundColor: "#1a4a7a" }}
+        className="w-full py-3 px-6 rounded-lg font-bold text-white bg-[#1D4395] hover:bg-[#2857B8] transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
       >
         {loading ? t("submitting") : t("submit")}
       </button>

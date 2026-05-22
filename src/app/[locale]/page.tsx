@@ -25,10 +25,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 const levelTimelineColors: Record<string, string> = {
-  blue: "#2563a8",
-  green: "#16a34a",
-  amber: "#d97706",
-  red: "#dc2626",
+  blue: "#2857B8",
+  green: "#2E7D5B",
+  amber: "#EEA748",
+  red: "#153373",
 };
 
 export default async function HomePage({ params }: Props) {
@@ -92,7 +92,7 @@ export default async function HomePage({ params }: Props) {
               {t("hero.title")}
             </h1>
             {/* Gold accent divider */}
-            <div className="h-1 w-20 bg-[#c9a227] mx-auto rounded-full mb-5" />
+            <div className="h-1 w-20 bg-[#EEA748] mx-auto rounded-full mb-5" />
             {/* Tagline */}
             <p className="text-lg md:text-2xl text-white/90 font-medium mb-8 max-w-xl mx-auto leading-relaxed">
               {t("hero.subtitle")}
@@ -101,14 +101,13 @@ export default async function HomePage({ params }: Props) {
             <div className="flex flex-wrap gap-4 justify-center">
               <Link
                 href={`/${locale}/contact`}
-                className="px-7 py-3.5 rounded-xl font-bold text-white text-base hover:opacity-90 transition-opacity shadow-lg"
-                style={{ backgroundColor: "#c9a227" }}
+                className="px-7 py-3.5 rounded-xl font-bold text-white text-base bg-[#1D4395] hover:bg-[#2857B8] transition-colors shadow-lg"
               >
                 {t("hero.requestInfo")}
               </Link>
               <Link
                 href={`/${locale}/registration`}
-                className="px-7 py-3.5 rounded-xl font-bold border-2 border-white text-white hover:bg-white hover:text-[#1a4a7a] transition-colors text-base shadow-lg"
+                className="px-7 py-3.5 rounded-xl font-bold border-2 border-white text-white hover:bg-white hover:text-[#1D4395] transition-colors text-base shadow-lg"
               >
                 {t("hero.bookVisit")}
               </Link>
@@ -131,11 +130,11 @@ export default async function HomePage({ params }: Props) {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Brief welcome */}
           <div className="text-center mb-10">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#1a4a7a] mb-3">
+            <h2 className="text-2xl md:text-3xl font-bold text-[#1D4395] mb-3">
               {t("intro.title")}
             </h2>
-            <div className="h-1 w-14 bg-[#c9a227] mx-auto rounded-full mb-5" />
-            <p className="text-[#4a5568] text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
+            <div className="h-1 w-14 bg-[#EEA748] mx-auto rounded-full mb-5" />
+            <p className="text-[#64748B] text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
               {t("intro.body")}
             </p>
           </div>
@@ -145,16 +144,16 @@ export default async function HomePage({ params }: Props) {
             {highlights.map((item, i) => (
               <div
                 key={i}
-                className="bg-[#f7f8fc] rounded-2xl p-6 border border-[#e2e8f0] flex flex-col gap-3 hover:shadow-md hover:-translate-y-0.5 transition-all"
+                className="bg-[#FAFBFF] rounded-2xl p-6 border border-[#E5E7EB] flex flex-col gap-3 hover:shadow-md hover:-translate-y-0.5 transition-all"
               >
                 <div
                   className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl"
-                  style={{ backgroundColor: "rgba(26,74,122,0.08)" }}
+                  style={{ backgroundColor: "rgba(29,67,149,0.08)" }}
                 >
                   {item.icon}
                 </div>
-                <h3 className="text-base font-bold text-[#1a4a7a]">{item.title}</h3>
-                <p className="text-[#4a5568] text-sm leading-relaxed">{item.description}</p>
+                <h3 className="text-base font-bold text-[#1D4395]">{item.title}</h3>
+                <p className="text-[#64748B] text-sm leading-relaxed">{item.description}</p>
               </div>
             ))}
           </div>
@@ -164,7 +163,7 @@ export default async function HomePage({ params }: Props) {
       {/* ══════════════════════════════════════════
           PILLARS — 5 educational pillars
       ══════════════════════════════════════════ */}
-      <section className="py-16 bg-[#f7f8fc]">
+      <section className="py-16 bg-[#FAFBFF]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionTitle
             title={t("pillars.sectionTitle")}
@@ -184,7 +183,7 @@ export default async function HomePage({ params }: Props) {
           <div className="text-center mt-8">
             <Link
               href={`/${locale}/pedagogical-project`}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-[#1a4a7a] border-2 border-[#1a4a7a] hover:bg-[#1a4a7a] hover:text-white transition-colors text-sm"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-[#1D4395] border-2 border-[#1D4395] hover:bg-[#1D4395] hover:text-white transition-colors text-sm"
             >
               {learnMoreLabel}
             </Link>
@@ -206,7 +205,7 @@ export default async function HomePage({ params }: Props) {
           <div className="relative">
             {/* Horizontal connector line (desktop) */}
             <div
-              className="hidden lg:block absolute h-0.5 bg-[#e2e8f0]"
+              className="hidden lg:block absolute h-0.5 bg-[#E5E7EB]"
               style={{ top: "28px", left: "12.5%", right: "12.5%", zIndex: 0 }}
             />
 
@@ -242,7 +241,7 @@ export default async function HomePage({ params }: Props) {
           <div className="text-center mt-8">
             <Link
               href={`/${locale}/levels`}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-[#1a4a7a] border-2 border-[#1a4a7a] hover:bg-[#1a4a7a] hover:text-white transition-colors text-sm"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-[#1D4395] border-2 border-[#1D4395] hover:bg-[#1D4395] hover:text-white transition-colors text-sm"
             >
               {learnMoreLabel}
             </Link>
@@ -253,7 +252,7 @@ export default async function HomePage({ params }: Props) {
       {/* ══════════════════════════════════════════
           LANGUAGES — trilingual section
       ══════════════════════════════════════════ */}
-      <section className="py-16" style={{ backgroundColor: "#1a4a7a" }}>
+      <section className="py-16 hero-gradient">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionTitle
             title={t("languages.sectionTitle")}
@@ -267,25 +266,15 @@ export default async function HomePage({ params }: Props) {
                 abbr: locale === "ar" ? "ع" : "AR",
                 lang:
                   locale === "ar" ? "العربية" : locale === "fr" ? "Arabe" : "Arabic",
-                role:
-                  locale === "ar"
-                    ? t("languages.roles.arabic")
-                    : locale === "fr"
-                    ? "Langue de l'identité et du patrimoine"
-                    : "Language of identity and heritage",
-                accent: "#c9a227",
+                role: t("languages.roles.arabic"),
+                accent: "#EEA748",
               },
               {
                 abbr: "FR",
                 lang:
                   locale === "ar" ? "الفرنسية" : locale === "fr" ? "Français" : "French",
-                role:
-                  locale === "ar"
-                    ? t("languages.roles.french")
-                    : locale === "fr"
-                    ? "Langue des sciences et du monde professionnel"
-                    : "Language of sciences and professional life",
-                accent: "#4ade80",
+                role: t("languages.roles.french"),
+                accent: "#3B6FD3",
               },
               {
                 abbr: "EN",
@@ -295,13 +284,8 @@ export default async function HomePage({ params }: Props) {
                     : locale === "fr"
                     ? "Anglais"
                     : "English",
-                role:
-                  locale === "ar"
-                    ? t("languages.roles.english")
-                    : locale === "fr"
-                    ? "Parcours progressif de renforcement"
-                    : "Progressive English strengthening track",
-                accent: "#60a5fa",
+                role: t("languages.roles.english"),
+                accent: "#2857B8",
               },
             ].map((item, i) => (
               <div
@@ -316,14 +300,14 @@ export default async function HomePage({ params }: Props) {
                   <span style={{ color: item.accent }}>{item.abbr}</span>
                 </div>
                 <h3 className="text-lg font-bold text-white mb-2">{item.lang}</h3>
-                <p className="text-blue-100 text-sm leading-relaxed">{item.role}</p>
+                <p className="text-[#EAF1FF] text-sm leading-relaxed">{item.role}</p>
               </div>
             ))}
           </div>
 
           {/* Cambridge note — exact approved phrasing */}
           <div className="bg-white/8 rounded-2xl p-5 border border-white/15 mb-7 max-w-3xl mx-auto">
-            <p className="text-blue-100 text-sm leading-relaxed text-center">
+            <p className="text-[#EAF1FF] text-sm leading-relaxed text-center">
               {t("languages.cambridge")}
             </p>
           </div>
@@ -331,7 +315,7 @@ export default async function HomePage({ params }: Props) {
           <div className="text-center">
             <Link
               href={`/${locale}/languages`}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold border-2 border-white text-white hover:bg-white hover:text-[#1a4a7a] transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold border-2 border-white text-white hover:bg-white hover:text-[#1D4395] transition-colors"
             >
               {t("languages.learnMore")}
             </Link>
@@ -342,7 +326,7 @@ export default async function HomePage({ params }: Props) {
       {/* ══════════════════════════════════════════
           ACTIVITIES — school life
       ══════════════════════════════════════════ */}
-      <section className="py-16 bg-[#f7f8fc]">
+      <section className="py-16 bg-[#FAFBFF]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionTitle
             title={t("activities.sectionTitle")}
@@ -362,7 +346,7 @@ export default async function HomePage({ params }: Props) {
           <div className="text-center mt-8">
             <Link
               href={`/${locale}/school-life`}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-[#1a4a7a] border-2 border-[#1a4a7a] hover:bg-[#1a4a7a] hover:text-white transition-colors text-sm"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-[#1D4395] border-2 border-[#1D4395] hover:bg-[#1D4395] hover:text-white transition-colors text-sm"
             >
               {discoverSchoolLifeLabel}
             </Link>
@@ -374,38 +358,36 @@ export default async function HomePage({ params }: Props) {
           FINAL CTA
       ══════════════════════════════════════════ */}
       <section
-        className="py-20 relative overflow-hidden"
-        style={{ backgroundColor: "#1a4a7a" }}
+        className="py-20 relative overflow-hidden hero-gradient"
       >
         {/* Subtle background accent */}
         <div
           className="absolute inset-0 opacity-10"
           style={{
             backgroundImage:
-              "radial-gradient(circle at 20% 50%, #c9a227 0%, transparent 50%), radial-gradient(circle at 80% 50%, #ffffff 0%, transparent 50%)",
+              "radial-gradient(circle at 20% 50%, #EEA748 0%, transparent 50%), radial-gradient(circle at 80% 50%, #ffffff 0%, transparent 50%)",
           }}
         />
         <div className="relative max-w-3xl mx-auto px-4 text-center">
           <h2 className="text-2xl md:text-4xl font-bold text-white mb-4 leading-tight">
             {t("cta.sectionTitle")}
           </h2>
-          <div className="h-1 w-16 bg-[#c9a227] mx-auto rounded-full mb-6" />
-          <p className="text-blue-100 text-base md:text-lg mb-10 max-w-xl mx-auto leading-relaxed">
+          <div className="h-1 w-16 bg-[#EEA748] mx-auto rounded-full mb-6" />
+          <p className="text-[#EAF1FF] text-base md:text-lg mb-10 max-w-xl mx-auto leading-relaxed">
             {t("cta.body")}
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             {/* Primary: request info */}
             <Link
               href={`/${locale}/contact`}
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-bold text-white hover:opacity-90 transition-opacity text-sm shadow-lg"
-              style={{ backgroundColor: "#c9a227" }}
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-bold text-white bg-[#1D4395] hover:bg-[#2857B8] transition-colors text-sm shadow-lg"
             >
               {t("hero.requestInfo")}
             </Link>
             {/* Secondary: book visit */}
             <Link
               href={`/${locale}/registration`}
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-bold border-2 border-white text-white hover:bg-white hover:text-[#1a4a7a] transition-colors text-sm shadow-lg"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-bold border-2 border-white text-white hover:bg-white hover:text-[#1D4395] transition-colors text-sm shadow-lg"
             >
               {t("hero.bookVisit")}
             </Link>

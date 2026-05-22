@@ -30,30 +30,27 @@ export default async function ContactPage({ params }: Props) {
     <div dir={isRtl ? "rtl" : "ltr"}>
 
       {/* ── Hero ── */}
-      <section
-        className="py-16 md:py-20 text-center relative overflow-hidden"
-        style={{ backgroundColor: "#1a4a7a" }}
-      >
+      <section className="py-16 md:py-20 text-center relative overflow-hidden hero-gradient">
         <div
           className="absolute inset-0 opacity-5"
           style={{
             backgroundImage:
-              "radial-gradient(circle at 30% 50%, #c9a227 0%, transparent 60%), radial-gradient(circle at 70% 30%, #ffffff 0%, transparent 50%)",
+              "radial-gradient(circle at 30% 50%, #EEA748 0%, transparent 60%), radial-gradient(circle at 70% 30%, #ffffff 0%, transparent 50%)",
           }}
         />
         <div className="relative max-w-3xl mx-auto px-4">
           <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
             {t("heroTitle")}
           </h1>
-          <div className="h-1 w-16 rounded-full mx-auto mb-5" style={{ backgroundColor: "#c9a227" }} />
-          <p className="text-blue-100 text-base md:text-lg max-w-xl mx-auto leading-relaxed">
+          <div className="h-1 w-16 rounded-full mx-auto mb-5" style={{ backgroundColor: "#EEA748" }} />
+          <p className="text-[#EAF1FF] text-base md:text-lg max-w-xl mx-auto leading-relaxed">
             {t("heroSubtitle")}
           </p>
         </div>
       </section>
 
       {/* ── Contact cards ── */}
-      <section className="py-12 bg-[#f7f8fc]">
+      <section className="py-12 bg-[#FAFBFF]">
         <div className="max-w-5xl mx-auto px-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
 
@@ -62,7 +59,7 @@ export default async function ContactPage({ params }: Props) {
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-white rounded-2xl p-6 border border-[#e2e8f0] shadow-sm flex flex-col items-center text-center gap-3 hover:shadow-md hover:-translate-y-0.5 transition-all"
+              className="bg-white rounded-2xl p-6 border border-[#E5E7EB] shadow-sm flex flex-col items-center text-center gap-3 hover:shadow-md hover:-translate-y-0.5 transition-all"
             >
               <div
                 className="w-12 h-12 rounded-full flex items-center justify-center"
@@ -73,8 +70,8 @@ export default async function ContactPage({ params }: Props) {
                 </svg>
               </div>
               <div>
-                <p className="font-bold text-[#1a4a7a] text-sm mb-1">WhatsApp</p>
-                <p className="text-[#4a5568] text-xs">{siteConfig.phone}</p>
+                <p className="font-bold text-[#1D4395] text-sm mb-1">WhatsApp</p>
+                <p className="text-[#64748B] text-xs">{siteConfig.phone}</p>
               </div>
             </a>
 
@@ -82,19 +79,19 @@ export default async function ContactPage({ params }: Props) {
             {siteConfig.phone !== "PUT_PHONE_HERE" && (
               <a
                 href={`tel:${siteConfig.phone}`}
-                className="bg-white rounded-2xl p-6 border border-[#e2e8f0] shadow-sm flex flex-col items-center text-center gap-3 hover:shadow-md hover:-translate-y-0.5 transition-all"
+                className="bg-white rounded-2xl p-6 border border-[#E5E7EB] shadow-sm flex flex-col items-center text-center gap-3 hover:shadow-md hover:-translate-y-0.5 transition-all"
               >
                 <div
                   className="w-12 h-12 rounded-full flex items-center justify-center"
-                  style={{ backgroundColor: "#1a4a7a" }}
+                  style={{ backgroundColor: "#1D4395" }}
                 >
                   <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
                 </div>
                 <div>
-                  <p className="font-bold text-[#1a4a7a] text-sm mb-1">{t("phone.title")}</p>
-                  <p className="text-[#4a5568] text-xs">{siteConfig.phone}</p>
+                  <p className="font-bold text-[#1D4395] text-sm mb-1">{t("phone.title")}</p>
+                  <p className="text-[#64748B] text-xs">{siteConfig.phone}</p>
                 </div>
               </a>
             )}
@@ -102,19 +99,19 @@ export default async function ContactPage({ params }: Props) {
             {/* Email */}
             <a
               href={`mailto:${siteConfig.email}`}
-              className="bg-white rounded-2xl p-6 border border-[#e2e8f0] shadow-sm flex flex-col items-center text-center gap-3 hover:shadow-md hover:-translate-y-0.5 transition-all"
+              className="bg-white rounded-2xl p-6 border border-[#E5E7EB] shadow-sm flex flex-col items-center text-center gap-3 hover:shadow-md hover:-translate-y-0.5 transition-all"
             >
               <div
                 className="w-12 h-12 rounded-full flex items-center justify-center"
-                style={{ backgroundColor: "#c9a227" }}
+                style={{ backgroundColor: "#EEA748" }}
               >
                 <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
               </div>
               <div>
-                <p className="font-bold text-[#1a4a7a] text-sm mb-1">{t("email.title")}</p>
-                <p className="text-[#4a5568] text-xs break-all">{siteConfig.email}</p>
+                <p className="font-bold text-[#1D4395] text-sm mb-1">{t("email.title")}</p>
+                <p className="text-[#64748B] text-xs break-all">{siteConfig.email}</p>
               </div>
             </a>
 
@@ -123,7 +120,7 @@ export default async function ContactPage({ params }: Props) {
               href={siteConfig.googleMapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-white rounded-2xl p-6 border border-[#e2e8f0] shadow-sm flex flex-col items-center text-center gap-3 hover:shadow-md hover:-translate-y-0.5 transition-all"
+              className="bg-white rounded-2xl p-6 border border-[#E5E7EB] shadow-sm flex flex-col items-center text-center gap-3 hover:shadow-md hover:-translate-y-0.5 transition-all"
             >
               <div
                 className="w-12 h-12 rounded-full flex items-center justify-center"
@@ -135,8 +132,8 @@ export default async function ContactPage({ params }: Props) {
                 </svg>
               </div>
               <div>
-                <p className="font-bold text-[#1a4a7a] text-sm mb-1">{t("address.title")}</p>
-                <p className="text-[#4a5568] text-xs">{t("address.value")}</p>
+                <p className="font-bold text-[#1D4395] text-sm mb-1">{t("address.title")}</p>
+                <p className="text-[#64748B] text-xs">{t("address.value")}</p>
               </div>
             </a>
           </div>
@@ -149,7 +146,7 @@ export default async function ContactPage({ params }: Props) {
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
 
             {/* Info card */}
-            <div className="lg:col-span-2 bg-[#f7f8fc] rounded-2xl p-7 border border-[#e2e8f0]">
+            <div className="lg:col-span-2 bg-[#FAFBFF] rounded-2xl p-7 border border-[#E5E7EB]">
               <div className="flex items-center gap-3 mb-4">
                 <div
                   className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
@@ -160,10 +157,10 @@ export default async function ContactPage({ params }: Props) {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
                 </div>
-                <h2 className="text-xl font-bold text-[#1a4a7a]">{t("mapSection.title")}</h2>
+                <h2 className="text-xl font-bold text-[#1D4395]">{t("mapSection.title")}</h2>
               </div>
-              <div className="h-0.5 w-12 rounded-full mb-5" style={{ backgroundColor: "#c9a227" }} />
-              <p className="text-[#4a5568] text-sm leading-relaxed mb-6">{t("mapSection.body")}</p>
+              <div className="h-0.5 w-12 rounded-full mb-5" style={{ backgroundColor: "#EEA748" }} />
+              <p className="text-[#64748B] text-sm leading-relaxed mb-6">{t("mapSection.body")}</p>
               <a
                 href={siteConfig.googleMapsUrl}
                 target="_blank"
@@ -178,8 +175,8 @@ export default async function ContactPage({ params }: Props) {
               </a>
 
               {/* Social */}
-              <div className="mt-8 pt-6 border-t border-[#e2e8f0]">
-                <p className="text-xs font-semibold text-[#4a5568] mb-3 uppercase tracking-wide">
+              <div className="mt-8 pt-6 border-t border-[#E5E7EB]">
+                <p className="text-xs font-semibold text-[#64748B] mb-3 uppercase tracking-wide">
                   {t("social.title")}
                 </p>
                 <div className="flex gap-2">
@@ -236,7 +233,7 @@ export default async function ContactPage({ params }: Props) {
                 title={mapTitle}
                 locale={locale}
               />
-              <p className="text-xs text-[#718096] mt-2 text-center">
+              <p className="text-xs text-[#64748B] mt-2 text-center">
                 {siteConfig.name[locale as "ar" | "fr" | "en"]} — {t("address.value")}
               </p>
             </div>
@@ -245,14 +242,14 @@ export default async function ContactPage({ params }: Props) {
       </section>
 
       {/* ── Contact form ── */}
-      <section className="py-12 bg-[#f7f8fc]">
+      <section className="py-12 bg-[#FAFBFF]">
         <div className="max-w-3xl mx-auto px-4">
           <div className="text-center mb-8">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#1a4a7a] mb-3">{t("formTitle")}</h2>
-            <div className="h-1 w-12 rounded-full mx-auto" style={{ backgroundColor: "#c9a227" }} />
-            <p className="text-[#4a5568] text-sm mt-3">{t("responseTime")}</p>
+            <h2 className="text-2xl md:text-3xl font-bold text-[#1D4395] mb-3">{t("formTitle")}</h2>
+            <div className="h-1 w-12 rounded-full mx-auto" style={{ backgroundColor: "#EEA748" }} />
+            <p className="text-[#64748B] text-sm mt-3">{t("responseTime")}</p>
           </div>
-          <div className="bg-white rounded-2xl p-6 md:p-8 border border-[#e2e8f0] shadow-sm">
+          <div className="bg-white rounded-2xl p-6 md:p-8 border border-[#E5E7EB] shadow-sm">
             <ContactForm />
           </div>
         </div>

@@ -1,27 +1,27 @@
 const colorMap: Record<string, { bg: string; border: string; text: string; badge: string }> = {
   blue: {
-    bg: "bg-blue-50",
-    border: "border-blue-200",
-    text: "text-blue-700",
-    badge: "bg-blue-100 text-blue-800",
+    bg: "bg-[#F5F8FF]",
+    border: "border-[#EAF1FF]",
+    text: "text-[#153373]",
+    badge: "bg-[#EAF1FF] text-[#153373]",
   },
   green: {
-    bg: "bg-green-50",
-    border: "border-green-200",
-    text: "text-green-700",
-    badge: "bg-green-100 text-green-800",
+    bg: "bg-[#FFF8EE]",
+    border: "border-[#FFF2DC]",
+    text: "text-[#0E2250]",
+    badge: "bg-[#FFF2DC] text-[#7A4A08]",
   },
   amber: {
-    bg: "bg-amber-50",
-    border: "border-amber-200",
-    text: "text-amber-700",
-    badge: "bg-amber-100 text-amber-800",
+    bg: "bg-[#FFF2DC]",
+    border: "border-[#F6C77A]",
+    text: "text-[#7A4A08]",
+    badge: "bg-[#FFF2DC] text-[#B87518]",
   },
   red: {
-    bg: "bg-red-50",
-    border: "border-red-200",
-    text: "text-red-700",
-    badge: "bg-red-100 text-red-800",
+    bg: "bg-[#F5F8FF]",
+    border: "border-[#EAF1FF]",
+    text: "text-[#153373]",
+    badge: "bg-[#EAF1FF] text-[#1D4395]",
   },
 };
 
@@ -48,7 +48,7 @@ export default function LevelCard({ title, ages, description, color, icon, index
         </span>
       </div>
       <h3 className={`text-xl font-bold ${colors.text}`}>{title}</h3>
-      <p className="text-[#4a5568] text-sm leading-relaxed">{description}</p>
+      <p className="text-[#64748B] text-sm leading-relaxed">{description}</p>
     </div>
   );
 }
