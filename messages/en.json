@@ -268,24 +268,27 @@
   },
   "languagesPage": {
     "meta": {
-      "title": "Languages & Cambridge — Madaris Nibras",
-      "description": "Learn Arabic, French, and English with the Cambridge English track at Madaris Nibras Tangier"
+      "title": "Languages and English Development — Madaris Nibras Tangier",
+      "description": "A modern Moroccan school in Tangier: a balanced linguistic approach in Arabic, French, and English, with a progressive pathway to strengthen English."
     },
-    "heroTitle": "Languages & Cambridge",
-    "heroSubtitle": "Three languages, three doors to the world",
-    "intro": "At Madaris Nibras, languages are not just school subjects — they are tools for thinking, communicating, and opening up. We believe a child who masters three languages has three different ways of understanding the world and expressing themselves.",
+    "heroTitle": "Languages and English Development",
+    "heroSubtitle": "Multiple languages… a pupil better able to understand, express, and communicate",
+    "intro": "At Madaris Nibras, we believe languages are not merely school subjects, nor separate categories, but tools to build the pupil's character, broaden their horizons, and strengthen their ability to understand, express, and communicate. The school therefore adopts a balanced linguistic approach that gives pupils a strong presence in Arabic, French, and English, without reducing any language to a single role; each language is a field for learning, communication, culture, openness, and confidence in expression.",
     "arabic": {
-      "title": "Arabic — Language of Identity and Heritage",
-      "body": "Arabic is the mother tongue and the language of the Quran. We teach it with meticulous care, from the first letters at preschool to literary texts in high school. We strengthen written and oral expression and cultivate love for Arabic literature and its rich heritage. Arabic linguistic mastery remains the foundation for all other academic achievement."
+      "title": "Arabic",
+      "body": "Arabic is presented at Madaris Nibras as a language of identity, communication, and expression that preserves roots and builds confidence in word and meaning. We accompany the pupil from the first letters in preschool to literary texts in high school, developing written and oral expression, strengthening their connection with Arabic through appropriate educational activities, and Quran memorisation within the school's educational project."
     },
     "french": {
-      "title": "French — Language of Science and the Local Context",
-      "body": "French holds a central place in the Moroccan educational system and in economic and professional life. We integrate French into curricula from the earliest years and teach it using modern communicative approaches that make it a living language, not just grammar rules. Students learn to use it in daily life and in scientific and professional contexts."
+      "title": "French",
+      "body": "French holds an important place in the pupil's academic and relational pathway. We integrate it into curricula from the early years through modern communicative approaches that make it a living language for learning, expression, and interaction with their environment, and openness to varied fields of knowledge and culture."
     },
     "english": {
-      "title": "English & the Cambridge English Track",
-      "body": "English is the language of the digital, academic, and business world. We teach it from primary school using interactive and advanced audiovisual methods. Our students benefit from a progressive track to strengthen English and prepare them for Cambridge English certifications, from primary through high school.",
-      "cambridge": "A progressive track to strengthen English and prepare students for Cambridge English certifications from primary through high school."
+      "title": "English",
+      "body": "Madaris Nibras gives special attention to English through a progressive pathway aimed at strengthening pupils' skills in comprehension, expression, communication, and practical use of the language. It is taught through interactive and audiovisual methods that help the pupil use the language confidently in class and beyond."
+    },
+    "cambridge": {
+      "title": "Cambridge English",
+      "body": "Within this approach, pupils are gradually prepared for Cambridge English qualifications at levels suited to their stage of schooling. This pathway aims to prepare pupils at the end of lower secondary to reach A1 level, and pupils in the final baccalaureate year to reach B2 level, supporting their readiness for international academic pathways and future opportunities to apply to international universities. It remains part of strengthening English and preparing for qualifications, not a stand-alone international curriculum or an automatic guarantee of certification."
     },
     "benefits": {
       "title": "Benefits of Multilingual Education",
@@ -293,7 +296,7 @@
         "Development of cognitive intelligence and intellectual flexibility",
         "Access to global knowledge sources without barriers",
         "Broader academic and professional opportunities at national and international levels",
-        "Mastery of internationally recognized English certifications",
+        "Progressive strengthening of English and appropriate preparation for Cambridge English qualifications",
         "Strengthening cultural identity while opening up to others"
       ]
     }

@@ -268,24 +268,27 @@
   },
   "languagesPage": {
     "meta": {
-      "title": "Langues & Cambridge — Madaris Nibras",
-      "description": "Apprenez l'arabe, le français et l'anglais avec le parcours Cambridge English à Madaris Nibras Tanger"
+      "title": "Langues et renforcement de l'anglais — Madaris Nibras Tanger",
+      "description": "Établissement éducatif marocain moderne à Tanger : approche linguistique équilibrée en arabe, français et anglais, avec un parcours progressif pour renforcer l'anglais."
     },
-    "heroTitle": "Langues & Cambridge",
-    "heroSubtitle": "Trois langues, trois portes vers le monde",
-    "intro": "À Madaris Nibras, les langues ne sont pas de simples matières scolaires ; ce sont des outils de réflexion, de communication et d'ouverture. Nous croyons qu'un enfant qui maîtrise trois langues possède trois façons différentes de comprendre le monde et de s'exprimer.",
+    "heroTitle": "Langues et renforcement de l'anglais",
+    "heroSubtitle": "Plurilinguisme… un élève plus capable de comprendre, de s'exprimer et de communiquer",
+    "intro": "À Madaris Nibras, nous croyons que les langues ne sont pas de simples matières scolaires, ni des catégories séparées, mais des outils pour construire la personnalité de l'élève, élargir ses horizons et renforcer sa capacité à comprendre, s'exprimer et communiquer. C'est pourquoi l'établissement adopte une approche linguistique équilibrée qui donne à l'élève une présence forte en arabe, en français et en anglais, sans réduire aucune langue à un seul rôle ; chaque langue est un domaine d'apprentissage, de communication, de culture, d'ouverture et de confiance dans l'expression.",
     "arabic": {
-      "title": "L'arabe — langue de l'identité et du patrimoine",
-      "body": "L'arabe est la langue maternelle et la langue du Coran. Nous l'enseignons avec le plus grand soin, des premières lettres au préscolaire jusqu'aux textes littéraires au lycée. Nous renforçons l'expression écrite et orale, et cultivons l'amour de la littérature arabe et de son riche patrimoine. La maîtrise linguistique en arabe reste le fondement de tout autre accomplissement académique."
+      "title": "Arabe",
+      "body": "L'arabe est présenté à Madaris Nibras comme une langue d'identité, de communication et d'expression, qui préserve les racines et renforce la confiance dans le mot et le sens. Nous accompagnons l'élève dans son apprentissage, des premières lettres au préscolaire jusqu'aux textes littéraires au lycée, avec le développement de l'expression écrite et orale, le renforcement du lien avec la langue arabe par des activités pédagogiques adaptées, et la mémorisation du Coran dans le cadre du projet éducatif de l'établissement."
     },
     "french": {
-      "title": "Le français — langue des sciences et du territoire",
-      "body": "Le français occupe une place centrale dans le système éducatif marocain et dans la vie économique et professionnelle. Nous intégrons le français dans les programmes dès les premières années, et nous l'enseignons avec des approches communicatives modernes qui en font une langue vivante et non de simples règles grammaticales. Les élèves apprennent à l'utiliser dans la vie quotidienne, le domaine scientifique et professionnel."
+      "title": "Français",
+      "body": "Le français occupe une place importante dans le parcours scolaire et relationnel de l'élève. Nous l'intégrons aux programmes dès les premières années avec des approches communicatives modernes, qui en font une langue vivante pour l'apprentissage, l'expression et l'interaction avec l'environnement, ainsi que l'ouverture sur des domaines de connaissance et de culture variés."
     },
     "english": {
-      "title": "L'anglais et le parcours Cambridge English",
-      "body": "L'anglais est la langue du monde numérique, académique et commercial. Nous l'enseignons dès le primaire avec des méthodes interactives et audiovisuelles avancées. Nos élèves bénéficient d'un parcours progressif pour renforcer l'anglais et les préparer aux certifications Cambridge English, du primaire au lycée.",
-      "cambridge": "Un parcours progressif pour renforcer l'anglais et préparer les élèves aux certifications Cambridge English, du primaire au lycée."
+      "title": "Anglais",
+      "body": "Madaris Nibras accorde une attention particulière à l'anglais, à travers un parcours progressif visant à renforcer les compétences des élèves en compréhension, expression, communication et usage pratique de la langue. Il est enseigné par des méthodes interactives et audiovisuelles qui aident l'élève à utiliser la langue avec confiance en classe et au-delà."
+    },
+    "cambridge": {
+      "title": "Cambridge English",
+      "body": "Dans ce cadre, les élèves sont préparés progressivement aux certifications Cambridge English selon des niveaux adaptés à leur cycle scolaire. Ce parcours vise à préparer les élèves de fin de collège à atteindre le niveau A1, et les élèves de terminale baccalauréat à atteindre le niveau B2, ce qui renforce leur préparation aux parcours académiques internationaux et soutient leurs perspectives d'inscription dans des universités internationales. Ce parcours reste un volet du renforcement de l'anglais et de la préparation aux certifications, et non un programme international autonome ni une garantie automatique d'obtention de certification."
     },
     "benefits": {
       "title": "Les avantages du plurilinguisme",
@@ -293,7 +296,7 @@
         "Développement de l'intelligence cognitive et de la flexibilité intellectuelle",
         "Accès aux sources de connaissances mondiales sans barrières",
         "Opportunités académiques et professionnelles élargies aux niveaux national et international",
-        "Maîtrise de certifications internationalement reconnues en anglais",
+        "Renforcement progressif de l'anglais et préparation adaptée aux certifications Cambridge English",
         "Renforcement de l'appartenance culturelle et d'ouverture à l'autre"
       ]
     }

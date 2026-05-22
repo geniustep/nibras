@@ -269,7 +269,7 @@ export default async function HomePage({ params }: Props) {
                   locale === "ar" ? "العربية" : locale === "fr" ? "Arabe" : "Arabic",
                 role:
                   locale === "ar"
-                    ? "لغة الهوية والتراث"
+                    ? t("languages.roles.arabic")
                     : locale === "fr"
                     ? "Langue de l'identité et du patrimoine"
                     : "Language of identity and heritage",
@@ -281,7 +281,7 @@ export default async function HomePage({ params }: Props) {
                   locale === "ar" ? "الفرنسية" : locale === "fr" ? "Français" : "French",
                 role:
                   locale === "ar"
-                    ? "لغة العلوم والمجال المهني"
+                    ? t("languages.roles.french")
                     : locale === "fr"
                     ? "Langue des sciences et du monde professionnel"
                     : "Language of sciences and professional life",
@@ -297,7 +297,7 @@ export default async function HomePage({ params }: Props) {
                     : "English",
                 role:
                   locale === "ar"
-                    ? "مسار تدريجي لتقوية اللغة"
+                    ? t("languages.roles.english")
                     : locale === "fr"
                     ? "Parcours progressif de renforcement"
                     : "Progressive English strengthening track",

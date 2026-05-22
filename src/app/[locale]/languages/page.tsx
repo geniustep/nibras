@@ -72,8 +72,8 @@ export default async function LanguagesPage({ params }: Props) {
                 <div className="flex items-start gap-3">
                   <span className="text-2xl flex-shrink-0">🏆</span>
                   <div>
-                    <h4 className="font-bold text-[#1a4a7a] text-sm mb-1">Cambridge English</h4>
-                    <p className="text-[#4a5568] text-sm italic">{t("english.cambridge")}</p>
+                    <h4 className="font-bold text-[#1a4a7a] text-sm mb-1">{t("cambridge.title")}</h4>
+                    <p className="text-[#4a5568] text-sm italic">{t("cambridge.body")}</p>
                   </div>
                 </div>
               </div>
