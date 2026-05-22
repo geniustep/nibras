@@ -84,7 +84,8 @@ export default function ContactForm() {
             value={form.phone}
             onChange={handleChange}
             placeholder={t("phonePlaceholder")}
-            className={inputClass}
+            className={`${inputClass} ltr-number`}
+            dir="ltr"
           />
         </div>
 

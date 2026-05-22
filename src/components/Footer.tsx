@@ -154,8 +154,8 @@ export default async function Footer({ locale }: Props) {
                 <div className="flex items-start gap-2">
                   <span className="text-[#EEA748] mt-0.5">📞</span>
                   <a
-                    href={`tel:${siteConfig.phone}`}
-                    className="text-[#EAF1FF]/80 text-sm hover:text-[#EEA748] transition-colors"
+                    href={`tel:+${siteConfig.whatsappNumber}`}
+                    className="ltr-number text-[#EAF1FF]/80 text-sm hover:text-[#EEA748] transition-colors"
                   >
                     {siteConfig.phone}
                   </a>

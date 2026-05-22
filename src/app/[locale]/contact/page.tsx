@@ -71,15 +71,17 @@ export default async function ContactPage({ params }: Props) {
               </div>
               <div>
                 <p className="font-bold text-[#1D4395] text-sm mb-1">WhatsApp</p>
-                <p className="text-[#64748B] text-xs">{siteConfig.phone}</p>
+                <p className="text-[#64748B] text-xs">
+                  <span className="ltr-number">{siteConfig.phone}</span>
+                </p>
               </div>
             </a>
 
             {/* Phone */}
             {siteConfig.phone !== "PUT_PHONE_HERE" && (
               <a
-                href={`tel:${siteConfig.phone}`}
-                className="bg-white rounded-2xl p-6 border border-[#E5E7EB] shadow-sm flex flex-col items-center text-center gap-3 hover:shadow-md hover:-translate-y-0.5 transition-all"
+                href={`tel:+${siteConfig.whatsappNumber}`}
+                className="ltr-number bg-white rounded-2xl p-6 border border-[#E5E7EB] shadow-sm flex flex-col items-center text-center gap-3 hover:shadow-md hover:-translate-y-0.5 transition-all"
               >
                 <div
                   className="w-12 h-12 rounded-full flex items-center justify-center"
@@ -91,7 +93,9 @@ export default async function ContactPage({ params }: Props) {
                 </div>
                 <div>
                   <p className="font-bold text-[#1D4395] text-sm mb-1">{t("phone.title")}</p>
-                  <p className="text-[#64748B] text-xs">{siteConfig.phone}</p>
+                  <p className="text-[#64748B] text-xs">
+                    <span className="ltr-number">{siteConfig.phone}</span>
+                  </p>
                 </div>
               </a>
             )}

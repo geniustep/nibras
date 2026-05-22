@@ -129,6 +129,12 @@ html[lang="ar"] h6 {
   animation: pulse-slow 3s ease-in-out infinite;
 }
 
+.ltr-number {
+  direction: ltr;
+  unicode-bidi: isolate;
+  display: inline-block;
+}
+
 .whatsapp-float {
   position: fixed;
   bottom: 1.5rem;
