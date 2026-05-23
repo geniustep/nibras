@@ -10,7 +10,7 @@ services:
     ports:
       - "5434:5432"
     volumes:
-      - nibras_pg_data:/var/lib/postgresql/data
+      - nibras-admission-portal_nibras_pg_data:/var/lib/postgresql/data
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U nibras -d nibras_admission"]
       interval: 5s
@@ -42,8 +42,8 @@ services:
       - "3010:3000"
     environment:
       DATABASE_URL: postgresql://nibras:nibras_secret@db:5432/nibras_admission
-      SESSION_SECRET: change-me-in-production-use-long-random-string
-      ADMIN_SEED_EMAIL: admin@nibras.ma
+      SESSION_SECRET: nibras-dev-session-secret-change-in-production-32chars
+      ADMIN_SEED_EMAIL: admin@madarisnibras.ma
       ADMIN_SEED_PASSWORD: Admin@2026
       TRACKING_YEAR: "2026"
       NODE_ENV: production
@@ -56,12 +56,12 @@ services:
         condition: service_completed_successfully
     networks:
       - default
-      - traefik-web
-
-networks:
-  traefik-web:
-    external: true
-    name: routy-traefik_web
+      - routy-traefik_web
 
 volumes:
-  nibras_pg_data:
+  nibras-admission-portal_nibras_pg_data:
+    external: true
+
+networks:
+  routy-traefik_web:
+    external: true
