@@ -4,9 +4,9 @@ import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
-import { usePathname, useRouter } from "next/navigation";
 import { siteConfig } from "../../site.config";
 import { getAdmissionPaths } from "@/lib/admission/paths";
+import { usePathname, useRouter } from "@/i18n/navigation";
 
 type Locale = "ar" | "fr" | "en";
 
@@ -54,20 +54,19 @@ export default function Header({ locale }: Props) {
   }, [pathname]);
 
   function switchLocale(newLocale: Locale) {
-    const segments = pathname.split("/");
-    segments[1] = newLocale;
-    const newPath = segments.join("/") || `/${newLocale}`;
-    router.push(newPath);
+    // pathname من next-intl بدون بادئة اللغة (مثل /admission/bidaya)
+    router.replace(pathname, { locale: newLocale });
   }
 
   const admissionPaths = getAdmissionPaths(locale);
 
   function isActive(href: string, key: string): boolean {
-    if (key === "home") return pathname === `/${locale}`;
+    if (key === "home") return pathname === "/";
     if (key === "onlineAdmission") {
-      return pathname.startsWith(`/${locale}/admission`);
+      return pathname === "/admission" || pathname.startsWith("/admission/");
     }
-    return pathname === href || pathname.startsWith(href + "/");
+    const hrefWithoutLocale = href.replace(new RegExp(`^/${locale}`), "") || "/";
+    return pathname === hrefWithoutLocale || pathname.startsWith(hrefWithoutLocale + "/");
   }
 
   const admissionIntro = admissionPaths.intro;
