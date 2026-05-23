@@ -53,7 +53,10 @@ export default function Header({ locale }: Props) {
   }, [pathname]);
 
   function switchLocale(newLocale: Locale) {
-    // Preserve current page path, only swap the locale segment
+    if (pathname === "/" || pathname.startsWith("/tassjil")) {
+      router.push(`/${newLocale}`);
+      return;
+    }
     const segments = pathname.split("/");
     segments[1] = newLocale;
     const newPath = segments.join("/") || `/${newLocale}`;

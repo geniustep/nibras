@@ -1,4 +1,23 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# مدارس النبراس — الموقع الرسمي + بوابة التسجيل الأولي
+
+مشروع [Next.js](https://nextjs.org) يضم الموقع المؤسسي (`/ar`, `/fr`, `/en`) وبوابة التسجيل الأولي (`/`, `/tassjil`).
+
+## النشر (معتمد)
+
+| المكوّن | الاستضافة |
+|---------|-----------|
+| الواجهة + API | **Vercel** |
+| PostgreSQL | **سيرفر مستقل** (Docker — `nibras_admission`, منفذ المضيف `5434`) |
+| لوحة القبول | `admission.madarisnibras.ma` (Docker — منفصلة) |
+
+**دليل كامل:** [docs/DEPLOYMENT-ADMISSION.md](docs/DEPLOYMENT-ADMISSION.md)  
+**طلب معلومات السيرفر:** [docs/SERVER-REQUEST.md](docs/SERVER-REQUEST.md)
+
+```bash
+cp .env.example .env   # DATABASE_URL, TRACKING_YEAR, NEXT_PUBLIC_APP_URL
+npm install
+npm run dev
+```
 
 ## Getting Started
 
