@@ -2,25 +2,30 @@
 
 import { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
+import { useLocale, useTranslations } from "next-intl";
 import type { CommonCoreTrack, SchoolCycle, SchoolLevel } from "@prisma/client";
 import { Button } from "@/components/admission/ui/Button";
 import { Input } from "@/components/admission/ui/Input";
 import { Select } from "@/components/admission/ui/Select";
 import { Textarea } from "@/components/admission/ui/Textarea";
 import { Card } from "@/components/admission/ui/Card";
-import { GENDER_LABELS } from "@/lib/admission/labels";
+import { getAdmissionPaths, type AppLocale } from "@/lib/admission/paths";
 import {
-  CYCLE_LABELS,
+  ALL_CYCLES,
+  ALL_TRACKS,
   isCommonCoreLevel,
-  LEVEL_LABELS,
   LEVELS_BY_CYCLE,
-  TRACK_LABELS,
 } from "@/lib/admission/school-levels";
 
 type FormErrors = Record<string, string>;
 
 export function RegistrationForm() {
   const router = useRouter();
+  const locale = useLocale() as AppLocale;
+  const t = useTranslations("admissionPortal.form");
+  const tSchool = useTranslations("admissionPortal.school");
+  const paths = getAdmissionPaths(locale);
+
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState<FormErrors>({});
   const [needsTransport, setNeedsTransport] = useState(false);
@@ -34,9 +39,9 @@ export function RegistrationForm() {
     if (!schoolCycle) return [];
     return LEVELS_BY_CYCLE[schoolCycle].map((level) => ({
       value: level,
-      label: LEVEL_LABELS[level],
+      label: tSchool(`levels.${level}`),
     }));
-  }, [schoolCycle]);
+  }, [schoolCycle, tSchool]);
 
   const showLevelField = Boolean(schoolCycle);
   const showTrackField =
@@ -62,6 +67,7 @@ export function RegistrationForm() {
     setErrors({});
 
     const formData = new FormData(e.currentTarget);
+    formData.set("locale", locale);
     formData.set("needsTransport", needsTransport ? "true" : "false");
     formData.set("needsCanteen", needsCanteen ? "true" : "false");
     formData.set("schoolCycle", schoolCycle);
@@ -83,14 +89,16 @@ export function RegistrationForm() {
         if (data.errors) {
           setErrors(data.errors);
         } else {
-          setErrors({ form: data.message ?? "تعذر إرسال الطلب. يرجى المحاولة لاحقًا." });
+          setErrors({ form: data.message ?? t("errors.submitFailed") });
         }
         return;
       }
 
-      router.push(`/admission/najah?ref=${encodeURIComponent(data.trackingNumber)}`);
+      router.push(
+        `${paths.success}?ref=${encodeURIComponent(data.trackingNumber)}`
+      );
     } catch {
-      setErrors({ form: "تعذر الاتصال بالخادم. يرجى التحقق من الاتصال والمحاولة مجددًا." });
+      setErrors({ form: t("errors.networkError") });
     } finally {
       setLoading(false);
     }
@@ -104,116 +112,110 @@ export function RegistrationForm() {
         </div>
       )}
 
-      <Card
-        title="معلومات التلميذ"
-        subtitle="البيانات الأساسية للتلميذ المراد تسجيله."
-      >
+      <Card title={t("sections.student.title")} subtitle={t("sections.student.subtitle")}>
         <div className="grid gap-5 sm:grid-cols-2">
           <Input
             name="studentFirstName"
-            label="الاسم الشخصي"
+            label={t("fields.studentFirstName")}
             required
             error={errors.studentFirstName}
           />
           <Input
             name="studentLastName"
-            label="الاسم العائلي"
+            label={t("fields.studentLastName")}
             required
             error={errors.studentLastName}
           />
           <Input
             name="studentDateOfBirth"
-            label="تاريخ الازدياد"
+            label={t("fields.studentDateOfBirth")}
             type="date"
             required
             error={errors.studentDateOfBirth}
           />
           <Select
             name="studentGender"
-            label="الجنس"
+            label={t("fields.studentGender")}
             required
             error={errors.studentGender}
-            placeholder="اختر..."
-            options={Object.entries(GENDER_LABELS).map(([value, label]) => ({
+            placeholder={t("placeholders.select")}
+            options={(["MALE", "FEMALE"] as const).map((value) => ({
               value,
-              label,
+              label: tSchool(`genders.${value}`),
             }))}
           />
           <Input
             name="studentNationalId"
-            label="رقم التعريف الوطني"
+            label={t("fields.studentNationalId")}
             error={errors.studentNationalId}
           />
           <Input
             name="currentSchool"
-            label="المؤسسة الحالية"
+            label={t("fields.currentSchool")}
             error={errors.currentSchool}
           />
         </div>
       </Card>
 
-      <Card
-        title="معلومات ولي الأمر"
-        subtitle="للتواصل معكم بخصوص طلب التسجيل."
-      >
+      <Card title={t("sections.parent.title")} subtitle={t("sections.parent.subtitle")}>
         <div className="grid gap-5 sm:grid-cols-2">
           <Input
             name="parentFullName"
-            label="الاسم الكامل"
+            label={t("fields.parentFullName")}
             required
             className="sm:col-span-2"
             error={errors.parentFullName}
           />
           <Input
             name="parentPhone"
-            label="رقم الهاتف"
+            label={t("fields.parentPhone")}
             type="tel"
             required
-            hint="مثال: 06XXXXXXXX"
+            hint={t("fields.parentPhoneHint")}
             error={errors.parentPhone}
           />
           <Input
             name="parentEmail"
-            label="البريد الإلكتروني"
+            label={t("fields.parentEmail")}
             type="email"
             error={errors.parentEmail}
           />
           <Input
             name="parentAddress"
-            label="العنوان"
+            label={t("fields.parentAddress")}
             className="sm:col-span-2"
             error={errors.parentAddress}
           />
         </div>
       </Card>
 
-      <Card title="المستوى والخدمات" subtitle="حددوا السلك الدراسي ثم المستوى المناسب.">
+      <Card title={t("sections.level.title")} subtitle={t("sections.level.subtitle")}>
         <div className="grid gap-5 sm:grid-cols-2">
           <Select
             name="schoolCycle"
-            label="السلك الدراسي المطلوب"
+            label={t("fields.schoolCycle")}
             required
             className="sm:col-span-2"
             value={schoolCycle}
             onChange={(e) => handleCycleChange(e.target.value)}
             error={errors.schoolCycle}
-            placeholder="اختر السلك الدراسي..."
-            options={Object.entries(CYCLE_LABELS).map(([value, label]) => ({
+            placeholder={t("placeholders.selectCycle")}
+            options={ALL_CYCLES.map((value) => ({
               value,
-              label,
+              label: tSchool(`cycles.${value}`),
             }))}
           />
 
           {showLevelField && (
             <Select
               name="schoolLevel"
-              label="المستوى المطلوب"
+              label={t("fields.schoolLevel")}
               required
               className="sm:col-span-2"
               value={schoolLevel}
               onChange={(e) => handleLevelChange(e.target.value)}
               error={errors.schoolLevel}
-              placeholder="اختر المستوى..."
+              placeholder={t("placeholders.selectLevel")}
               options={levelOptions}
             />
           )}
@@ -222,22 +224,21 @@ export function RegistrationForm() {
             <div className="sm:col-span-2">
               <Select
                 name="commonCoreTrack"
-                label="نوع الشعبة المطلوبة"
+                label={t("fields.commonCoreTrack")}
                 required
                 value={commonCoreTrack}
                 onChange={(e) =>
                   setCommonCoreTrack(e.target.value as CommonCoreTrack)
                 }
                 error={errors.commonCoreTrack}
-                placeholder="اختر نوع الشعبة..."
-                options={Object.entries(TRACK_LABELS).map(([value, label]) => ({
+                placeholder={t("placeholders.selectTrack")}
+                options={ALL_TRACKS.map((value) => ({
                   value,
-                  label,
+                  label: tSchool(`tracks.${value}`),
                 }))}
               />
               <p className="mt-2 text-xs leading-relaxed text-slate-500">
-                اختيار الشعبة في هذه المرحلة أولي، وسيتم تأكيده بعد مراجعة الملف
-                والتواصل مع ولي الأمر.
+                {t("fields.trackNote")}
               </p>
             </div>
           )}
@@ -250,9 +251,11 @@ export function RegistrationForm() {
               className="mt-1 h-4 w-4 rounded border-slate-300 text-[#1D4395]"
             />
             <span>
-              <span className="block font-medium text-[#0E2250]">النقل المدرسي</span>
+              <span className="block font-medium text-[#0E2250]">
+                {t("fields.transportTitle")}
+              </span>
               <span className="mt-1 block text-sm text-slate-600">
-                نرغب في معلومات حول خدمة النقل المدرسي.
+                {t("fields.transportBody")}
               </span>
             </span>
           </label>
@@ -260,7 +263,7 @@ export function RegistrationForm() {
           {needsTransport && (
             <Textarea
               name="transportNotes"
-              label="العنوان "
+              label={t("fields.transportNotes")}
               className="sm:col-span-2"
               error={errors.transportNotes}
             />
@@ -274,9 +277,11 @@ export function RegistrationForm() {
               className="mt-1 h-4 w-4 rounded border-slate-300 text-[#1D4395]"
             />
             <span>
-              <span className="block font-medium text-[#0E2250]">المطعم المدرسي</span>
+              <span className="block font-medium text-[#0E2250]">
+                {t("fields.canteenTitle")}
+              </span>
               <span className="mt-1 block text-sm text-slate-600">
-                نرغب في الاستفادة من خدمة المطعم المدرسي.
+                {t("fields.canteenBody")}
               </span>
             </span>
           </label>
@@ -284,14 +289,11 @@ export function RegistrationForm() {
       </Card>
 
       <div className="rounded-2xl border border-[#EEA748]/30 bg-[#FAFBFF] p-5 text-sm text-slate-600">
-        <p>
-          بإرسال هذا الطلب، تؤكدون صحة المعلومات المقدّمة. سيتواصل معكم فريق
-          القبول والتسجيل لاستكمال الإجراءات. هذا الطلب لا يعني قبولًا نهائيًا.
-        </p>
+        <p>{t("disclaimer")}</p>
       </div>
 
       <Button type="submit" loading={loading} fullWidth variant="primary">
-        إرسال طلب التسجيل الأولي
+        {t("submit")}
       </Button>
     </form>
   );

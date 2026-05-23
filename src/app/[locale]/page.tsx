@@ -4,6 +4,7 @@ import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 import { siteConfig } from "../../../site.config";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
+import { getAdmissionPaths } from "@/lib/admission/paths";
 import SectionTitle from "@/components/ui/SectionTitle";
 import PillarCard from "@/components/ui/PillarCard";
 import LevelCard from "@/components/ui/LevelCard";
@@ -35,6 +36,7 @@ export default async function HomePage({ params }: Props) {
   const { locale } = await params;
   const t = await getTranslations({ locale });
   const whatsappUrl = getWhatsAppUrl(locale);
+  const admissionPaths = getAdmissionPaths(locale as Locale);
   const isRtl = locale === "ar";
 
   const pillars = t.raw("pillars.items") as Array<{
@@ -106,7 +108,7 @@ export default async function HomePage({ params }: Props) {
                 {t("hero.requestInfo")}
               </Link>
               <Link
-                href={siteConfig.paths.admissionIntro}
+                href={admissionPaths.intro}
                 className="px-7 py-3.5 rounded-xl font-bold border-2 border-white text-white hover:bg-white hover:text-[#1D4395] transition-colors text-base shadow-lg"
               >
                 {t("hero.startAdmission")}
@@ -386,7 +388,7 @@ export default async function HomePage({ params }: Props) {
             </Link>
             {/* Secondary: book visit */}
             <Link
-              href={siteConfig.paths.admissionIntro}
+              href={admissionPaths.intro}
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-bold border-2 border-white text-white hover:bg-white hover:text-[#1D4395] transition-colors text-sm shadow-lg"
             >
               {t("cta.startAdmission")}

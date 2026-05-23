@@ -15,13 +15,23 @@ const nextConfig: NextConfig = {
         permanent: false,
       },
       {
+        source: "/admission",
+        destination: "/ar/admission",
+        permanent: false,
+      },
+      {
+        source: "/admission/:path*",
+        destination: "/ar/admission/:path*",
+        permanent: false,
+      },
+      {
         source: "/tassjil",
-        destination: "/admission",
+        destination: "/ar/admission",
         permanent: true,
       },
       {
         source: "/tassjil/:path*",
-        destination: "/admission/:path*",
+        destination: "/ar/admission/:path*",
         permanent: true,
       },
       {

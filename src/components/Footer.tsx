@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 import { siteConfig } from "../../site.config";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
+import { getAdmissionPaths } from "@/lib/admission/paths";
 
 type Locale = "ar" | "fr" | "en";
 
@@ -16,6 +17,8 @@ export default async function Footer({ locale }: Props) {
   const isRtl = locale === "ar";
   const whatsappUrl = getWhatsAppUrl(locale);
 
+  const admissionPaths = getAdmissionPaths(locale);
+
   const navLinks = [
     { key: "home", href: `/${locale}` },
     { key: "about", href: `/${locale}/about` },
@@ -23,7 +26,7 @@ export default async function Footer({ locale }: Props) {
     { key: "levels", href: `/${locale}/levels` },
     { key: "languages", href: `/${locale}/languages` },
     { key: "schoolLife", href: `/${locale}/school-life` },
-    { key: "onlineAdmission", href: siteConfig.paths.admissionIntro },
+    { key: "onlineAdmission", href: admissionPaths.intro },
     { key: "registration", href: `/${locale}/registration` },
     { key: "contact", href: `/${locale}/contact` },
   ] as const;

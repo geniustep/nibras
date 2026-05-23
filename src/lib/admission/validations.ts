@@ -11,57 +11,61 @@ const schoolCycleSchema = z.enum(ALL_CYCLES);
 const schoolLevelSchema = z.enum(ALL_LEVELS);
 const commonCoreTrackSchema = z.enum(ALL_TRACKS);
 
-export const applicationSchema = z
-  .object({
-    studentFirstName: z.string().min(2, "الاسم الشخصي مطلوب"),
-    studentLastName: z.string().min(2, "الاسم العائلي مطلوب"),
-    studentDateOfBirth: z.string().min(1, "تاريخ الازدياد مطلوب"),
-    studentGender: z.enum(["MALE", "FEMALE"]),
-    studentNationalId: z.string().optional(),
-    currentSchool: z.string().optional(),
+export function createApplicationSchema() {
+  return z
+    .object({
+      studentFirstName: z.string().min(2, "studentFirstName"),
+      studentLastName: z.string().min(2, "studentLastName"),
+      studentDateOfBirth: z.string().min(1, "studentDateOfBirth"),
+      studentGender: z.enum(["MALE", "FEMALE"]),
+      studentNationalId: z.string().optional(),
+      currentSchool: z.string().optional(),
 
-    parentFullName: z.string().min(3, "اسم ولي الأمر مطلوب"),
-    parentPhone: z
-      .string()
-      .min(10, "رقم الهاتف غير صالح")
-      .regex(/^[\d\s+()-]+$/, "رقم الهاتف غير صالح"),
-    parentEmail: z.string().email("البريد الإلكتروني غير صالح").optional().or(z.literal("")),
-    parentAddress: z.string().optional(),
+      parentFullName: z.string().min(3, "parentFullName"),
+      parentPhone: z
+        .string()
+        .min(10, "parentPhone")
+        .regex(/^[\d\s+()-]+$/, "parentPhone"),
+      parentEmail: z.string().email("parentEmail").optional().or(z.literal("")),
+      parentAddress: z.string().optional(),
 
-    schoolCycle: schoolCycleSchema,
-    schoolLevel: schoolLevelSchema,
-    commonCoreTrack: z
-      .union([commonCoreTrackSchema, z.literal(""), z.undefined()])
-      .optional(),
+      schoolCycle: schoolCycleSchema,
+      schoolLevel: schoolLevelSchema,
+      commonCoreTrack: z
+        .union([commonCoreTrackSchema, z.literal(""), z.undefined()])
+        .optional(),
 
-    needsTransport: z.coerce.boolean(),
-    transportNotes: z.string().optional(),
-    needsCanteen: z.coerce.boolean(),
-  })
-  .superRefine((data, ctx) => {
-    if (!levelBelongsToCycle(data.schoolCycle, data.schoolLevel)) {
-      ctx.addIssue({
-        code: "custom",
-        message: "المستوى المختار لا يتوافق مع السلك الدراسي",
-        path: ["schoolLevel"],
-      });
-    }
-
-    const track = data.commonCoreTrack ?? null;
-
-    if (isCommonCoreLevel(data.schoolLevel)) {
-      if (!track) {
+      needsTransport: z.coerce.boolean(),
+      transportNotes: z.string().optional(),
+      needsCanteen: z.coerce.boolean(),
+    })
+    .superRefine((data, ctx) => {
+      if (!levelBelongsToCycle(data.schoolCycle, data.schoolLevel)) {
         ctx.addIssue({
           code: "custom",
-          message: "نوع الشعبة مطلوب للجذع المشترك",
+          message: "levelCycleMismatch",
+          path: ["schoolLevel"],
+        });
+      }
+
+      const track = data.commonCoreTrack ?? null;
+
+      if (isCommonCoreLevel(data.schoolLevel)) {
+        if (!track) {
+          ctx.addIssue({
+            code: "custom",
+            message: "trackRequired",
+            path: ["commonCoreTrack"],
+          });
+        }
+      } else if (track) {
+        ctx.addIssue({
+          code: "custom",
+          message: "trackNotRequired",
           path: ["commonCoreTrack"],
         });
       }
-    } else if (track) {
-      ctx.addIssue({
-        code: "custom",
-        message: "الشعبة غير مطلوبة لهذا المستوى",
-        path: ["commonCoreTrack"],
-      });
-    }
-  });
+    });
+}
+
+export const applicationSchema = createApplicationSchema();

@@ -459,6 +459,139 @@
       }
     }
   },
+  "admissionPortal": {
+    "meta": {
+      "layoutTitle": "Initial Registration Portal | Madaris Nibras",
+      "layoutDescription": "Madaris Nibras initial registration platform — submit your application and follow the enrollment process."
+    },
+    "intro": {
+      "meta": { "title": "Initial Registration Portal" },
+      "badge": "Madaris Nibras — Initial registration is open",
+      "heroTitle": "Start your child's journey with confidence",
+      "heroBody": "Welcome to the Madaris Nibras initial registration portal. Through this platform, you can submit your child's registration request in clear, simple steps, within an integrated educational pathway combining values, academic excellence, languages, and activities.",
+      "ctaStart": "Start registration request",
+      "ctaHow": "How does it work?",
+      "stepsTitle": "Initial registration steps",
+      "steps": [
+        {
+          "title": "Complete the registration form",
+          "text": "Enter your child's details and parent/guardian information, and select the desired cycle and level."
+        },
+        {
+          "title": "Receive your application number",
+          "text": "After submission, a unique reference number is shown — keep it to track your application when needed."
+        },
+        {
+          "title": "Follow-up from admissions",
+          "text": "Our team will contact you to complete the file and next steps with clarity and care."
+        }
+      ],
+      "closingQuote": "At Madaris Nibras, we accompany your children toward a promising future with confidence and excellence, while preserving their values and identity.",
+      "ctaSubmit": "Submit registration request"
+    },
+    "form": {
+      "meta": { "title": "Initial Registration" },
+      "title": "Initial Registration Form",
+      "subtitle": "Please fill in the fields accurately. Fields marked with (*) are required.",
+      "sections": {
+        "student": {
+          "title": "Student information",
+          "subtitle": "Basic details of the student to be registered."
+        },
+        "parent": {
+          "title": "Parent / guardian information",
+          "subtitle": "So we can contact you about your registration request."
+        },
+        "level": {
+          "title": "Level & services",
+          "subtitle": "Select the school cycle, then the appropriate level."
+        }
+      },
+      "fields": {
+        "studentFirstName": "First name",
+        "studentLastName": "Last name",
+        "studentDateOfBirth": "Date of birth",
+        "studentGender": "Gender",
+        "studentNationalId": "National ID number",
+        "currentSchool": "Current school",
+        "parentFullName": "Full name",
+        "parentPhone": "Phone number",
+        "parentPhoneHint": "Example: 06XXXXXXXX",
+        "parentEmail": "Email",
+        "parentAddress": "Address",
+        "schoolCycle": "Requested school cycle",
+        "schoolLevel": "Requested level",
+        "commonCoreTrack": "Requested track (common core)",
+        "trackNote": "Track selection at this stage is preliminary and will be confirmed after file review and contact with the parent.",
+        "transportTitle": "School transport",
+        "transportBody": "We would like information about school transport service.",
+        "transportNotes": "Address",
+        "canteenTitle": "School canteen",
+        "canteenBody": "We would like to use the school canteen service."
+      },
+      "placeholders": {
+        "select": "Select...",
+        "selectCycle": "Select school cycle...",
+        "selectLevel": "Select level...",
+        "selectTrack": "Select track..."
+      },
+      "disclaimer": "By submitting this request, you confirm the accuracy of the information provided. Our admissions team will contact you to complete the process. This request does not constitute final acceptance.",
+      "submit": "Submit initial registration request",
+      "errors": {
+        "submitFailed": "Could not submit the request. Please try again later.",
+        "networkError": "Could not reach the server. Please check your connection and try again."
+      }
+    },
+    "success": {
+      "meta": { "title": "Request received" },
+      "title": "Your request was received successfully",
+      "body": "Thank you for your trust. Our admissions team will review your request and contact you as soon as possible.",
+      "trackingLabel": "Application tracking number",
+      "trackingHint": "Please keep this number for any communication with the school.",
+      "backHome": "Back to homepage"
+    },
+    "school": {
+      "genders": { "MALE": "Male", "FEMALE": "Female" },
+      "cycles": {
+        "EARLY_CHILDHOOD": "Early childhood & preschool",
+        "PRIMARY": "Primary education",
+        "MIDDLE_SCHOOL": "Middle school",
+        "HIGH_SCHOOL": "High school (qualifying)"
+      },
+      "levels": {
+        "AGE_3": "Age 3 / Petite Section",
+        "AGE_4": "Age 4 / Moyenne Section",
+        "AGE_5": "Age 5 / Grande Section",
+        "PRIMARY_1": "Year 1 primary / 1ère Année Primaire",
+        "PRIMARY_2": "Year 2 primary / 2ème Année Primaire",
+        "PRIMARY_3": "Year 3 primary / 3ème Année Primaire",
+        "PRIMARY_4": "Year 4 primary / 4ème Année Primaire",
+        "PRIMARY_5": "Year 5 primary / 5ème Année Primaire",
+        "PRIMARY_6": "Year 6 primary / 6ème Année Primaire",
+        "MIDDLE_1": "Year 1 middle / 1ère Année Collège",
+        "MIDDLE_2": "Year 2 middle / 2ème Année Collège",
+        "MIDDLE_3": "Year 3 middle / 3ème Année Collège",
+        "COMMON_CORE": "Common core / Tronc Commun"
+      },
+      "tracks": {
+        "SCIENTIFIC": "Scientific common core / Tronc Commun Scientifique",
+        "LITERARY": "Literary common core / Tronc Commun Lettres",
+        "TECHNOLOGICAL": "Technological common core / Tronc Commun Technologique"
+      }
+    },
+    "validation": {
+      "studentFirstName": "First name is required",
+      "studentLastName": "Last name is required",
+      "studentDateOfBirth": "Date of birth is required",
+      "parentFullName": "Parent/guardian name is required",
+      "parentPhone": "Invalid phone number",
+      "parentEmail": "Invalid email address",
+      "levelCycleMismatch": "The selected level does not match the school cycle",
+      "trackRequired": "Track is required for common core",
+      "trackNotRequired": "Track is not required for this level",
+      "saveFailed": "Could not save the request. Please try again later."
+    }
+  },
   "footer": {
     "description": "Madaris Nibras — a modern Moroccan educational institution in Tangier, offering balanced education combining values, academic excellence, and multilingualism from early years through secondary school.",
     "quickLinks": "Quick Links",

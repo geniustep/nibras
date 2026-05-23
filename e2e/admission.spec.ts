@@ -7,19 +7,21 @@ test.describe("بوابة التسجيل الأولي", () => {
     await expect(page.getByRole("heading", { name: /مدارس النبراس/ })).toBeVisible();
   });
 
-  test("الصفحة التعريفية /admission/bidaya", async ({ page }) => {
-    await page.goto("/admission/bidaya");
-    await expect(page.getByRole("heading", { name: "بوابة التسجيل الأولي" })).toBeVisible();
-    await expect(page.getByRole("link", { name: "بدء التسجيل الأولي" })).toHaveAttribute(
+  test("الصفحة التعريفية /ar/admission/bidaya", async ({ page }) => {
+    await page.goto("/ar/admission/bidaya");
+    await expect(
+      page.getByRole("heading", { name: "ابدؤوا مسار ابنكم بثقة" })
+    ).toBeVisible();
+    await expect(page.getByRole("link", { name: "بدء طلب التسجيل" })).toHaveAttribute(
       "href",
-      "/admission"
+      "/ar/admission"
     );
     await expect(page.locator("header")).toBeVisible();
     await expect(page.locator("footer")).toBeVisible();
   });
 
-  test("استمارة /admission", async ({ page }) => {
-    await page.goto("/admission");
+  test("استمارة /ar/admission", async ({ page }) => {
+    await page.goto("/ar/admission");
     await expect(
       page.getByRole("heading", { name: "استمارة التسجيل الأولي" })
     ).toBeVisible();
@@ -28,14 +30,19 @@ test.describe("بوابة التسجيل الأولي", () => {
     await expect(page.getByRole("button", { name: "إرسال طلب التسجيل الأولي" })).toBeVisible();
   });
 
-  test("صفحة النجاح /admission/najah", async ({ page }) => {
-    await page.goto("/admission/najah?ref=NIB-2026-000042");
+  test("صفحة النجاح /ar/admission/najah", async ({ page }) => {
+    await page.goto("/ar/admission/najah?ref=NIB-2026-000042");
     await expect(page.getByRole("heading", { name: "تم استلام طلبكم بنجاح" })).toBeVisible();
     await expect(page.getByText("NIB-2026-000042")).toBeVisible();
     await expect(page.getByRole("link", { name: "العودة إلى الصفحة الرئيسية" })).toHaveAttribute(
       "href",
       "/ar"
     );
+  });
+
+  test("/admission القديم يعيد التوجيه إلى /ar/admission", async ({ page }) => {
+    const res = await page.goto("/admission", { waitUntil: "commit" });
+    expect(res?.url()).toContain("/ar/admission");
   });
 
   test("الموقع الرئيسي /ar يعمل", async ({ page }) => {
@@ -51,5 +58,4 @@ test.describe("بوابة التسجيل الأولي", () => {
     expect(body.errors).toBeTruthy();
     expect(body.errors.studentFirstName).toBeTruthy();
   });
-
 });

@@ -51,6 +51,7 @@ export default async function ContactPage({ params }: Props) {
       </section>
 
       <AdmissionCtaBanner
+        locale={locale as "ar" | "fr" | "en"}
         title={t("admissionCta.title")}
         body={t("admissionCta.body")}
         button={t("admissionCta.button")}

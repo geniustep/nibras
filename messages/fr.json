@@ -459,6 +459,139 @@
       }
     }
   },
+  "admissionPortal": {
+    "meta": {
+      "layoutTitle": "Portail d'inscription initiale | Madaris Nibras",
+      "layoutDescription": "Plateforme d'inscription initiale Madaris Nibras — déposer une demande et suivre le parcours d'inscription."
+    },
+    "intro": {
+      "meta": { "title": "Portail d'inscription initiale" },
+      "badge": "Madaris Nibras — Inscription initiale ouverte",
+      "heroTitle": "Commencez le parcours de votre enfant en toute confiance",
+      "heroBody": "Bienvenue sur le portail d'inscription initiale de Madaris Nibras. Via cette plateforme, vous pouvez déposer la demande d'inscription de votre enfant en quelques étapes claires et simples, dans un parcours éducatif intégré alliant valeurs, excellence académique, langues et activités.",
+      "ctaStart": "Commencer la demande",
+      "ctaHow": "Comment ça se passe ?",
+      "stepsTitle": "Étapes de l'inscription initiale",
+      "steps": [
+        {
+          "title": "Remplir le formulaire",
+          "text": "Saisissez les informations de l'élève et du parent, avec le cycle et le niveau souhaités."
+        },
+        {
+          "title": "Obtenir un numéro de dossier",
+          "text": "Après envoi, un numéro de référence s'affiche — conservez-le pour suivre votre dossier."
+        },
+        {
+          "title": "Contact de l'équipe admissions",
+          "text": "Notre équipe vous contactera pour compléter le dossier et les étapes suivantes avec clarté et attention."
+        }
+      ],
+      "closingQuote": "À Madaris Nibras, nous accompagnons vos enfants vers un avenir prometteur avec confiance et excellence, tout en préservant leurs valeurs et leur identité.",
+      "ctaSubmit": "Déposer une demande d'inscription"
+    },
+    "form": {
+      "meta": { "title": "Inscription initiale" },
+      "title": "Formulaire d'inscription initiale",
+      "subtitle": "Veuillez remplir les champs avec précision. Les champs marqués (*) sont obligatoires.",
+      "sections": {
+        "student": {
+          "title": "Informations sur l'élève",
+          "subtitle": "Données de base de l'élève à inscrire."
+        },
+        "parent": {
+          "title": "Informations du parent / tuteur",
+          "subtitle": "Pour vous contacter au sujet de la demande."
+        },
+        "level": {
+          "title": "Niveau & services",
+          "subtitle": "Choisissez le cycle scolaire, puis le niveau adapté."
+        }
+      },
+      "fields": {
+        "studentFirstName": "Prénom",
+        "studentLastName": "Nom",
+        "studentDateOfBirth": "Date de naissance",
+        "studentGender": "Genre",
+        "studentNationalId": "Numéro d'identité nationale",
+        "currentSchool": "Établissement actuel",
+        "parentFullName": "Nom complet",
+        "parentPhone": "Téléphone",
+        "parentPhoneHint": "Ex. : 06XXXXXXXX",
+        "parentEmail": "E-mail",
+        "parentAddress": "Adresse",
+        "schoolCycle": "Cycle scolaire demandé",
+        "schoolLevel": "Niveau demandé",
+        "commonCoreTrack": "Filière demandée (tronc commun)",
+        "trackNote": "Le choix de filière à ce stade est provisoire et sera confirmé après examen du dossier et contact avec le parent.",
+        "transportTitle": "Transport scolaire",
+        "transportBody": "Nous souhaitons des informations sur le service de transport.",
+        "transportNotes": "Adresse",
+        "canteenTitle": "Cantine scolaire",
+        "canteenBody": "Nous souhaitons bénéficier du service de cantine."
+      },
+      "placeholders": {
+        "select": "Choisir...",
+        "selectCycle": "Choisir le cycle...",
+        "selectLevel": "Choisir le niveau...",
+        "selectTrack": "Choisir la filière..."
+      },
+      "disclaimer": "En envoyant cette demande, vous confirmez l'exactitude des informations. L'équipe admissions vous contactera pour la suite. Cette demande ne vaut pas acceptation définitive.",
+      "submit": "Envoyer la demande d'inscription initiale",
+      "errors": {
+        "submitFailed": "Impossible d'envoyer la demande. Veuillez réessayer plus tard.",
+        "networkError": "Impossible de joindre le serveur. Vérifiez votre connexion et réessayez."
+      }
+    },
+    "success": {
+      "meta": { "title": "Demande reçue" },
+      "title": "Votre demande a bien été reçue",
+      "body": "Merci pour votre confiance. L'équipe admissions examinera votre demande et vous contactera dès que possible.",
+      "trackingLabel": "Numéro de suivi",
+      "trackingHint": "Conservez ce numéro pour toute communication avec l'établissement.",
+      "backHome": "Retour à l'accueil"
+    },
+    "school": {
+      "genders": { "MALE": "Garçon", "FEMALE": "Fille" },
+      "cycles": {
+        "EARLY_CHILDHOOD": "Petite enfance & maternelle",
+        "PRIMARY": "Enseignement primaire",
+        "MIDDLE_SCHOOL": "Collège",
+        "HIGH_SCHOOL": "Lycée qualifiant"
+      },
+      "levels": {
+        "AGE_3": "3 ans / Petite Section",
+        "AGE_4": "4 ans / Moyenne Section",
+        "AGE_5": "5 ans / Grande Section",
+        "PRIMARY_1": "CP / 1ère Année Primaire",
+        "PRIMARY_2": "CE1 / 2ème Année Primaire",
+        "PRIMARY_3": "CE2 / 3ème Année Primaire",
+        "PRIMARY_4": "CM1 / 4ème Année Primaire",
+        "PRIMARY_5": "CM2 / 5ème Année Primaire",
+        "PRIMARY_6": "6ème Année Primaire",
+        "MIDDLE_1": "1ère année collège",
+        "MIDDLE_2": "2ème année collège",
+        "MIDDLE_3": "3ème année collège",
+        "COMMON_CORE": "Tronc commun"
+      },
+      "tracks": {
+        "SCIENTIFIC": "Tronc commun scientifique",
+        "LITERARY": "Tronc commun lettres",
+        "TECHNOLOGICAL": "Tronc commun technologique"
+      }
+    },
+    "validation": {
+      "studentFirstName": "Le prénom est requis",
+      "studentLastName": "Le nom est requis",
+      "studentDateOfBirth": "La date de naissance est requise",
+      "parentFullName": "Le nom du parent/tuteur est requis",
+      "parentPhone": "Numéro de téléphone invalide",
+      "parentEmail": "Adresse e-mail invalide",
+      "levelCycleMismatch": "Le niveau choisi ne correspond pas au cycle",
+      "trackRequired": "La filière est requise pour le tronc commun",
+      "trackNotRequired": "La filière n'est pas requise pour ce niveau",
+      "saveFailed": "Impossible d'enregistrer la demande. Veuillez réessayer plus tard."
+    }
+  },
   "footer": {
     "description": "Madaris Nibras — établissement éducatif marocain moderne à Tanger, offrant une éducation équilibrée alliant valeurs, excellence académique et plurilinguisme, de la maternelle au lycée.",
     "quickLinks": "Liens rapides",

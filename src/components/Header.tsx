@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { usePathname, useRouter } from "next/navigation";
 import { siteConfig } from "../../site.config";
+import { getAdmissionPaths } from "@/lib/admission/paths";
 
 type Locale = "ar" | "fr" | "en";
 
@@ -53,25 +54,23 @@ export default function Header({ locale }: Props) {
   }, [pathname]);
 
   function switchLocale(newLocale: Locale) {
-    if (pathname.startsWith("/admission")) {
-      router.push(`/${newLocale}`);
-      return;
-    }
     const segments = pathname.split("/");
     segments[1] = newLocale;
     const newPath = segments.join("/") || `/${newLocale}`;
     router.push(newPath);
   }
 
+  const admissionPaths = getAdmissionPaths(locale);
+
   function isActive(href: string, key: string): boolean {
     if (key === "home") return pathname === `/${locale}`;
     if (key === "onlineAdmission") {
-      return pathname === siteConfig.paths.admissionIntro || pathname.startsWith("/admission");
+      return pathname.startsWith(`/${locale}/admission`);
     }
     return pathname === href || pathname.startsWith(href + "/");
   }
 
-  const admissionIntro = siteConfig.paths.admissionIntro;
+  const admissionIntro = admissionPaths.intro;
 
   // Primary links — always visible on desktop
   const primaryLinks = [

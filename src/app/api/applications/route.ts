@@ -1,16 +1,27 @@
 import { NextResponse } from "next/server";
+import { getTranslations } from "next-intl/server";
 import { prisma } from "@/lib/admission/prisma";
-import { applicationSchema } from "@/lib/admission/validations";
+import { createApplicationSchema } from "@/lib/admission/validations";
 import { generateTrackingNumber } from "@/lib/admission/tracking";
 import {
   getApplicationDbDebugHint,
   logApplicationDbError,
 } from "@/lib/admission/db-error";
+import { routing } from "@/i18n/routing";
+
+type AppLocale = (typeof routing.locales)[number];
+
+function resolveLocale(raw?: string): AppLocale {
+  if (raw && routing.locales.includes(raw as AppLocale)) {
+    return raw as AppLocale;
+  }
+  return routing.defaultLocale;
+}
 
 function formDataToObject(formData: FormData) {
   const obj: Record<string, string> = {};
   formData.forEach((value, key) => {
-    if (typeof value === "string") {
+    if (typeof value === "string" && key !== "locale") {
       obj[key] = value;
     }
   });
@@ -18,19 +29,20 @@ function formDataToObject(formData: FormData) {
 }
 
 export async function POST(request: Request) {
+  const formData = await request.formData();
+  const locale = resolveLocale(formData.get("locale")?.toString());
+  const t = await getTranslations({ locale, namespace: "admissionPortal.validation" });
+
   if (!process.env.DATABASE_URL?.trim()) {
     console.error("[applications] DATABASE_URL is missing on this deployment");
-    return NextResponse.json(
-      { message: "تعذر حفظ الطلب. يرجى المحاولة لاحقًا." },
-      { status: 503 }
-    );
+    return NextResponse.json({ message: t("saveFailed") }, { status: 503 });
   }
 
   try {
-    const formData = await request.formData();
     const raw = formDataToObject(formData);
+    const schema = createApplicationSchema();
 
-    const parsed = applicationSchema.safeParse({
+    const parsed = schema.safeParse({
       ...raw,
       needsTransport: raw.needsTransport === "true",
       needsCanteen: raw.needsCanteen === "true",
@@ -42,7 +54,8 @@ export async function POST(request: Request) {
       const errors: Record<string, string> = {};
       parsed.error.issues.forEach((issue) => {
         const key = String(issue.path[0] ?? "form");
-        errors[key] = issue.message;
+        const messageKey = issue.message;
+        errors[key] = t(messageKey as Parameters<typeof t>[0]);
       });
       return NextResponse.json({ errors }, { status: 400 });
     }
@@ -95,7 +108,7 @@ export async function POST(request: Request) {
         : undefined;
     return NextResponse.json(
       {
-        message: "تعذر حفظ الطلب. يرجى المحاولة لاحقًا.",
+        message: t("saveFailed"),
         ...(debug ? { debug } : {}),
       },
       { status: 500 }
