@@ -65,8 +65,13 @@ export default function Header({ locale }: Props) {
 
   function isActive(href: string, key: string): boolean {
     if (key === "home") return pathname === `/${locale}`;
+    if (key === "onlineAdmission") {
+      return pathname === siteConfig.paths.admissionIntro || pathname.startsWith("/admission");
+    }
     return pathname === href || pathname.startsWith(href + "/");
   }
+
+  const admissionIntro = siteConfig.paths.admissionIntro;
 
   // Primary links — always visible on desktop
   const primaryLinks = [
@@ -74,6 +79,7 @@ export default function Header({ locale }: Props) {
     { key: "about", href: `/${locale}/about` },
     { key: "pedagogicalProject", href: `/${locale}/pedagogical-project` },
     { key: "levels", href: `/${locale}/levels` },
+    { key: "onlineAdmission", href: admissionIntro },
     { key: "registration", href: `/${locale}/registration` },
     { key: "contact", href: `/${locale}/contact` },
   ] as const;
@@ -224,13 +230,21 @@ export default function Header({ locale }: Props) {
               )}
             </div>
 
-            {/* CTA */}
-            <Link
-              href={`/${locale}/contact`}
-              className="hidden lg:flex items-center px-4 py-2 rounded-lg text-sm font-bold text-white bg-[#1D4395] hover:bg-[#2857B8] transition-colors whitespace-nowrap"
-            >
-              {t("getInfo")}
-            </Link>
+            {/* CTAs */}
+            <div className="hidden lg:flex items-center gap-2">
+              <Link
+                href={`/${locale}/contact`}
+                className="inline-flex items-center px-4 py-2 rounded-lg text-sm font-semibold text-[#1D4395] border border-[#1D4395] hover:bg-[#F5F8FF] transition-colors whitespace-nowrap"
+              >
+                {t("getInfo")}
+              </Link>
+              <Link
+                href={admissionIntro}
+                className="inline-flex items-center px-4 py-2 rounded-lg text-sm font-bold text-white bg-[#1D4395] hover:bg-[#2857B8] transition-colors whitespace-nowrap"
+              >
+                {t("onlineAdmission")}
+              </Link>
+            </div>
 
             {/* Hamburger (mobile only) */}
             <button
@@ -294,20 +308,26 @@ export default function Header({ locale }: Props) {
                 ))}
               </div>
 
-              {/* CTA */}
+              <Link
+                href={admissionIntro}
+                onClick={() => setMenuOpen(false)}
+                className="block py-3 rounded-xl text-center text-sm font-bold text-white bg-[#1D4395] hover:bg-[#2857B8] transition-colors"
+              >
+                {t("onlineAdmission")}
+              </Link>
+
               <Link
                 href={`/${locale}/contact`}
                 onClick={() => setMenuOpen(false)}
-                className="block py-3 rounded-xl text-center text-sm font-bold text-white bg-[#1D4395] hover:bg-[#2857B8] transition-colors"
+                className="block py-3 rounded-xl text-center text-sm font-semibold text-[#1D4395] border-2 border-[#1D4395] hover:bg-[#F5F8FF] transition-colors"
               >
                 {t("getInfo")}
               </Link>
 
-              {/* Book visit */}
               <Link
                 href={`/${locale}/registration`}
                 onClick={() => setMenuOpen(false)}
-                className="block py-3 rounded-xl text-center text-sm font-semibold text-[#1D4395] border-2 border-[#1D4395] hover:bg-[#F5F8FF] transition-colors"
+                className="block py-3 rounded-xl text-center text-sm font-medium text-[#64748B] border border-[#E5E7EB] hover:border-[#1D4395] hover:text-[#1D4395] transition-colors"
               >
                 {t("bookVisit")}
               </Link>

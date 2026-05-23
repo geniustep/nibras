@@ -106,10 +106,10 @@ export default async function HomePage({ params }: Props) {
                 {t("hero.requestInfo")}
               </Link>
               <Link
-                href={`/${locale}/registration`}
+                href={siteConfig.paths.admissionIntro}
                 className="px-7 py-3.5 rounded-xl font-bold border-2 border-white text-white hover:bg-white hover:text-[#1D4395] transition-colors text-base shadow-lg"
               >
-                {t("hero.bookVisit")}
+                {t("hero.startAdmission")}
               </Link>
             </div>
           </div>
@@ -386,8 +386,14 @@ export default async function HomePage({ params }: Props) {
             </Link>
             {/* Secondary: book visit */}
             <Link
-              href={`/${locale}/registration`}
+              href={siteConfig.paths.admissionIntro}
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-bold border-2 border-white text-white hover:bg-white hover:text-[#1D4395] transition-colors text-sm shadow-lg"
+            >
+              {t("cta.startAdmission")}
+            </Link>
+            <Link
+              href={`/${locale}/registration`}
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-white/90 border border-white/40 hover:bg-white/10 transition-colors text-sm"
             >
               {t("hero.bookVisit")}
             </Link>

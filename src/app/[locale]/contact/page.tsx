@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { siteConfig } from "../../../../site.config";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
+import AdmissionCtaBanner from "@/components/AdmissionCtaBanner";
 import ContactForm from "@/components/ContactForm";
 import MapEmbed from "@/components/MapEmbed";
 
@@ -48,6 +49,12 @@ export default async function ContactPage({ params }: Props) {
           </p>
         </div>
       </section>
+
+      <AdmissionCtaBanner
+        title={t("admissionCta.title")}
+        body={t("admissionCta.body")}
+        button={t("admissionCta.button")}
+      />
 
       {/* ── Contact cards ── */}
       <section className="py-12 bg-[#FAFBFF]">

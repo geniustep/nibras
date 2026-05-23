@@ -21,4 +21,10 @@ export const siteConfig = {
     logo: "/logo_nibrass.png",
     mainImage: "/main.jpeg",
   },
+  /** بوابة التسجيل الأولي (نفس المسارات على كل اللغات) */
+  paths: {
+    admissionIntro: "/admission/bidaya",
+    admissionForm: "/admission",
+    admissionSuccess: "/admission/najah",
+  },
 };

@@ -23,6 +23,7 @@ export default async function Footer({ locale }: Props) {
     { key: "levels", href: `/${locale}/levels` },
     { key: "languages", href: `/${locale}/languages` },
     { key: "schoolLife", href: `/${locale}/school-life` },
+    { key: "onlineAdmission", href: siteConfig.paths.admissionIntro },
     { key: "registration", href: `/${locale}/registration` },
     { key: "contact", href: `/${locale}/contact` },
   ] as const;

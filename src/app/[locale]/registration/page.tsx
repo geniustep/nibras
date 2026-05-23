@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
+import AdmissionCtaBanner from "@/components/AdmissionCtaBanner";
 import ContactForm from "@/components/ContactForm";
 import SectionTitle from "@/components/ui/SectionTitle";
 
@@ -33,6 +34,12 @@ export default async function RegistrationPage({ params }: Props) {
           <p className="text-[#EAF1FF] text-lg md:text-xl">{t("heroSubtitle")}</p>
         </div>
       </section>
+
+      <AdmissionCtaBanner
+        title={t("admissionCta.title")}
+        body={t("admissionCta.body")}
+        button={t("admissionCta.button")}
+      />
 
       {/* Intro */}
       <section className="py-10 bg-[#FAFBFF]">

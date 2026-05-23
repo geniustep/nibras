@@ -7,6 +7,7 @@
     "languages": "Languages & English Support",
     "schoolLife": "School Life",
     "registration": "Registration & Visit",
+    "onlineAdmission": "Online Registration",
     "contact": "Contact Us",
     "more": "More",
     "schoolLifeActivities": "School Life & Activities",
@@ -19,6 +20,7 @@
     "body": "Madaris Nibras is a modern Moroccan educational institution in Tangier. We support pupils from early years through secondary school in an educational project that combines values, academic excellence, multilingualism, integrated activities, and openness to the future.",
     "requestInfo": "Request Information",
     "bookVisit": "Book a Visit",
+    "startAdmission": "Online Registration",
     "whatsapp": "Contact via WhatsApp"
   },
   "intro": {
@@ -140,6 +142,7 @@
     "body": "We accompany your children toward a promising future with confidence and excellence. Contact us or book a visit to discover our educational project.",
     "whatsapp": "Contact via WhatsApp",
     "form": "Fill Out the Registration Form",
+    "startAdmission": "Start Online Registration",
     "map": "View on Map"
   },
   "about": {
@@ -367,6 +370,11 @@
     "heroTitle": "Registration & Visit",
     "heroSubtitle": "The first step toward an integrated educational pathway",
     "intro": "We are happy to welcome families wishing to join the Madaris Nibras community. Whether you want to register or learn more about our school, our team is ready to guide you.",
+    "admissionCta": {
+      "title": "Online Initial Registration",
+      "body": "Submit your child's initial registration request online and receive a tracking number right after submission.",
+      "button": "Start Online Registration"
+    },
     "process": {
       "title": "Registration Steps",
       "steps": [
@@ -391,6 +399,11 @@
     },
     "heroTitle": "Contact Madaris Nibras",
     "heroSubtitle": "Our team is happy to answer your questions about registration, academic levels, and booking a school visit. Families are essential partners in the educational journey.",
+    "admissionCta": {
+      "title": "Ready to submit an initial registration request?",
+      "body": "You can send your request online and receive a tracking number right after submission.",
+      "button": "Go to online registration"
+    },
     "address": {
       "title": "Address",
       "value": "Zemmouri 3 Complex, near Aswak Assalam"

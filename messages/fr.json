@@ -7,6 +7,7 @@
     "languages": "Langues et anglais renforcé",
     "schoolLife": "Vie scolaire",
     "registration": "Inscription & Visite",
+    "onlineAdmission": "Inscription en ligne",
     "contact": "Contact",
     "more": "Plus",
     "schoolLifeActivities": "Vie scolaire et activités",
@@ -19,6 +20,7 @@
     "body": "Madaris Nibras est un établissement éducatif marocain moderne à Tanger. Nous accompagnons l'élève de la maternelle au lycée dans un projet éducatif qui allie valeurs, excellence académique, plurilinguisme, activités intégrées et ouverture sur l'avenir.",
     "requestInfo": "Demander des infos",
     "bookVisit": "Réserver une visite",
+    "startAdmission": "Inscription en ligne",
     "whatsapp": "Contacter via WhatsApp"
   },
   "intro": {
@@ -140,6 +142,7 @@
     "body": "Nous accompagnons vos enfants vers un avenir prometteur avec confiance et excellence. Contactez-nous ou réservez une visite pour découvrir notre projet éducatif.",
     "whatsapp": "Contacter via WhatsApp",
     "form": "Remplir le formulaire d'inscription",
+    "startAdmission": "Commencer l'inscription en ligne",
     "map": "Voir sur la carte"
   },
   "about": {
@@ -367,6 +370,11 @@
     "heroTitle": "Inscription & Visite",
     "heroSubtitle": "La première étape vers un parcours éducatif intégré",
     "intro": "Nous sommes heureux d'accueillir les familles souhaitant rejoindre la communauté Madaris Nibras. Que vous souhaitiez vous inscrire ou en savoir plus sur notre établissement, notre équipe est prête à vous accompagner.",
+    "admissionCta": {
+      "title": "Inscription en ligne",
+      "body": "Soumettez la demande d'inscription initiale en ligne et recevez un numéro de suivi dès l'envoi.",
+      "button": "Commencer l'inscription"
+    },
     "process": {
       "title": "Les étapes de l'inscription",
       "steps": [
@@ -391,6 +399,11 @@
     },
     "heroTitle": "Contactez Madaris Nibras",
     "heroSubtitle": "Notre équipe se fera un plaisir de répondre à vos questions sur l'inscription, les niveaux scolaires et la visite de l'établissement. La famille est un partenaire essentiel du parcours éducatif.",
+    "admissionCta": {
+      "title": "Prêt à soumettre une demande d'inscription ?",
+      "body": "Envoyez votre demande en ligne et recevez un numéro de suivi dès l'envoi.",
+      "button": "Accéder à l'inscription en ligne"
+    },
     "address": {
       "title": "Adresse",
       "value": "Complexe Zemmouri 3, près d'Aswak Assalam"
