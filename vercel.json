@@ -29,22 +29,22 @@
     },
     {
       "source": "/adminsession",
-      "destination": "https://admission.madarisnibras.ma/admin",
+      "destination": "/admin",
       "permanent": false
     },
     {
       "source": "/adminsession/:path*",
-      "destination": "https://admission.madarisnibras.ma/admin/:path*",
+      "destination": "/admin/:path*",
       "permanent": false
     },
     {
       "source": "/:locale(ar|fr|en)/adminsession",
-      "destination": "https://admission.madarisnibras.ma/admin",
+      "destination": "/admin",
       "permanent": false
     },
     {
       "source": "/:locale(ar|fr|en)/adminsession/:path*",
-      "destination": "https://admission.madarisnibras.ma/admin/:path*",
+      "destination": "/admin/:path*",
       "permanent": false
     }
   ]

@@ -1,0 +1,67 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: nibras-admission-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: nibras
+      POSTGRES_PASSWORD: nibras_secret
+      POSTGRES_DB: nibras_admission
+    ports:
+      - "5434:5432"
+    volumes:
+      - nibras_pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U nibras -d nibras_admission"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  migrate:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: migrator
+    container_name: nibras-admission-migrate
+    environment:
+      DATABASE_URL: postgresql://nibras:nibras_secret@db:5432/nibras_admission
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: "no"
+    command: ["npx", "prisma", "migrate", "deploy"]
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: runner
+    container_name: nibras-admission-app
+    restart: unless-stopped
+    ports:
+      - "3010:3000"
+    environment:
+      DATABASE_URL: postgresql://nibras:nibras_secret@db:5432/nibras_admission
+      SESSION_SECRET: change-me-in-production-use-long-random-string
+      ADMIN_SEED_EMAIL: admin@nibras.ma
+      ADMIN_SEED_PASSWORD: Admin@2026
+      TRACKING_YEAR: "2026"
+      NODE_ENV: production
+      NEXT_PUBLIC_APP_URL: https://www.madarisnibras.ma
+      NEXT_PUBLIC_SITE_URL: https://www.madarisnibras.ma
+    depends_on:
+      db:
+        condition: service_healthy
+      migrate:
+        condition: service_completed_successfully
+    networks:
+      - default
+      - traefik-web
+
+networks:
+  traefik-web:
+    external: true
+    name: routy-traefik_web
+
+volumes:
+  nibras_pg_data:
