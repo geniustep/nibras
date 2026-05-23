@@ -4,8 +4,23 @@ import { routing } from "./src/i18n/routing";
 
 const intlMiddleware = createMiddleware(routing);
 
-function isAdminSessionPath(pathname: string) {
-  return pathname === "/adminsession" || pathname.startsWith("/adminsession/");
+const ADMIN_ORIGIN =
+  process.env.ADMIN_UPSTREAM_URL ?? "https://admission.madarisnibras.ma";
+
+/** /adminsession أو /ar|fr|en/adminsession → لوحة الإدارة على النطاق المستقل */
+function getAdminSessionRedirectUrl(pathname: string): string | null {
+  const localeMatch = pathname.match(
+    /^\/(ar|fr|en)\/adminsession(\/.*)?$/
+  );
+  if (localeMatch) {
+    const rest = localeMatch[2] ?? "";
+    return `${ADMIN_ORIGIN}/admin${rest}`;
+  }
+  if (pathname === "/adminsession" || pathname.startsWith("/adminsession/")) {
+    const rest = pathname.slice("/adminsession".length);
+    return `${ADMIN_ORIGIN}/admin${rest}`;
+  }
+  return null;
 }
 
 function isLegacyAdmissionPath(pathname: string) {
@@ -15,8 +30,9 @@ function isLegacyAdmissionPath(pathname: string) {
 export default function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  if (isAdminSessionPath(pathname)) {
-    return NextResponse.next();
+  const adminRedirect = getAdminSessionRedirectUrl(pathname);
+  if (adminRedirect) {
+    return NextResponse.redirect(adminRedirect);
   }
 
   // مسارات قديمة بدون لغة → العربية الافتراضية (تفعيل الترجمة + تبديل اللغة)

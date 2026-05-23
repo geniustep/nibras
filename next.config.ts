@@ -44,6 +44,16 @@ const nextConfig: NextConfig = {
         destination: `${adminOrigin}/admin/:path*`,
         permanent: false,
       },
+      {
+        source: "/:locale(ar|fr|en)/adminsession",
+        destination: `${adminOrigin}/admin`,
+        permanent: false,
+      },
+      {
+        source: "/:locale(ar|fr|en)/adminsession/:path*",
+        destination: `${adminOrigin}/admin/:path*`,
+        permanent: false,
+      },
     ];
   },
 };

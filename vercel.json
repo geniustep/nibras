@@ -36,6 +36,16 @@
       "source": "/adminsession/:path*",
       "destination": "https://admission.madarisnibras.ma/admin/:path*",
       "permanent": false
+    },
+    {
+      "source": "/:locale(ar|fr|en)/adminsession",
+      "destination": "https://admission.madarisnibras.ma/admin",
+      "permanent": false
+    },
+    {
+      "source": "/:locale(ar|fr|en)/adminsession/:path*",
+      "destination": "https://admission.madarisnibras.ma/admin/:path*",
+      "permanent": false
     }
   ]
 }

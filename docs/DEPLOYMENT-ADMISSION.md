@@ -20,7 +20,7 @@
 | `/admission/bidaya` | الصفحة التعريفية لبوابة التسجيل |
 | `/admission` | استمارة التسجيل الأولي |
 | `/admission/najah` | تأكيد الطلب + رقم التتبع |
-| `/adminsession` | لوحة الإدارة (بروكسي إلى السيرفر) |
+| `/adminsession` و`/{ar,fr,en}/adminsession` | إعادة توجيه إلى `https://admission.madarisnibras.ma/admin` |
 | `POST /api/applications` | حفظ الطلب |
 
 الموقع المؤسسي (متعدد اللغات): `/ar`, `/fr`, `/en`.
