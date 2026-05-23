@@ -13,22 +13,26 @@ export default function AdmissionIntroPage() {
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24">
           <div className="max-w-2xl">
             <span className="inline-block rounded-full border border-[#EEA748]/40 bg-white px-4 py-1 text-xs font-semibold text-[#1D4395]">
-              مدارس النبراس — التسجيل الأولي
+              مدارس النبراس — التسجيل الأولي مفتوح
             </span>
+
             <h1 className="mt-6 text-3xl font-bold leading-tight text-[#0E2250] sm:text-4xl lg:text-5xl">
-              بوابة التسجيل الأولي
+              ابدؤوا مسار ابنكم بثقة
             </h1>
+
             <p className="mt-5 text-lg leading-relaxed text-slate-600">
-              مرحبًا بكم. هذه المنصة مخصّصة لتقديم طلب التسجيل الأولي
-              لتلميذكم، بخطوات بسيطة وواضحة. سيتواصل معكم فريقنا لاستكمال
-              الإجراءات بكل عناية.
+              مرحبًا بكم في بوابة التسجيل الأولي بمدارس النبراس. يمكنكم من
+              خلال هذه المنصة تقديم طلب تسجيل ابنكم بخطوات واضحة وبسيطة، ضمن
+              مسار تربوي متكامل يجمع بين القيم، التميز الأكاديمي، اللغات،
+              والأنشطة.
             </p>
+
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link href="/admission">
-                <Button variant="primary">بدء التسجيل الأولي</Button>
+                <Button variant="primary">بدء طلب التسجيل</Button>
               </Link>
               <a href="#ma3lomat">
-                <Button variant="outline">معلومات مفيدة</Button>
+                <Button variant="outline">كيف تتم العملية؟</Button>
               </a>
             </div>
           </div>
@@ -36,23 +40,26 @@ export default function AdmissionIntroPage() {
       </section>
 
       <section id="ma3lomat" className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
-        <h2 className="text-2xl font-bold text-[#0E2250]">كيف تعمل المنصة؟</h2>
+        <h2 className="text-2xl font-bold text-[#0E2250]">
+          خطوات التسجيل الأولي
+        </h2>
+
         <div className="mt-8 grid gap-6 sm:grid-cols-3">
           {[
             {
-              step: "١",
-              title: "تعبئة الاستمارة",
-              text: "أدخلوا معلومات التلميذ وولي الأمر والمستوى المطلوب.",
+              step: "1",
+              title: "تعبئة طلب التسجيل",
+              text: "أدخلوا معلومات ابنكم ومعلومات ولي الأمر، مع اختيار السلك والمستوى المطلوب.",
             },
             {
-              step: "٢",
-              title: "استلام رقم التتبع",
-              text: "بعد الإرسال، يظهر رقم طلبكم للاحتفاظ به.",
+              step: "2",
+              title: "الحصول على رقم الطلب",
+              text: "بعد إرسال الطلب، يظهر رقم خاص بملفكم للاحتفاظ به ومتابعة التسجيل عند الحاجة.",
             },
             {
-              step: "٣",
-              title: "متابعة من الفريق",
-              text: "يتواصل معكم فريق القبول لاستكمال الخطوات.",
+              step: "3",
+              title: "تواصل من فريق القبول",
+              text: "يتواصل معكم فريق المؤسسة لاستكمال المعطيات والخطوات المناسبة بكل وضوح وعناية.",
             },
           ].map((item) => (
             <article
@@ -74,10 +81,11 @@ export default function AdmissionIntroPage() {
       <section className="bg-[#0E2250] py-12 text-white">
         <div className="mx-auto max-w-6xl px-4 text-center sm:px-6">
           <p className="text-lg font-medium">
-            نرافقكم بكل احترام في رحلة انضمام تلميذكم إلى مدارس النبراس.
+            في مدارس النبراس، نرافق أبناءكم نحو مستقبل واعد بثقة وتميز،
+            ونحفظ قيمهم وهويتهم.
           </p>
           <Link href="/admission" className="mt-6 inline-block">
-            <Button variant="gold">تقديم طلب الآن</Button>
+            <Button variant="gold">تقديم طلب التسجيل</Button>
           </Link>
         </div>
       </section>
