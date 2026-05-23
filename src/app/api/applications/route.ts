@@ -2,6 +2,10 @@ import { NextResponse } from "next/server";
 import { prisma } from "@/lib/admission/prisma";
 import { applicationSchema } from "@/lib/admission/validations";
 import { generateTrackingNumber } from "@/lib/admission/tracking";
+import {
+  getApplicationDbDebugHint,
+  logApplicationDbError,
+} from "@/lib/admission/db-error";
 
 function formDataToObject(formData: FormData) {
   const obj: Record<string, string> = {};
@@ -14,6 +18,14 @@ function formDataToObject(formData: FormData) {
 }
 
 export async function POST(request: Request) {
+  if (!process.env.DATABASE_URL?.trim()) {
+    console.error("[applications] DATABASE_URL is missing on this deployment");
+    return NextResponse.json(
+      { message: "تعذر حفظ الطلب. يرجى المحاولة لاحقًا." },
+      { status: 503 }
+    );
+  }
+
   try {
     const formData = await request.formData();
     const raw = formDataToObject(formData);
@@ -79,9 +91,16 @@ export async function POST(request: Request) {
       id: application.id,
     });
   } catch (error) {
-    console.error("Application create error:", error);
+    logApplicationDbError(error);
+    const debug =
+      process.env.ADMISSION_API_DEBUG === "true"
+        ? getApplicationDbDebugHint(error)
+        : undefined;
     return NextResponse.json(
-      { message: "تعذر حفظ الطلب. يرجى المحاولة لاحقًا." },
+      {
+        message: "تعذر حفظ الطلب. يرجى المحاولة لاحقًا.",
+        ...(debug ? { debug } : {}),
+      },
       { status: 500 }
     );
   }

@@ -93,6 +93,26 @@ npm run test:admission:e2e      # Playwright (يتطلب npm run dev)
 
 ---
 
+## استكشاف خطأ 500 على `POST /api/applications`
+
+الرسالة «تعذر حفظ الطلب» مع **HTTP 500** تعني أن الاتصال بقاعدة البيانات أو الحفظ فشل (بعد اجتياز التحقق من الحقول).
+
+| السبب الشائع | الحل |
+|--------------|------|
+| `DATABASE_URL` غير مضاف على Vercel | Environment Variables → Production |
+| الرابط يستخدم `localhost` أو `127.0.0.1` | استبدله بـ HOST عام أو pooler من السيرفر |
+| Vercel لا يصل إلى PostgreSQL | فتح الجدار الناري / pooler + `?sslmode=require` |
+| الجداول غير موجودة | `npx prisma migrate deploy` على السيرفر |
+| اتصالات serverless | تم ضبط Prisma singleton في الكود |
+
+**تشخيص على Vercel:**
+
+1. Deployments → Functions → Logs عند إرسال استمارة — ابحث عن `[applications]`.
+2. مؤقتاً: `ADMISSION_API_DEBUG=true` ثم أعد الإرسال — قد يظهر حقل `debug` في استجابة JSON.
+3. `HEALTH_CHECK_SECRET` + `GET /api/health/db?secret=...` للتحقق من الاتصال.
+
+---
+
 ## قائمة تحقق قبل الإطلاق
 
 - [ ] `DATABASE_URL` إنتاج على Vercel (من السيرفر، ليس localhost)
