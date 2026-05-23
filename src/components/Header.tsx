@@ -81,7 +81,6 @@ export default function Header({ locale }: Props) {
     { key: "levels", href: `/${locale}/levels` },
     { key: "onlineAdmission", href: admissionIntro },
     { key: "registration", href: `/${locale}/registration` },
-    { key: "contact", href: `/${locale}/contact` },
   ] as const;
 
   // Secondary links — in "More" dropdown
@@ -230,21 +229,12 @@ export default function Header({ locale }: Props) {
               )}
             </div>
 
-            {/* CTAs */}
-            <div className="hidden lg:flex items-center gap-2">
-              <Link
-                href={`/${locale}/contact`}
-                className="inline-flex items-center px-4 py-2 rounded-lg text-sm font-semibold text-[#1D4395] border border-[#1D4395] hover:bg-[#F5F8FF] transition-colors whitespace-nowrap"
-              >
-                {t("getInfo")}
-              </Link>
-              <Link
-                href={admissionIntro}
-                className="inline-flex items-center px-4 py-2 rounded-lg text-sm font-bold text-white bg-[#1D4395] hover:bg-[#2857B8] transition-colors whitespace-nowrap"
-              >
-                {t("onlineAdmission")}
-              </Link>
-            </div>
+            <Link
+              href={admissionIntro}
+              className="hidden lg:inline-flex items-center px-4 py-2 rounded-lg text-sm font-bold text-white bg-[#1D4395] hover:bg-[#2857B8] transition-colors whitespace-nowrap"
+            >
+              {t("onlineAdmission")}
+            </Link>
 
             {/* Hamburger (mobile only) */}
             <button
@@ -314,14 +304,6 @@ export default function Header({ locale }: Props) {
                 className="block py-3 rounded-xl text-center text-sm font-bold text-white bg-[#1D4395] hover:bg-[#2857B8] transition-colors"
               >
                 {t("onlineAdmission")}
-              </Link>
-
-              <Link
-                href={`/${locale}/contact`}
-                onClick={() => setMenuOpen(false)}
-                className="block py-3 rounded-xl text-center text-sm font-semibold text-[#1D4395] border-2 border-[#1D4395] hover:bg-[#F5F8FF] transition-colors"
-              >
-                {t("getInfo")}
               </Link>
 
               <Link
