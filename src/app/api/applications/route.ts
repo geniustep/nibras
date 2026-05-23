@@ -63,7 +63,6 @@ export async function POST(request: Request) {
         parentFullName: data.parentFullName,
         parentPhone: data.parentPhone,
         parentEmail: data.parentEmail || null,
-        parentRelationship: data.parentRelationship || "ولي الأمر",
         parentAddress: data.parentAddress || null,
         schoolCycle: data.schoolCycle,
         schoolLevel: data.schoolLevel,
@@ -74,8 +73,6 @@ export async function POST(request: Request) {
         needsTransport: data.needsTransport,
         transportNotes: data.transportNotes || null,
         needsCanteen: data.needsCanteen,
-        referralSource: data.referralSource,
-        referralDetails: data.referralDetails || null,
         statusHistory: {
           create: {
             oldStatus: null,

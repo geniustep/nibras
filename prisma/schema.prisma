@@ -49,15 +49,6 @@ enum CommonCoreTrack {
   TECHNOLOGICAL
 }
 
-enum ReferralSource {
-  WEBSITE
-  SOCIAL_MEDIA
-  FAMILY_FRIEND
-  SCHOOL_EVENT
-  ADVERTISEMENT
-  OTHER
-}
-
 enum Gender {
   MALE
   FEMALE
@@ -159,7 +150,6 @@ model AdmissionRequest {
   parentPhone        String
   parentWhatsapp     String?
   parentEmail        String?
-  parentRelationship String   @default("ولي الأمر")
   parentAddress      String?
   parentMessage      String?
 
@@ -170,8 +160,6 @@ model AdmissionRequest {
   needsTransport  Boolean        @default(false)
   transportNotes  String?
   needsCanteen    Boolean        @default(false)
-  referralSource  ReferralSource
-  referralDetails String?
 
   assignedToId String?
   assignedTo   AdminUser? @relation("AssignedRequests", fields: [assignedToId], references: [id], onDelete: SetNull)

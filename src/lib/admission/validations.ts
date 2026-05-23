@@ -13,8 +13,8 @@ const commonCoreTrackSchema = z.enum(ALL_TRACKS);
 
 export const applicationSchema = z
   .object({
-    studentFirstName: z.string().min(2, "الاسم الأول مطلوب"),
-    studentLastName: z.string().min(2, "اسم العائلة مطلوب"),
+    studentFirstName: z.string().min(2, "الاسم الشخصي مطلوب"),
+    studentLastName: z.string().min(2, "الاسم العائلي مطلوب"),
     studentDateOfBirth: z.string().min(1, "تاريخ الازدياد مطلوب"),
     studentGender: z.enum(["MALE", "FEMALE"]),
     studentNationalId: z.string().optional(),
@@ -26,7 +26,6 @@ export const applicationSchema = z
       .min(10, "رقم الهاتف غير صالح")
       .regex(/^[\d\s+()-]+$/, "رقم الهاتف غير صالح"),
     parentEmail: z.string().email("البريد الإلكتروني غير صالح").optional().or(z.literal("")),
-    parentRelationship: z.string().optional(),
     parentAddress: z.string().optional(),
 
     schoolCycle: schoolCycleSchema,
@@ -38,15 +37,6 @@ export const applicationSchema = z
     needsTransport: z.coerce.boolean(),
     transportNotes: z.string().optional(),
     needsCanteen: z.coerce.boolean(),
-    referralSource: z.enum([
-      "WEBSITE",
-      "SOCIAL_MEDIA",
-      "FAMILY_FRIEND",
-      "SCHOOL_EVENT",
-      "ADVERTISEMENT",
-      "OTHER",
-    ]),
-    referralDetails: z.string().optional(),
   })
   .superRefine((data, ctx) => {
     if (!levelBelongsToCycle(data.schoolCycle, data.schoolLevel)) {

@@ -26,7 +26,6 @@ const valid = applicationSchema.safeParse({
   schoolLevel: "PRIMARY_1",
   needsTransport: false,
   needsCanteen: false,
-  referralSource: "WEBSITE",
 });
 
 assert("بيانات صالحة كاملة", valid.success);
@@ -45,7 +44,6 @@ const mismatch = applicationSchema.safeParse({
   schoolLevel: "MIDDLE_1",
   needsTransport: false,
   needsCanteen: false,
-  referralSource: "WEBSITE",
 });
 assert("عدم توافق السلك والمستوى", !mismatch.success);
 
@@ -61,7 +59,6 @@ const commonCore = applicationSchema.safeParse({
   commonCoreTrack: "SCIENTIFIC",
   needsTransport: false,
   needsCanteen: false,
-  referralSource: "WEBSITE",
 });
 assert("الجذع المشترك مع شعبة", commonCore.success);
 

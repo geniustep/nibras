@@ -8,7 +8,7 @@ import { Input } from "@/components/admission/ui/Input";
 import { Select } from "@/components/admission/ui/Select";
 import { Textarea } from "@/components/admission/ui/Textarea";
 import { Card } from "@/components/admission/ui/Card";
-import { GENDER_LABELS, REFERRAL_LABELS } from "@/lib/admission/labels";
+import { GENDER_LABELS } from "@/lib/admission/labels";
 import {
   CYCLE_LABELS,
   isCommonCoreLevel,
@@ -111,13 +111,13 @@ export function RegistrationForm() {
         <div className="grid gap-5 sm:grid-cols-2">
           <Input
             name="studentFirstName"
-            label="الاسم الأول"
+            label="الاسم الشخصي"
             required
             error={errors.studentFirstName}
           />
           <Input
             name="studentLastName"
-            label="اسم العائلة"
+            label="الاسم العائلي"
             required
             error={errors.studentLastName}
           />
@@ -141,12 +141,12 @@ export function RegistrationForm() {
           />
           <Input
             name="studentNationalId"
-            label="رقم التعريف الوطني (اختياري)"
+            label="رقم التعريف الوطني"
             error={errors.studentNationalId}
           />
           <Input
             name="currentSchool"
-            label="المؤسسة الحالية (اختياري)"
+            label="المؤسسة الحالية"
             error={errors.currentSchool}
           />
         </div>
@@ -174,19 +174,13 @@ export function RegistrationForm() {
           />
           <Input
             name="parentEmail"
-            label="البريد الإلكتروني (اختياري)"
+            label="البريد الإلكتروني"
             type="email"
             error={errors.parentEmail}
           />
           <Input
-            name="parentRelationship"
-            label="صلة القرابة"
-            defaultValue="ولي الأمر"
-            error={errors.parentRelationship}
-          />
-          <Input
             name="parentAddress"
-            label="العنوان (اختياري)"
+            label="العنوان"
             className="sm:col-span-2"
             error={errors.parentAddress}
           />
@@ -266,7 +260,7 @@ export function RegistrationForm() {
           {needsTransport && (
             <Textarea
               name="transportNotes"
-              label="ملاحظات حول النقل (اختياري)"
+              label="العنوان "
               className="sm:col-span-2"
               error={errors.transportNotes}
             />
@@ -286,30 +280,6 @@ export function RegistrationForm() {
               </span>
             </span>
           </label>
-        </div>
-      </Card>
-
-      <Card
-        title="كيف تعرفتم على المؤسسة؟"
-        subtitle="يساعدنا هذا الحقل على تحسين تواصلنا مع الأسر."
-      >
-        <div className="grid gap-5">
-          <Select
-            name="referralSource"
-            label="مصدر المعرفة"
-            required
-            error={errors.referralSource}
-            placeholder="اختر..."
-            options={Object.entries(REFERRAL_LABELS).map(([value, label]) => ({
-              value,
-              label,
-            }))}
-          />
-          <Input
-            name="referralDetails"
-            label="تفاصيل إضافية (اختياري)"
-            error={errors.referralDetails}
-          />
         </div>
       </Card>
 

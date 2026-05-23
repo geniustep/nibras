@@ -24,7 +24,6 @@ async function run() {
   fd.set("schoolLevel", "PRIMARY_1");
   fd.set("needsTransport", "false");
   fd.set("needsCanteen", "false");
-  fd.set("referralSource", "WEBSITE");
 
   const validReq = new Request("http://localhost/api/applications", {
     method: "POST",
