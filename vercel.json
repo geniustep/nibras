@@ -16,16 +16,16 @@
       "source": "/tassjil/:path*",
       "destination": "/admission/:path*",
       "permanent": true
-    }
-  ],
-  "rewrites": [
+    },
     {
       "source": "/adminsession",
-      "destination": "https://admission.madarisnibras.ma/admin"
+      "destination": "https://admission.madarisnibras.ma/admin",
+      "permanent": false
     },
     {
       "source": "/adminsession/:path*",
-      "destination": "https://admission.madarisnibras.ma/admin/:path*"
+      "destination": "https://admission.madarisnibras.ma/admin/:path*",
+      "permanent": false
     }
   ]
 }

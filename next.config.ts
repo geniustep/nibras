@@ -3,8 +3,8 @@ import createNextIntlPlugin from "next-intl/plugin";
 
 const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 
-const adminUpstream =
-  process.env.ADMIN_UPSTREAM_URL ?? "https://admission.madarisnibras.ma/admin";
+const adminOrigin =
+  process.env.ADMIN_UPSTREAM_URL ?? "https://admission.madarisnibras.ma";
 
 const nextConfig: NextConfig = {
   async redirects() {
@@ -24,17 +24,15 @@ const nextConfig: NextConfig = {
         destination: "/admission/:path*",
         permanent: true,
       },
-    ];
-  },
-  async rewrites() {
-    return [
       {
         source: "/adminsession",
-        destination: adminUpstream,
+        destination: `${adminOrigin}/admin`,
+        permanent: false,
       },
       {
         source: "/adminsession/:path*",
-        destination: `${adminUpstream}/:path*`,
+        destination: `${adminOrigin}/admin/:path*`,
+        permanent: false,
       },
     ];
   },
