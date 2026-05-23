@@ -24,7 +24,7 @@ export default function AdmissionIntroPage() {
               الإجراءات بكل عناية.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Link href="/tassjil">
+              <Link href="/admission">
                 <Button variant="primary">بدء التسجيل الأولي</Button>
               </Link>
               <a href="#ma3lomat">
@@ -40,17 +40,17 @@ export default function AdmissionIntroPage() {
         <div className="mt-8 grid gap-6 sm:grid-cols-3">
           {[
             {
-              step: "1",
+              step: "١",
               title: "تعبئة الاستمارة",
               text: "أدخلوا معلومات التلميذ وولي الأمر والمستوى المطلوب.",
             },
             {
-              step: "2",
+              step: "٢",
               title: "استلام رقم التتبع",
               text: "بعد الإرسال، يظهر رقم طلبكم للاحتفاظ به.",
             },
             {
-              step: "3",
+              step: "٣",
               title: "متابعة من الفريق",
               text: "يتواصل معكم فريق القبول لاستكمال الخطوات.",
             },
@@ -76,7 +76,7 @@ export default function AdmissionIntroPage() {
           <p className="text-lg font-medium">
             نرافقكم بكل احترام في رحلة انضمام تلميذكم إلى مدارس النبراس.
           </p>
-          <Link href="/tassjil" className="mt-6 inline-block">
+          <Link href="/admission" className="mt-6 inline-block">
             <Button variant="gold">تقديم طلب الآن</Button>
           </Link>
         </div>

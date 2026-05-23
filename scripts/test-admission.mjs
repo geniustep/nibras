@@ -33,9 +33,9 @@ async function main() {
   console.log(`Base URL: ${base}\n`);
 
   const pages = await Promise.all([
-    checkPage("/tassjil/bidaya", ["بوابة التسجيل الأولي", "بدء التسجيل الأولي"]),
-    checkPage("/tassjil", ["استمارة التسجيل الأولي", "studentFirstName"]),
-    checkPage("/tassjil/najah?ref=NIB-2026-000001", [
+    checkPage("/admission/bidaya", ["بوابة التسجيل الأولي", "بدء التسجيل الأولي"]),
+    checkPage("/admission", ["استمارة التسجيل الأولي", "studentFirstName"]),
+    checkPage("/admission/najah?ref=NIB-2026-000001", [
       "تم استلام طلبكم بنجاح",
       "NIB-2026-000001",
     ]),

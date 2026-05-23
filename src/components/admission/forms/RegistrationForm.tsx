@@ -88,7 +88,7 @@ export function RegistrationForm() {
         return;
       }
 
-      router.push(`/tassjil/najah?ref=${encodeURIComponent(data.trackingNumber)}`);
+      router.push(`/admission/najah?ref=${encodeURIComponent(data.trackingNumber)}`);
     } catch {
       setErrors({ form: "تعذر الاتصال بالخادم. يرجى التحقق من الاتصال والمحاولة مجددًا." });
     } finally {

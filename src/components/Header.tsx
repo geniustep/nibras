@@ -53,7 +53,7 @@ export default function Header({ locale }: Props) {
   }, [pathname]);
 
   function switchLocale(newLocale: Locale) {
-    if (pathname.startsWith("/tassjil")) {
+    if (pathname.startsWith("/admission")) {
       router.push(`/${newLocale}`);
       return;
     }

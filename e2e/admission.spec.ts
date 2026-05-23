@@ -7,19 +7,19 @@ test.describe("بوابة التسجيل الأولي", () => {
     await expect(page.getByRole("heading", { name: /مدارس النبراس/ })).toBeVisible();
   });
 
-  test("الصفحة التعريفية /tassjil/bidaya", async ({ page }) => {
-    await page.goto("/tassjil/bidaya");
+  test("الصفحة التعريفية /admission/bidaya", async ({ page }) => {
+    await page.goto("/admission/bidaya");
     await expect(page.getByRole("heading", { name: "بوابة التسجيل الأولي" })).toBeVisible();
     await expect(page.getByRole("link", { name: "بدء التسجيل الأولي" })).toHaveAttribute(
       "href",
-      "/tassjil"
+      "/admission"
     );
     await expect(page.locator("header")).toBeVisible();
     await expect(page.locator("footer")).toBeVisible();
   });
 
-  test("استمارة /tassjil", async ({ page }) => {
-    await page.goto("/tassjil");
+  test("استمارة /admission", async ({ page }) => {
+    await page.goto("/admission");
     await expect(
       page.getByRole("heading", { name: "استمارة التسجيل الأولي" })
     ).toBeVisible();
@@ -28,8 +28,8 @@ test.describe("بوابة التسجيل الأولي", () => {
     await expect(page.getByRole("button", { name: "إرسال طلب التسجيل الأولي" })).toBeVisible();
   });
 
-  test("صفحة النجاح /tassjil/najah", async ({ page }) => {
-    await page.goto("/tassjil/najah?ref=NIB-2026-000042");
+  test("صفحة النجاح /admission/najah", async ({ page }) => {
+    await page.goto("/admission/najah?ref=NIB-2026-000042");
     await expect(page.getByRole("heading", { name: "تم استلام طلبكم بنجاح" })).toBeVisible();
     await expect(page.getByText("NIB-2026-000042")).toBeVisible();
     await expect(page.getByRole("link", { name: "العودة إلى الصفحة الرئيسية" })).toHaveAttribute(

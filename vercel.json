@@ -6,6 +6,26 @@
       "source": "/",
       "destination": "/ar",
       "permanent": false
+    },
+    {
+      "source": "/tassjil",
+      "destination": "/admission",
+      "permanent": true
+    },
+    {
+      "source": "/tassjil/:path*",
+      "destination": "/admission/:path*",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/adminsession",
+      "destination": "https://admission.madarisnibras.ma/admin"
+    },
+    {
+      "source": "/adminsession/:path*",
+      "destination": "https://admission.madarisnibras.ma/admin/:path*"
     }
   ]
 }
