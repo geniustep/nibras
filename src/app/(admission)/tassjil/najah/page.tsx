@@ -37,7 +37,7 @@ export default async function SuccessPage({
       </div>
 
       <div className="mt-10">
-        <Link href="/">
+        <Link href="/ar">
           <Button variant="outline">العودة إلى الصفحة الرئيسية</Button>
         </Link>
       </div>

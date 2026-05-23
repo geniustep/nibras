@@ -1,9 +1,14 @@
 import { test, expect } from "@playwright/test";
 
 test.describe("بوابة التسجيل الأولي", () => {
-  test("الصفحة التعريفية /", async ({ page }) => {
-    const res = await page.goto("/");
-    expect(res?.status()).toBe(200);
+  test("الجذر / يعيد التوجيه إلى /ar", async ({ page }) => {
+    const res = await page.goto("/", { waitUntil: "commit" });
+    expect(res?.url()).toContain("/ar");
+    await expect(page.getByRole("heading", { name: /مدارس النبراس/ })).toBeVisible();
+  });
+
+  test("الصفحة التعريفية /tassjil/bidaya", async ({ page }) => {
+    await page.goto("/tassjil/bidaya");
     await expect(page.getByRole("heading", { name: "بوابة التسجيل الأولي" })).toBeVisible();
     await expect(page.getByRole("link", { name: "بدء التسجيل الأولي" })).toHaveAttribute(
       "href",
@@ -29,7 +34,7 @@ test.describe("بوابة التسجيل الأولي", () => {
     await expect(page.getByText("NIB-2026-000042")).toBeVisible();
     await expect(page.getByRole("link", { name: "العودة إلى الصفحة الرئيسية" })).toHaveAttribute(
       "href",
-      "/"
+      "/ar"
     );
   });
 

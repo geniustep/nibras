@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     "منصة التسجيل الأولي لمدارس النبراس — تقديم طلب الانضمام ومتابعة مسار التسجيل.",
 };
 
-export default async function AdmissionLayout({
+export default async function TassjilLayout({
   children,
 }: {
   children: React.ReactNode;

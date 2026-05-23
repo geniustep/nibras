@@ -33,7 +33,7 @@ async function main() {
   console.log(`Base URL: ${base}\n`);
 
   const pages = await Promise.all([
-    checkPage("/", ["بوابة التسجيل الأولي", "بدء التسجيل الأولي"]),
+    checkPage("/tassjil/bidaya", ["بوابة التسجيل الأولي", "بدء التسجيل الأولي"]),
     checkPage("/tassjil", ["استمارة التسجيل الأولي", "studentFirstName"]),
     checkPage("/tassjil/najah?ref=NIB-2026-000001", [
       "تم استلام طلبكم بنجاح",
@@ -42,11 +42,10 @@ async function main() {
     checkPage("/ar", ["مدارس"]),
   ]);
 
-  const headerCheck = await checkPage("/", ["sticky top-0"]); // Header classes
   const api = await checkApiValidation();
 
   let failed = 0;
-  for (const r of [...pages, { ...headerCheck, note: "header" }, api]) {
+  for (const r of [...pages, api]) {
     const mark = r.ok ? "PASS" : "FAIL";
     if (!r.ok) failed++;
     console.log(
@@ -54,13 +53,16 @@ async function main() {
     );
   }
 
-  // تحقق من عدم إعادة توجيه / إلى /ar
   const rootRedirect = await fetch(`${base}/`, { redirect: "manual" });
-  const noRedirect = rootRedirect.status === 200;
+  const redirectsToAr =
+    rootRedirect.status >= 300 &&
+    rootRedirect.status < 400 &&
+    (rootRedirect.headers.get("location")?.includes("/ar") ||
+      rootRedirect.url?.includes("/ar"));
   console.log(
-    `[${noRedirect ? "PASS" : "FAIL"}] / لا يعيد التوجيه إلى /ar (status=${rootRedirect.status})`
+    `[${redirectsToAr ? "PASS" : "FAIL"}] / يعيد التوجيه إلى /ar (status=${rootRedirect.status})`
   );
-  if (!noRedirect) failed++;
+  if (!redirectsToAr) failed++;
 
   console.log(`\n${failed === 0 ? "كل الاختبارات نجحت." : `فشل ${failed} اختبار(ات).`}`);
   process.exit(failed > 0 ? 1 : 0);

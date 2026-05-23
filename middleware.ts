@@ -5,7 +5,7 @@ import { routing } from "./src/i18n/routing";
 const intlMiddleware = createMiddleware(routing);
 
 function isAdmissionPath(pathname: string) {
-  return pathname === "/" || pathname.startsWith("/tassjil");
+  return pathname.startsWith("/tassjil");
 }
 
 export default function middleware(request: NextRequest) {
