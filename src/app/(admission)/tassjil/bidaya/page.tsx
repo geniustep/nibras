@@ -40,17 +40,17 @@ export default function AdmissionIntroPage() {
         <div className="mt-8 grid gap-6 sm:grid-cols-3">
           {[
             {
-              step: "١",
+              step: "1",
               title: "تعبئة الاستمارة",
               text: "أدخلوا معلومات التلميذ وولي الأمر والمستوى المطلوب.",
             },
             {
-              step: "٢",
+              step: "2",
               title: "استلام رقم التتبع",
               text: "بعد الإرسال، يظهر رقم طلبكم للاحتفاظ به.",
             },
             {
-              step: "٣",
+              step: "3",
               title: "متابعة من الفريق",
               text: "يتواصل معكم فريق القبول لاستكمال الخطوات.",
             },
